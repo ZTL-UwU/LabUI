@@ -22,6 +22,8 @@ $grey8: #383838;
 $grey9: #272727;
 $grey: $grey5;
 
+$black: #000000;
+
 $yellow1: #ffe6b7;
 $yellow2: #ffda93;
 $yellow3: #ffce6f;
@@ -55,7 +57,17 @@ $red8 :#9a473f;
 $red9: #723730;
 $red: $red6;
 
+$z-index1: 1;
+$z-index2: 10;
+$z-index3: 100;
+$z-index4: 1000;
+$z-index5: 10000;
+$z-index6: 100000;
+$z-index7: 1000000;
+
 $border-radius-normal: 5px;
+$border-radius-round: 200px;
+
 @mixin button-shadow($height, $color) {
     box-shadow: 0px $height 0px 0px $color;
 }

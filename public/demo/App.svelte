@@ -1,5 +1,6 @@
 <script lang="typescript">
-    import { LButton } from '../../src/main.ts';
+    import { LButton, LProgress } from '../../src/main.ts';
+    import * as colors from '../../src/color.ts';
 </script>
 
 <div class="item-20">
@@ -29,10 +30,17 @@
     <LButton color="grey">Grey</LButton>
 </div>
 
+<div class="item-20">
+    <LProgress size="small" color={colors.red} percent="10" inner={false} outer={false}></LProgress>
+    <LProgress></LProgress>
+    <LProgress color={colors.green} size="large" inner={false} percent="100" outer></LProgress>
+</div>
+
 <style lang="scss">
     .item-20 {
         margin-bottom: 20px;
     }
+
     .item-15 {
         margin-bottom: 15px;
     }
