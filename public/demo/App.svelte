@@ -31,9 +31,9 @@
 </div>
 
 <div class="item-20">
-    <LProgress size="small" color={colors.red} percent="10" inner={false} outer={false}></LProgress>
-    <LProgress></LProgress>
-    <LProgress color={colors.green} size="large" inner={false} percent="100" outer></LProgress>
+    <LProgress size="small" color={colors.red} percent="10"></LProgress>
+    <LProgress color={colors.green} percent="100" width="300px"></LProgress>
+    <LProgress size="large"></LProgress>
 </div>
 
 <style lang="scss">
