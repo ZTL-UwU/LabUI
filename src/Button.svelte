@@ -2,6 +2,7 @@
     export let disabled = false;
     export let plain = false;
     export let flat = false;
+    export let round = false;
     export let color = disabled ? '' : 'green';
     export let size = 'normal';
     export let height = '';
@@ -10,8 +11,9 @@
     $: button_plain = plain ? 'button-plain' : '';
     $: button_color = disabled ? '' : `button-${color}`;
     $: button_flat = flat ? `button-flat` : '';
+    $: button_round = round ? `button-round` : '';
 
-    $: classes = `button button-${size} ${button_color} ${button_plain} ${button_flat}`;
+    $: classes = `button button-${size} ${button_color} ${button_plain} ${button_flat} ${button_round}`;
     let height_style: string = height === '' ? '' : `height: ${height};`
     let width_style: string = width === '' ? '' : `width: ${width};`;
     $: styles = height_style + width_style;
@@ -32,6 +34,11 @@
     .button {
         font-weight: 800;
 
+        &.button-round {
+            border-radius: $border-radius-round;
+            min-height: 34px !important;
+            min-width: 34px !important;
+        }
         border-radius: $border-radius-normal;
         
         border: none;
@@ -41,6 +48,7 @@
 
         &.button-plain {
             color: $grey6;
+
             background-color: $transparent !important;
 
             &:disabled { @include border-normal($grey2); }

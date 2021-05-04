@@ -85,7 +85,7 @@ $border-normal: 3px;
 
 $border-radius-normal: 5px;
 $border-radius-large: 8px;
-$border-radius-round: 200px;
+$border-radius-round: 10000px;
 
 @mixin height-shadow($height, $color) {
     box-shadow: 0px $height 0px 0px $color;

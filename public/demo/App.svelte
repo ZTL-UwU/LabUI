@@ -56,6 +56,12 @@
     </div>
 
     <div class="item-20">
+        <h2>Round</h2>
+        <LButton round flat color="blue">R</LButton>
+        <LButton round plain color="yellow">Plain Round</LButton>
+    </div>
+
+    <div class="item-20">
         <h1>Progress Bars</h1>
         <LProgress size="small" color={colors.red} percent="10"></LProgress>
         <LProgress color={colors.green} percent="100" width="300px"></LProgress>
