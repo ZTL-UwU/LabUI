@@ -1,17 +1,17 @@
 <script lang="typescript">
     export let disabled = false;
     export let plain = false;
-    export let ghost = false;
+    export let flat = false;
     export let color = disabled ? '' : 'green';
     export let size = 'normal';
     export let height = '';
     export let width = '';
 
     $: button_plain = plain ? 'button-plain' : '';
-    $: button_ghost = ghost ? 'button-ghost' : '';
     $: button_color = disabled ? '' : `button-${color}`;
+    $: button_flat = flat ? `button-flat` : '';
 
-    $: classes = `button button-${size} ${button_color} ${button_plain} ${button_ghost}`;
+    $: classes = `button button-${size} ${button_color} ${button_plain} ${button_flat}`;
     let height_style: string = height === '' ? '' : `height: ${height};`
     let width_style: string = width === '' ? '' : `width: ${width};`;
     $: styles = height_style + width_style;
@@ -49,6 +49,12 @@
             &.button-grey { border: 3px solid $grey1; }
             &.button-red { border: 3px solid $red2; }
         }
+
+        &.button-flat {
+            box-shadow: none !important;
+            transform: none !important;
+        }
+
         &.button-blue { background-color: $blue; }
         &.button-green { background-color: $green; }
         &.button-yellow { background-color: $yellow; }
@@ -56,24 +62,13 @@
         &.button-red { background-color: $red; }
 
         &.button-tiny {
-            padding: 2px;
+            padding: 4px;
             &.button-plain {
                 &.button-blue { @include button-shadow(4px, $blue3); }
                 &.button-green { @include button-shadow(4px, $green3); }
                 &.button-yellow { @include button-shadow(4px, $yellow2); }
                 &.button-grey { @include button-shadow(4px, $grey2); }
                 &.button-red { @include button-shadow(4px, $red3); }
-            }
-            &.button-ghost {
-                color: $grey6;
-                background-color: $transparent !important;
-                border: 3px solid $transparent;
-                box-shadow: none;
-                &.button-green { box-shadow: none; };
-                &.button-blue { box-shadow: none; };
-                &.button-yellow { box-shadow: none; };
-                &.button-grey { box-shadow: none; };
-                &.button-red { box-shadow: none; };
             }
             &.button-blue { @include button-shadow(4px, $blue7); }
             &.button-green { @include button-shadow(4px, $green7); }
@@ -91,17 +86,6 @@
                 &.button-grey { @include button-shadow(4px, $grey2); }
                 &.button-red { @include button-shadow(4px, $red3); }
             }
-            &.button-ghost {
-                color: $grey6;
-                background-color: $transparent !important;
-                border: none;
-                box-shadow: none;
-                &.button-green { box-shadow: none; };
-                &.button-blue { box-shadow: none; };
-                &.button-yellow { box-shadow: none; };
-                &.button-grey { box-shadow: none; };
-                &.button-red { box-shadow: none; };
-            }
             &.button-blue { @include button-shadow(6px, $blue7); }
             &.button-green { @include button-shadow(6px, $green7); }
             &.button-yellow { @include button-shadow(6px, $yellow6); }
@@ -117,17 +101,6 @@
                 &.button-yellow { @include button-shadow(6px, $yellow2); }
                 &.button-grey { @include button-shadow(6px, $grey2); }
                 &.button-red { @include button-shadow(6px, $red3); }
-            }
-            &.button-ghost {
-                color: $grey6;
-                background-color: $transparent !important;
-                border: none;
-                box-shadow: none;
-                &.button-green { box-shadow: none; };
-                &.button-blue { box-shadow: none; };
-                &.button-yellow { box-shadow: none; };
-                &.button-grey { box-shadow: none; };
-                &.button-red { box-shadow: none; };
             }
             &.button-green { @include button-shadow(8px, $green7); }
             &.button-blue { @include button-shadow(8px, $blue7); }
@@ -145,17 +118,6 @@
                 &.button-grey { @include button-shadow(8px, $grey2); }
                 &.button-red { @include button-shadow(8px, $red3); }
             }
-            &.button-ghost {
-                color: $grey6;
-                background-color: $transparent !important;
-                border: none;
-                box-shadow: none;
-                &.button-green { box-shadow: none; };
-                &.button-blue { box-shadow: none; };
-                &.button-yellow { box-shadow: none; };
-                &.button-grey { box-shadow: none; };
-                &.button-red { box-shadow: none; };
-            }
             &.button-blue { @include button-shadow(10px, $blue7); }
             &.button-green { @include button-shadow(10px, $green7); }
             &.button-yellow { @include button-shadow(10px, $yellow6); }
@@ -166,13 +128,20 @@
         &:hover {
             border: none;
 
-            &.button-plain, &.button-ghost {
+            &.button-plain {
                 &:disabled { border: 3px solid $grey2; }
                 &.button-blue { border: 3px solid $blue3; }
                 &.button-green { border: 3px solid $green3; }
                 &.button-yellow { border: 3px solid $yellow2; }
                 &.button-grey { border: 3px solid $grey2; }
                 &.button-red { border: 3px solid $red3; }
+            }
+            &.button-flat {
+                &.button-blue { background-color: $blue5; }
+                &.button-green { background-color: $green5; }
+                &.button-yellow { background-color: $yellow4; }
+                &.button-grey { background-color: $grey4; }
+                &.button-red { background-color: $red5; }
             }
             &.button-blue { background-color: $blue7; }
             &.button-green { background-color: $green7; }
@@ -181,7 +150,7 @@
             &.button-red { background-color: $red7; }
 
             &.button-tiny {
-                &.button-plain, &.button-ghost {
+                &.button-plain {
                     &.button-blue { @include button-shadow(4px, $blue4); }
                     &.button-green { @include button-shadow(4px, $green4); }
                     &.button-yellow { @include button-shadow(4px, $yellow3); }
@@ -195,7 +164,7 @@
                 &.button-red { @include button-shadow(4px, $red8); }
             }
             &.button-small {
-                &.button-plain, &.button-ghost {
+                &.button-plain {
                     &.button-blue { @include button-shadow(4px, $blue4); }
                     &.button-green { @include button-shadow(4px, $green4); }
                     &.button-yellow { @include button-shadow(4px, $yellow3); }
@@ -209,7 +178,7 @@
                 &.button-red { @include button-shadow(6px, $red8); }
             }
             &.button-normal {
-                &.button-plain, &.button-ghost {
+                &.button-plain {
                     &.button-blue { @include button-shadow(6px, $blue4); }
                     &.button-green { @include button-shadow(6px, $green4); }
                     &.button-yellow { @include button-shadow(6px, $yellow3); }
@@ -223,7 +192,7 @@
                 &.button-red { @include button-shadow(8px, $red8); }
             }
             &.button-large {
-                &.button-plain, &.button-ghost {
+                &.button-plain {
                     &.button-blue { @include button-shadow(8px, $blue4); }
                     &.button-green { @include button-shadow(8px, $green4); }
                     &.button-yellow { @include button-shadow(8px, $yellow3); }
@@ -241,8 +210,16 @@
         &:active {
             transform: translateY(2px);
 
+            &.button-flat {
+                &.button-blue { background-color: $blue6; }
+                &.button-green { background-color: $green6; }
+                &.button-yellow { background-color: $yellow5; }
+                &.button-grey { background-color: $grey5; }
+                &.button-red { background-color: $red6; }
+            }
+
             &.button-tiny {
-                &.button-plain, &.button-ghost {
+                &.button-plain {
                     &.button-blue { @include button-shadow(2px, $blue4); }
                     &.button-green { @include button-shadow(2px, $green4); }
                     &.button-yellow { @include button-shadow(2px, $yellow3); }
@@ -256,7 +233,7 @@
                 &.button-red { @include button-shadow(2px, $red8); }
             }
             &.button-small {
-                &.button-plain, &.button-ghost {
+                &.button-plain {
                     &.button-blue { @include button-shadow(2px, $blue4); }
                     &.button-green { @include button-shadow(2px, $green4); }
                     &.button-yellow { @include button-shadow(2px, $yellow3); }
@@ -270,7 +247,7 @@
                 &.button-red { @include button-shadow(4px, $red8); }
             }
             &.button-normal {
-                &.button-plain, &.button-ghost {
+                &.button-plain {
                     &.button-blue { @include button-shadow(4px, $blue4); }
                     &.button-green { @include button-shadow(4px, $green4); }
                     &.button-yellow { @include button-shadow(4px, $yellow3); }
@@ -284,7 +261,7 @@
                 &.button-red { @include button-shadow(6px, $red8); }
             }
             &.button-large {
-                &.button-plain, &.button-ghost {
+                &.button-plain {
                     &.button-blue { @include button-shadow(6px, $blue4); }
                     &.button-green { @include button-shadow(6px, $green4); }
                     &.button-yellow { @include button-shadow(6px, $yellow3); }
