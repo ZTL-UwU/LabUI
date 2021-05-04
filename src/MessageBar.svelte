@@ -1,0 +1,53 @@
+<script lang="typescript">
+    import { createEventDispatcher } from 'svelte';
+    import { error, warning, success, info, primary, white } from './color.js';
+
+    export let type = 'normal';
+    export let show = true;
+
+    const dispatcher = createEventDispatcher();
+    const light = '#FFF';
+    const dark = '#000';
+
+    $: color = ({
+        normal: info,
+        info: info,
+        primary: primary,
+        warning: warning,
+        error: error,
+        success: success,
+    })[type];
+
+    function closeAlert() {
+        show = false;
+        dispatcher("close");
+    }
+</script>
+
+{#if show}
+    <div
+        style={`background-color: ${color}; color: ${white} `}
+        class="message-bar"
+    >
+        <slot name="content"></slot>
+        <span on:click={closeAlert} class="close">X</span>
+    </div>
+{/if}
+
+<style lang="scss">
+    @import './variables.scss';
+
+    .close {
+        cursor: pointer;
+        float: right;
+        margin-right: 5px;
+    }
+
+    .message-bar {
+        min-height: 30px;
+        padding: 2px 20px 2px 20px;
+        border-radius: $border-radius-normal;
+
+        margin-bottom: 10px;
+    }
+</style>

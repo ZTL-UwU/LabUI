@@ -1,5 +1,5 @@
 <script lang="typescript">
-    import { LButton, LProgress } from '../../src/main.ts';
+    import { LButton, LProgress, LMessageBar } from '../../src/main.ts';
     import * as colors from '../../src/color.ts';
 </script>
 
@@ -34,6 +34,15 @@
     <LProgress size="small" color={colors.red} percent="10"></LProgress>
     <LProgress color={colors.green} percent="100" width="300px"></LProgress>
     <LProgress size="large"></LProgress>
+</div>
+
+<div class="item-20">
+    <LMessageBar>
+        <span slot="content">Message</span>
+    </LMessageBar>
+    <LMessageBar type="warning">
+        <span slot="content">Warning</span>
+    </LMessageBar>
 </div>
 
 <style lang="scss">

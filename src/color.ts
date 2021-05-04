@@ -33,6 +33,8 @@ export const grey80 = '#383838';
 export const grey90 = '#272727';
 export const grey = grey50;
 
+export const black = '#000000';
+
 export const yellow10 = '#ffe6b7';
 export const yellow20 = '#ffda93';
 export const yellow30 = '#ffce6f';
@@ -59,4 +61,4 @@ export const primary = green;
 export const warning = yellow;
 export const error = red;
 export const success = green50;
-export const info = grey;
+export const info = grey20;
