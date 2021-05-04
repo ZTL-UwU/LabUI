@@ -27,7 +27,6 @@
 
     .button {
         font-weight: 800;
-        padding: 8px 5px 8px 5px;
 
         border-radius: $border-radius-normal;
         
