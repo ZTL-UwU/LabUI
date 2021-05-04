@@ -74,7 +74,7 @@
                 Body
             </div>
         </LBox>
-        <LBox noheader>
+        <LBox noheader flat={false}>
             <div slot="body">Body</div>
         </LBox>
     </div>

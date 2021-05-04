@@ -1,8 +1,12 @@
 <script lang="typescript">
     export let noheader = false;
+    export let flat = true;
+
+    $: box_3D = flat ? '' : 'box-3D';
+    $: classes = `box ${box_3D}`;
 </script>
 
-<div class="box">
+<div class={classes}>
     {#if !noheader}
         <div class="box-header">
             <slot name="header" />
@@ -34,5 +38,9 @@
         }
 
         margin-bottom: 10px;
+    }
+
+    .box-3D {
+        border-bottom: 5px solid $border1;
     }
 </style>

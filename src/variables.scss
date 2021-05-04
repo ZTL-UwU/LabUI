@@ -82,7 +82,7 @@ $border-normal: 3px;
 $border-radius-normal: 5px;
 $border-radius-round: 200px;
 
-@mixin button-shadow($height, $color) {
+@mixin height-shadow($height, $color) {
     box-shadow: 0px $height 0px 0px $color;
 }
 
