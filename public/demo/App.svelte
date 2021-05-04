@@ -39,6 +39,7 @@
     <div class="item-15">
         <LButton plain color="blue">Plain</LButton>
         <LButton plain color="green" size="large">Plain large</LButton>
+        <LButton plain color="grey" size="tiny">T</LButton>
         <LButton plain disabled>Plain Disabled</LButton>
     </div>
 

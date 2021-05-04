@@ -1,6 +1,7 @@
 <script lang="typescript">
+    import { LButton } from './main.ts';
     import { createEventDispatcher } from 'svelte';
-    import { error, warning, success, info, primary, white } from './color.js';
+    import { error, warning, success, info, primary, white } from './color.ts';
 
     export let type = 'normal';
     export let show = true;
@@ -31,7 +32,9 @@
     >
         <slot name="icon" />
         <slot name="content" />
-        <span on:click={closeAlert} class="close">X</span>
+        <div class="close">
+            <LButton color="grey" ghost size="tiny" on:click={closeAlert}>X</LButton>
+        </div>
     </div>
 {/if}
 

@@ -57,8 +57,15 @@ export const red80 = '#9a473f';
 export const red90 = '#723730';
 export const red = red60;
 
+export const c_grey10 = '#dce0e6';
+export const c_grey20 = '#b4b7bc';
+export const c_grey30 = '#8d8f93';
+export const c_grey40 = '#68696c';
+export const c_grey50 = '#454648';
+export const c_grey60 = '#252526';
+
 export const primary = green;
 export const warning = yellow;
 export const error = red;
 export const success = green50;
-export const info = grey20;
+export const info = c_grey20;
