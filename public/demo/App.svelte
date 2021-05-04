@@ -44,9 +44,9 @@
     </div>
 
     <div class="item-20">
-        <LButton flat color="blue">Ghost</LButton>
-        <LButton flat color="grey" size="tiny">G</LButton>
-        <LButton flat color="green" size="large">Ghost large</LButton>
+        <LButton flat color="blue">Flat</LButton>
+        <LButton flat plain color="yellow">Flat Plain</LButton>
+        <LButton flat color="green" size="large">Flat large</LButton>
     </div>
 
     <div class="item-20">

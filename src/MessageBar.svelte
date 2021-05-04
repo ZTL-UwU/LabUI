@@ -33,7 +33,7 @@
         <slot name="icon" />
         <slot name="content" />
         <div class="close">
-            <LButton color="grey" ghost size="tiny" on:click={closeAlert}>X</LButton>
+            <LButton color="grey" flat size="tiny" on:click={closeAlert}>X</LButton>
         </div>
     </div>
 {/if}

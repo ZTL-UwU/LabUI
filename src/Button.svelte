@@ -18,6 +18,7 @@
 </script>
 
 <button
+    on:click
     {disabled}
     class={classes}
     style={styles}
