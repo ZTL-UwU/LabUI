@@ -1,12 +1,18 @@
 <script lang="typescript">
     export let noheader = false;
     export let flat = true;
+    export let width = '500px';
 
     $: box_3D = flat ? '' : 'box-3D';
     $: classes = `box ${box_3D}`;
+    let width_style: string = width === '' ? '' : `width: ${width};`;
+    $: styles = width_style;
 </script>
 
-<div class={classes}>
+<div
+    class={classes}
+    style={styles}
+>
     {#if !noheader}
         <div class="box-header">
             <slot name="header" />
@@ -24,7 +30,6 @@
         border-radius: $border-radius-normal;
         @include border-normal($border1);
 
-        width: 500px;
         background-color: $white;
 
         .box-header {

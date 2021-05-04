@@ -1,7 +1,7 @@
 <script lang="typescript">
     import { LButton } from './main.ts';
     import { createEventDispatcher } from 'svelte';
-    import { error, warning, success, info, primary, white } from './color.ts';
+    import { error, warning, success, info, primary, white, other } from './color.ts';
 
     export let type = 'normal';
     export let show = true;
@@ -17,6 +17,7 @@
         warning: warning,
         error: error,
         success: success,
+        other: other,
     })[type];
 
     function closeAlert() {

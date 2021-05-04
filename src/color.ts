@@ -68,4 +68,5 @@ export const primary = green;
 export const warning = yellow;
 export const error = red;
 export const success = green50;
-export const info = c_grey20;
+export const other = c_grey20;
+export const info = blue;

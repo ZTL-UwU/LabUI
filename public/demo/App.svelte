@@ -8,7 +8,7 @@
         <LButton>Demo</LButton>
         <LButton disabled>Disabled</LButton>
         <LButton>
-            <img src="https://avatars.githubusercontent.com/u/49156174?s=45&v=4" />
+            <img src="https://avatars.githubusercontent.com/u/49156174?s=45&v=4" alt="avatar" />
         </LButton>
     </div>
 
@@ -55,14 +55,31 @@
         <LProgress size="large"></LProgress>
     </div>
 
-    <div class="item-20">
-        <LMessageBar>
-            <span slot="content">Message</span>
-        </LMessageBar>
-        <LMessageBar type="warning">
-            <span slot="content">Warning</span>
-        </LMessageBar>
-    </div>
+    <LBox noheader width="800px">
+        <div slot="body">
+            <LMessageBar type="success">
+                <span slot="content">Success</span>
+            </LMessageBar>
+            <LMessageBar type="warning">
+                <span slot="content">Warning</span>
+            </LMessageBar>
+            <LMessageBar type="error">
+                <span slot="content">
+                    Error
+                    <LButton flat plain color="red">ERR</LButton>
+                </span>
+            </LMessageBar>
+            <LMessageBar>
+                <span slot="content">Message</span>
+            </LMessageBar>
+            <LMessageBar type="other">
+                <span slot="content">Other</span>
+            </LMessageBar>
+            <LMessageBar type="primary">
+                <span slot="content">Primary</span>
+            </LMessageBar>
+        </div>
+    </LBox>
 
     <div class="item-20">
         <LBox>
