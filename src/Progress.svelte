@@ -37,7 +37,7 @@
 
     .progress-background {
         border-radius: $border-radius-round;
-        background-color: $grey1;
+        background-color: $c_grey1;
 
         margin-bottom: 10px;
         text-align: right;
