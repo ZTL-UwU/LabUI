@@ -5,6 +5,7 @@
 
 <main>
     <div class="item-15">
+        <h1>Buttons</h1>
         <LButton>Demo</LButton>
         <LButton disabled>Disabled</LButton>
         <LButton>
@@ -13,6 +14,7 @@
     </div>
 
     <div class="item-15">
+        <h2>Sizes</h2>
         <LButton size="tiny">Tiny</LButton>
         <LButton size="small">Small</LButton>
         <LButton>Normal</LButton>
@@ -21,6 +23,7 @@
     </div>
 
     <div class="item-15">
+        <h2>Disabled</h2>
         <LButton disabled size="tiny">Tiny</LButton>
         <LButton disabled size="small">Small</LButton>
         <LButton disabled>Normal</LButton>
@@ -29,6 +32,7 @@
     </div>
 
     <div class="item-15">
+        <h2>Colors</h2>
         <LButton color="blue">Blue</LButton>
         <LButton color="green">Green</LButton>
         <LButton color="yellow">Yellow</LButton>
@@ -37,6 +41,7 @@
     </div>
 
     <div class="item-15">
+        <h2>Plain</h2>
         <LButton plain color="blue">Plain</LButton>
         <LButton plain color="green" size="large">Plain large</LButton>
         <LButton plain color="grey" size="tiny">T</LButton>
@@ -44,18 +49,23 @@
     </div>
 
     <div class="item-20">
+        <h2>Flat</h2>
         <LButton flat color="blue">Flat</LButton>
         <LButton flat plain color="yellow">Flat Plain</LButton>
         <LButton flat color="green" size="large">Flat large</LButton>
     </div>
 
     <div class="item-20">
+        <h1>Progress Bars</h1>
         <LProgress size="small" color={colors.red} percent="10"></LProgress>
         <LProgress color={colors.green} percent="100" width="300px"></LProgress>
         <LProgress size="large"></LProgress>
     </div>
 
-    <LBox noheader width="800px">
+    <LBox width="800px">
+        <strong slot="header">
+            Message Bars
+        </strong>
         <div slot="body">
             <LMessageBar type="success">
                 <span slot="content">Success</span>
@@ -82,6 +92,7 @@
     </LBox>
 
     <div class="item-20">
+        <h2>Boxes</h2>
         <LBox>
             <span slot="header">Header</span>
             <div slot="body">
@@ -92,12 +103,17 @@
             </div>
         </LBox>
         <LBox noheader flat={false}>
-            <div slot="body">Body</div>
+            <div slot="body">3D Boxes</div>
         </LBox>
     </div>
 </main>
 
 <style lang="scss">
+    main {
+        background-color: #FAFAFE;
+        padding: 50px 200px 50px 200px;
+    }
+
     .item-20 {
         margin-bottom: 20px;
     }
