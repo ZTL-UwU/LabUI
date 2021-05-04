@@ -27,7 +27,7 @@
     @import './variables.scss';
 
     .box {
-        border-radius: $border-radius-normal;
+        border-radius: $border-radius-large;
         @include border-normal($border1);
 
         background-color: $white;
