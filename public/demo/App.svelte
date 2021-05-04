@@ -4,7 +4,7 @@
 </script>
 
 <main>
-    <div class="item-20">
+    <div class="item-15">
         <LButton>Demo</LButton>
         <LButton disabled>Disabled</LButton>
         <LButton>
@@ -13,20 +13,22 @@
     </div>
 
     <div class="item-15">
+        <LButton size="tiny">Tiny</LButton>
         <LButton size="small">Small</LButton>
         <LButton>Normal</LButton>
         <LButton size="large">Large</LButton>
-        <LButton height="80px" width="200px">Custom</LButton>
+        <LButton height="80px" width="200px">Custom Size</LButton>
     </div>
 
-    <div class="item-20">
+    <div class="item-15">
+        <LButton disabled size="tiny">Tiny</LButton>
         <LButton disabled size="small">Small</LButton>
         <LButton disabled>Normal</LButton>
         <LButton disabled size="large">Large</LButton>
-        <LButton disabled height="80px" width="200px">Custom</LButton>
+        <LButton disabled height="80px" width="200px">Custom Size</LButton>
     </div>
 
-    <div class="item-20">
+    <div class="item-15">
         <LButton color="blue">Blue</LButton>
         <LButton color="green">Green</LButton>
         <LButton color="yellow">Yellow</LButton>
@@ -34,10 +36,16 @@
         <LButton color="grey" size="large">Grey Large</LButton>
     </div>
 
-    <div class="item-20">
+    <div class="item-15">
         <LButton plain color="blue">Plain</LButton>
-        <LButton plain color="green" size="large">large</LButton>
+        <LButton plain color="green" size="large">Plain large</LButton>
         <LButton plain disabled>Plain Disabled</LButton>
+    </div>
+
+    <div class="item-20">
+        <LButton ghost color="blue">Ghost</LButton>
+        <LButton ghost color="grey" size="tiny">G</LButton>
+        <LButton ghost color="green" size="large">Ghost large</LButton>
     </div>
 
     <div class="item-20">
