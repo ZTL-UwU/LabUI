@@ -1,5 +1,5 @@
 <script lang="typescript">
-    import { LButton, LProgress, LMessageBar } from '../../src/main.ts';
+    import { LBox, LButton, LProgress, LMessageBar } from '../../src/main.ts';
     import * as colors from '../../src/color.ts';
 </script>
 
@@ -62,6 +62,21 @@
         <LMessageBar type="warning">
             <span slot="content">Warning</span>
         </LMessageBar>
+    </div>
+
+    <div class="item-20">
+        <LBox>
+            <span slot="header">Header</span>
+            <div slot="body">
+                <LMessageBar type="success">
+                    <span slot="content">Message</span>
+                </LMessageBar>
+                Body
+            </div>
+        </LBox>
+        <LBox noheader>
+            <div slot="body">Body</div>
+        </LBox>
     </div>
 </main>
 

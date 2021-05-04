@@ -43,12 +43,12 @@
             color: $grey6;
             background-color: $transparent !important;
 
-            &:disabled { border: 3px solid $grey2; }
-            &.button-blue { border: 3px solid $blue2; }
-            &.button-green { border: 3px solid $green2; }
-            &.button-yellow { border: 3px solid $yellow1; }
-            &.button-grey { border: 3px solid $grey1; }
-            &.button-red { border: 3px solid $red2; }
+            &:disabled { @include border-normal($grey2); }
+            &.button-blue { @include border-normal($blue2); }
+            &.button-green { @include border-normal($green2); }
+            &.button-yellow { @include border-normal($yellow1); }
+            &.button-grey { @include border-normal($grey1); }
+            &.button-red { @include border-normal($red2); }
         }
 
         &.button-flat {
@@ -130,12 +130,12 @@
             border: none;
 
             &.button-plain {
-                &:disabled { border: 3px solid $grey2; }
-                &.button-blue { border: 3px solid $blue3; }
-                &.button-green { border: 3px solid $green3; }
-                &.button-yellow { border: 3px solid $yellow2; }
-                &.button-grey { border: 3px solid $grey2; }
-                &.button-red { border: 3px solid $red3; }
+                &:disabled { @include border-normal($grey2); }
+                &.button-blue { @include border-normal($blue3); }
+                &.button-green { @include border-normal($green3); }
+                &.button-yellow { @include border-normal($yellow2); }
+                &.button-grey { @include border-normal($grey2); }
+                &.button-red { @include border-normal($red3); }
             }
             &.button-flat {
                 &.button-blue { background-color: $blue5; }
