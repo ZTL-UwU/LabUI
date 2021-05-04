@@ -29,7 +29,8 @@
         style={`background-color: ${color}; color: ${white} `}
         class="message-bar"
     >
-        <slot name="content"></slot>
+        <slot name="icon" />
+        <slot name="content" />
         <span on:click={closeAlert} class="close">X</span>
     </div>
 {/if}
