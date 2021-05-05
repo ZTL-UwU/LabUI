@@ -24,10 +24,10 @@
     $: fontStyle = `font-size: ${font_size};`;
 </script>
 
-<div class="progress-background" style={backgroundStyle}>
-    <div class="progress-front" style={barStyle}>
+<div class="lb__progress-background" style={backgroundStyle}>
+    <div class="lb__progress-front" style={barStyle}>
         {#if show_num}
-            <span class="num" style={fontStyle}>{ percent }%</span>
+            <span class="lb__progress-num" style={fontStyle}>{ percent }%</span>
         {/if}
     </div>
 </div>
@@ -35,7 +35,7 @@
 <style lang="scss">
     @import './variables.scss';
 
-    .progress-background {
+    .lb__progress-background {
         border-radius: $border-radius-round;
         background-color: $c_grey1;
 
@@ -43,7 +43,7 @@
         text-align: right;
     }
 
-    .progress-front {
+    .lb__progress-front {
         line-height: 1;
         border-radius: $border-radius-round;
         background-color: $green;
@@ -51,7 +51,7 @@
         transition: .5s;
     }
 
-    .num {
+    .lb__progress-num {
         vertical-align: middle;
         color: $white;
         font-weight: 500;

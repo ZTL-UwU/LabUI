@@ -8,12 +8,12 @@
     export let height = '';
     export let width = '';
 
-    $: button_plain = plain ? 'button-plain' : '';
-    $: button_color = disabled ? '' : `button-${color}`;
-    $: button_flat = flat ? `button-flat` : '';
-    $: button_round = round ? `button-round` : '';
+    $: button_plain = plain ? 'lb__button-plain' : '';
+    $: button_color = disabled ? '' : `lb__button-${color}`;
+    $: button_flat = flat ? `lb__button-flat` : '';
+    $: button_round = round ? `lb__button-round` : '';
 
-    $: classes = `button button-${size} ${button_color} ${button_plain} ${button_flat} ${button_round}`;
+    $: classes = `lb__button lb__button-${size} ${button_color} ${button_plain} ${button_flat} ${button_round}`;
     let height_style: string = height === '' ? '' : `height: ${height};`
     let width_style: string = width === '' ? '' : `width: ${width};`;
     $: styles = height_style + width_style;
@@ -31,10 +31,10 @@
 <style lang="scss">
     @import './variables.scss';
 
-    .button {
+    .lb__button {
         font-weight: 800;
 
-        &.button-round {
+        &.lb__button-round {
             border-radius: $border-radius-round;
             min-height: 34px !important;
             min-width: 34px !important;
@@ -46,257 +46,257 @@
         cursor: pointer;
         transition: 0.05s;
 
-        &.button-plain {
+        &.lb__button-plain {
             color: $grey6;
 
             background-color: $transparent !important;
 
             &:disabled { @include border-normal($grey2); }
-            &.button-blue { @include border-normal($blue2); }
-            &.button-green { @include border-normal($green2); }
-            &.button-yellow { @include border-normal($yellow1); }
-            &.button-grey { @include border-normal($grey1); }
-            &.button-red { @include border-normal($red2); }
+            &.lb__button-blue { @include border-normal($blue2); }
+            &.lb__button-green { @include border-normal($green2); }
+            &.lb__button-yellow { @include border-normal($yellow1); }
+            &.lb__button-grey { @include border-normal($grey1); }
+            &.lb__button-red { @include border-normal($red2); }
         }
 
-        &.button-flat {
+        &.lb__button-flat {
             box-shadow: none !important;
             transform: none !important;
         }
 
-        &.button-blue { background-color: $blue; }
-        &.button-green { background-color: $green; }
-        &.button-yellow { background-color: $yellow; }
-        &.button-grey { background-color: $grey; }
-        &.button-red { background-color: $red; }
+        &.lb__button-blue { background-color: $blue; }
+        &.lb__button-green { background-color: $green; }
+        &.lb__button-yellow { background-color: $yellow; }
+        &.lb__button-grey { background-color: $grey; }
+        &.lb__button-red { background-color: $red; }
 
-        &.button-tiny {
+        &.lb__button-tiny {
             padding: 4px;
-            &.button-plain {
-                &.button-blue { @include height-shadow(4px, $blue3); }
-                &.button-green { @include height-shadow(4px, $green3); }
-                &.button-yellow { @include height-shadow(4px, $yellow2); }
-                &.button-grey { @include height-shadow(4px, $grey2); }
-                &.button-red { @include height-shadow(4px, $red3); }
+            &.lb__button-plain {
+                &.lb__button-blue { @include height-shadow(4px, $blue3); }
+                &.lb__button-green { @include height-shadow(4px, $green3); }
+                &.lb__button-yellow { @include height-shadow(4px, $yellow2); }
+                &.lb__button-grey { @include height-shadow(4px, $grey2); }
+                &.lb__button-red { @include height-shadow(4px, $red3); }
             }
-            &.button-blue { @include height-shadow(4px, $blue7); }
-            &.button-green { @include height-shadow(4px, $green7); }
-            &.button-yellow { @include height-shadow(4px, $yellow6); }
-            &.button-grey { @include height-shadow(4px, $grey6); }
-            &.button-red { @include height-shadow(4px, $red7); }
+            &.lb__button-blue { @include height-shadow(4px, $blue7); }
+            &.lb__button-green { @include height-shadow(4px, $green7); }
+            &.lb__button-yellow { @include height-shadow(4px, $yellow6); }
+            &.lb__button-grey { @include height-shadow(4px, $grey6); }
+            &.lb__button-red { @include height-shadow(4px, $red7); }
         }
-        &.button-small {
+        &.lb__button-small {
             min-height: 24px;
             min-width: 80px;
-            &.button-plain {
-                &.button-blue { @include height-shadow(4px, $blue3); }
-                &.button-green { @include height-shadow(4px, $green3); }
-                &.button-yellow { @include height-shadow(4px, $yellow2); }
-                &.button-grey { @include height-shadow(4px, $grey2); }
-                &.button-red { @include height-shadow(4px, $red3); }
+            &.lb__button-plain {
+                &.lb__button-blue { @include height-shadow(4px, $blue3); }
+                &.lb__button-green { @include height-shadow(4px, $green3); }
+                &.lb__button-yellow { @include height-shadow(4px, $yellow2); }
+                &.lb__button-grey { @include height-shadow(4px, $grey2); }
+                &.lb__button-red { @include height-shadow(4px, $red3); }
             }
-            &.button-blue { @include height-shadow(6px, $blue7); }
-            &.button-green { @include height-shadow(6px, $green7); }
-            &.button-yellow { @include height-shadow(6px, $yellow6); }
-            &.button-grey { @include height-shadow(6px, $grey6); }
-            &.button-red { @include height-shadow(6px, $red7); }
+            &.lb__button-blue { @include height-shadow(6px, $blue7); }
+            &.lb__button-green { @include height-shadow(6px, $green7); }
+            &.lb__button-yellow { @include height-shadow(6px, $yellow6); }
+            &.lb__button-grey { @include height-shadow(6px, $grey6); }
+            &.lb__button-red { @include height-shadow(6px, $red7); }
         }
-        &.button-normal {
+        &.lb__button-normal {
             min-height: 30px;
             min-width: 100px;
-            &.button-plain {
-                &.button-blue { @include height-shadow(6px, $blue3); }
-                &.button-green { @include height-shadow(6px, $green3); }
-                &.button-yellow { @include height-shadow(6px, $yellow2); }
-                &.button-grey { @include height-shadow(6px, $grey2); }
-                &.button-red { @include height-shadow(6px, $red3); }
+            &.lb__button-plain {
+                &.lb__button-blue { @include height-shadow(6px, $blue3); }
+                &.lb__button-green { @include height-shadow(6px, $green3); }
+                &.lb__button-yellow { @include height-shadow(6px, $yellow2); }
+                &.lb__button-grey { @include height-shadow(6px, $grey2); }
+                &.lb__button-red { @include height-shadow(6px, $red3); }
             }
-            &.button-green { @include height-shadow(8px, $green7); }
-            &.button-blue { @include height-shadow(8px, $blue7); }
-            &.button-yellow { @include height-shadow(8px, $yellow6); }
-            &.button-grey { @include height-shadow(8px, $grey6); }
-            &.button-red { @include height-shadow(8px, $red7); }
+            &.lb__button-green { @include height-shadow(8px, $green7); }
+            &.lb__button-blue { @include height-shadow(8px, $blue7); }
+            &.lb__button-yellow { @include height-shadow(8px, $yellow6); }
+            &.lb__button-grey { @include height-shadow(8px, $grey6); }
+            &.lb__button-red { @include height-shadow(8px, $red7); }
         }
-        &.button-large {
+        &.lb__button-large {
             min-height: 40px;
             min-width: 120px;
-            &.button-plain {
-                &.button-blue { @include height-shadow(8px, $blue3); }
-                &.button-green { @include height-shadow(8px, $green3); }
-                &.button-yellow { @include height-shadow(8px, $yellow2); }
-                &.button-grey { @include height-shadow(8px, $grey2); }
-                &.button-red { @include height-shadow(8px, $red3); }
+            &.lb__button-plain {
+                &.lb__button-blue { @include height-shadow(8px, $blue3); }
+                &.lb__button-green { @include height-shadow(8px, $green3); }
+                &.lb__button-yellow { @include height-shadow(8px, $yellow2); }
+                &.lb__button-grey { @include height-shadow(8px, $grey2); }
+                &.lb__button-red { @include height-shadow(8px, $red3); }
             }
-            &.button-blue { @include height-shadow(10px, $blue7); }
-            &.button-green { @include height-shadow(10px, $green7); }
-            &.button-yellow { @include height-shadow(10px, $yellow6); }
-            &.button-grey { @include height-shadow(10px, $grey6); }
-            &.button-red { @include height-shadow(10px, $red7); }
+            &.lb__button-blue { @include height-shadow(10px, $blue7); }
+            &.lb__button-green { @include height-shadow(10px, $green7); }
+            &.lb__button-yellow { @include height-shadow(10px, $yellow6); }
+            &.lb__button-grey { @include height-shadow(10px, $grey6); }
+            &.lb__button-red { @include height-shadow(10px, $red7); }
         }
 
         &:hover {
             border: none;
 
-            &.button-plain {
+            &.lb__button-plain {
                 &:disabled { @include border-normal($grey2); }
-                &.button-blue { @include border-normal($blue3); }
-                &.button-green { @include border-normal($green3); }
-                &.button-yellow { @include border-normal($yellow2); }
-                &.button-grey { @include border-normal($grey2); }
-                &.button-red { @include border-normal($red3); }
+                &.lb__button-blue { @include border-normal($blue3); }
+                &.lb__button-green { @include border-normal($green3); }
+                &.lb__button-yellow { @include border-normal($yellow2); }
+                &.lb__button-grey { @include border-normal($grey2); }
+                &.lb__button-red { @include border-normal($red3); }
             }
-            &.button-flat {
-                &.button-blue { background-color: $blue5; }
-                &.button-green { background-color: $green5; }
-                &.button-yellow { background-color: $yellow4; }
-                &.button-grey { background-color: $grey4; }
-                &.button-red { background-color: $red5; }
+            &.lb__button-flat {
+                &.lb__button-blue { background-color: $blue5; }
+                &.lb__button-green { background-color: $green5; }
+                &.lb__button-yellow { background-color: $yellow4; }
+                &.lb__button-grey { background-color: $grey4; }
+                &.lb__button-red { background-color: $red5; }
             }
-            &.button-blue { background-color: $blue7; }
-            &.button-green { background-color: $green7; }
-            &.button-yellow { background-color: $yellow6; }
-            &.button-grey { background-color: $grey6; }
-            &.button-red { background-color: $red7; }
+            &.lb__button-blue { background-color: $blue7; }
+            &.lb__button-green { background-color: $green7; }
+            &.lb__button-yellow { background-color: $yellow6; }
+            &.lb__button-grey { background-color: $grey6; }
+            &.lb__button-red { background-color: $red7; }
 
-            &.button-tiny {
-                &.button-plain {
-                    &.button-blue { @include height-shadow(4px, $blue4); }
-                    &.button-green { @include height-shadow(4px, $green4); }
-                    &.button-yellow { @include height-shadow(4px, $yellow3); }
-                    &.button-grey { @include height-shadow(4px, $grey3); }
-                    &.button-red { @include height-shadow(4px, $red4); }
+            &.lb__button-tiny {
+                &.lb__button-plain {
+                    &.lb__button-blue { @include height-shadow(4px, $blue4); }
+                    &.lb__button-green { @include height-shadow(4px, $green4); }
+                    &.lb__button-yellow { @include height-shadow(4px, $yellow3); }
+                    &.lb__button-grey { @include height-shadow(4px, $grey3); }
+                    &.lb__button-red { @include height-shadow(4px, $red4); }
                 }
-                &.button-blue { @include height-shadow(4px, $blue8); }
-                &.button-green { @include height-shadow(4px, $green8); }
-                &.button-yellow { @include height-shadow(4px, $yellow7); }
-                &.button-grey { @include height-shadow(4px, $grey7); }
-                &.button-red { @include height-shadow(4px, $red8); }
+                &.lb__button-blue { @include height-shadow(4px, $blue8); }
+                &.lb__button-green { @include height-shadow(4px, $green8); }
+                &.lb__button-yellow { @include height-shadow(4px, $yellow7); }
+                &.lb__button-grey { @include height-shadow(4px, $grey7); }
+                &.lb__button-red { @include height-shadow(4px, $red8); }
             }
-            &.button-small {
-                &.button-plain {
-                    &.button-blue { @include height-shadow(4px, $blue4); }
-                    &.button-green { @include height-shadow(4px, $green4); }
-                    &.button-yellow { @include height-shadow(4px, $yellow3); }
-                    &.button-grey { @include height-shadow(4px, $grey3); }
-                    &.button-red { @include height-shadow(4px, $red4); }
+            &.lb__button-small {
+                &.lb__button-plain {
+                    &.lb__button-blue { @include height-shadow(4px, $blue4); }
+                    &.lb__button-green { @include height-shadow(4px, $green4); }
+                    &.lb__button-yellow { @include height-shadow(4px, $yellow3); }
+                    &.lb__button-grey { @include height-shadow(4px, $grey3); }
+                    &.lb__button-red { @include height-shadow(4px, $red4); }
                 }
-                &.button-blue { @include height-shadow(6px, $blue8); }
-                &.button-green { @include height-shadow(6px, $green8); }
-                &.button-yellow { @include height-shadow(6px, $yellow7); }
-                &.button-grey { @include height-shadow(6px, $grey7); }
-                &.button-red { @include height-shadow(6px, $red8); }
+                &.lb__button-blue { @include height-shadow(6px, $blue8); }
+                &.lb__button-green { @include height-shadow(6px, $green8); }
+                &.lb__button-yellow { @include height-shadow(6px, $yellow7); }
+                &.lb__button-grey { @include height-shadow(6px, $grey7); }
+                &.lb__button-red { @include height-shadow(6px, $red8); }
             }
-            &.button-normal {
-                &.button-plain {
-                    &.button-blue { @include height-shadow(6px, $blue4); }
-                    &.button-green { @include height-shadow(6px, $green4); }
-                    &.button-yellow { @include height-shadow(6px, $yellow3); }
-                    &.button-grey { @include height-shadow(6px, $grey3); }
-                    &.button-red { @include height-shadow(6px, $red4); }
+            &.lb__button-normal {
+                &.lb__button-plain {
+                    &.lb__button-blue { @include height-shadow(6px, $blue4); }
+                    &.lb__button-green { @include height-shadow(6px, $green4); }
+                    &.lb__button-yellow { @include height-shadow(6px, $yellow3); }
+                    &.lb__button-grey { @include height-shadow(6px, $grey3); }
+                    &.lb__button-red { @include height-shadow(6px, $red4); }
                 }
-                &.button-blue { @include height-shadow(8px, $blue8); }
-                &.button-green { @include height-shadow(8px, $green8); }
-                &.button-yellow { @include height-shadow(8px, $yellow7); }
-                &.button-grey { @include height-shadow(8px, $grey7); }
-                &.button-red { @include height-shadow(8px, $red8); }
+                &.lb__button-blue { @include height-shadow(8px, $blue8); }
+                &.lb__button-green { @include height-shadow(8px, $green8); }
+                &.lb__button-yellow { @include height-shadow(8px, $yellow7); }
+                &.lb__button-grey { @include height-shadow(8px, $grey7); }
+                &.lb__button-red { @include height-shadow(8px, $red8); }
             }
-            &.button-large {
-                &.button-plain {
-                    &.button-blue { @include height-shadow(8px, $blue4); }
-                    &.button-green { @include height-shadow(8px, $green4); }
-                    &.button-yellow { @include height-shadow(8px, $yellow3); }
-                    &.button-grey { @include height-shadow(8px, $grey3); }
-                    &.button-red { @include height-shadow(8px, $red4); }
+            &.lb__button-large {
+                &.lb__button-plain {
+                    &.lb__button-blue { @include height-shadow(8px, $blue4); }
+                    &.lb__button-green { @include height-shadow(8px, $green4); }
+                    &.lb__button-yellow { @include height-shadow(8px, $yellow3); }
+                    &.lb__button-grey { @include height-shadow(8px, $grey3); }
+                    &.lb__button-red { @include height-shadow(8px, $red4); }
                 }
-                &.button-blue { @include height-shadow(10px, $blue8); }
-                &.button-green { @include height-shadow(10px, $green8); }
-                &.button-yellow { @include height-shadow(10px, $yellow7); }
-                &.button-grey { @include height-shadow(10px, $grey7); }
-                &.button-red { @include height-shadow(10px, $red8); }
+                &.lb__button-blue { @include height-shadow(10px, $blue8); }
+                &.lb__button-green { @include height-shadow(10px, $green8); }
+                &.lb__button-yellow { @include height-shadow(10px, $yellow7); }
+                &.lb__button-grey { @include height-shadow(10px, $grey7); }
+                &.lb__button-red { @include height-shadow(10px, $red8); }
             }
         }
 
         &:active {
             transform: translateY(2px);
 
-            &.button-flat {
-                &.button-blue { background-color: $blue6; }
-                &.button-green { background-color: $green6; }
-                &.button-yellow { background-color: $yellow5; }
-                &.button-grey { background-color: $grey5; }
-                &.button-red { background-color: $red6; }
+            &.lb__button-flat {
+                &.lb__button-blue { background-color: $blue6; }
+                &.lb__button-green { background-color: $green6; }
+                &.lb__button-yellow { background-color: $yellow5; }
+                &.lb__button-grey { background-color: $grey5; }
+                &.lb__button-red { background-color: $red6; }
             }
 
-            &.button-tiny {
-                &.button-plain {
-                    &.button-blue { @include height-shadow(2px, $blue4); }
-                    &.button-green { @include height-shadow(2px, $green4); }
-                    &.button-yellow { @include height-shadow(2px, $yellow3); }
-                    &.button-grey { @include height-shadow(2px, $grey3); }
-                    &.button-red { @include height-shadow(2px, $red4); }
+            &.lb__button-tiny {
+                &.lb__button-plain {
+                    &.lb__button-blue { @include height-shadow(2px, $blue4); }
+                    &.lb__button-green { @include height-shadow(2px, $green4); }
+                    &.lb__button-yellow { @include height-shadow(2px, $yellow3); }
+                    &.lb__button-grey { @include height-shadow(2px, $grey3); }
+                    &.lb__button-red { @include height-shadow(2px, $red4); }
                 }
-                &.button-blue { @include height-shadow(2px, $blue8); }
-                &.button-green { @include height-shadow(2px, $green8); }
-                &.button-yellow { @include height-shadow(2px, $yellow7); }
-                &.button-grey { @include height-shadow(2px, $grey7); }
-                &.button-red { @include height-shadow(2px, $red8); }
+                &.lb__button-blue { @include height-shadow(2px, $blue8); }
+                &.lb__button-green { @include height-shadow(2px, $green8); }
+                &.lb__button-yellow { @include height-shadow(2px, $yellow7); }
+                &.lb__button-grey { @include height-shadow(2px, $grey7); }
+                &.lb__button-red { @include height-shadow(2px, $red8); }
             }
-            &.button-small {
-                &.button-plain {
-                    &.button-blue { @include height-shadow(2px, $blue4); }
-                    &.button-green { @include height-shadow(2px, $green4); }
-                    &.button-yellow { @include height-shadow(2px, $yellow3); }
-                    &.button-grey { @include height-shadow(2px, $grey3); }
-                    &.button-red { @include height-shadow(2px, $red4); }
+            &.lb__button-small {
+                &.lb__button-plain {
+                    &.lb__button-blue { @include height-shadow(2px, $blue4); }
+                    &.lb__button-green { @include height-shadow(2px, $green4); }
+                    &.lb__button-yellow { @include height-shadow(2px, $yellow3); }
+                    &.lb__button-grey { @include height-shadow(2px, $grey3); }
+                    &.lb__button-red { @include height-shadow(2px, $red4); }
                 }
-                &.button-blue { @include height-shadow(4px, $blue8); }
-                &.button-green { @include height-shadow(4px, $green8); }
-                &.button-yellow { @include height-shadow(4px, $yellow7); }
-                &.button-grey { @include height-shadow(4px, $grey7); }
-                &.button-red { @include height-shadow(4px, $red8); }
+                &.lb__button-blue { @include height-shadow(4px, $blue8); }
+                &.lb__button-green { @include height-shadow(4px, $green8); }
+                &.lb__button-yellow { @include height-shadow(4px, $yellow7); }
+                &.lb__button-grey { @include height-shadow(4px, $grey7); }
+                &.lb__button-red { @include height-shadow(4px, $red8); }
             }
-            &.button-normal {
-                &.button-plain {
-                    &.button-blue { @include height-shadow(4px, $blue4); }
-                    &.button-green { @include height-shadow(4px, $green4); }
-                    &.button-yellow { @include height-shadow(4px, $yellow3); }
-                    &.button-grey { @include height-shadow(4px, $grey3); }
-                    &.button-red { @include height-shadow(4px, $red4); }
+            &.lb__button-normal {
+                &.lb__button-plain {
+                    &.lb__button-blue { @include height-shadow(4px, $blue4); }
+                    &.lb__button-green { @include height-shadow(4px, $green4); }
+                    &.lb__button-yellow { @include height-shadow(4px, $yellow3); }
+                    &.lb__button-grey { @include height-shadow(4px, $grey3); }
+                    &.lb__button-red { @include height-shadow(4px, $red4); }
                 }
-                &.button-blue { @include height-shadow(6px, $blue8); }
-                &.button-green { @include height-shadow(6px, $green8); }
-                &.button-yellow { @include height-shadow(6px, $yellow7); }
-                &.button-grey { @include height-shadow(6px, $grey7); }
-                &.button-red { @include height-shadow(6px, $red8); }
+                &.lb__button-blue { @include height-shadow(6px, $blue8); }
+                &.lb__button-green { @include height-shadow(6px, $green8); }
+                &.lb__button-yellow { @include height-shadow(6px, $yellow7); }
+                &.lb__button-grey { @include height-shadow(6px, $grey7); }
+                &.lb__button-red { @include height-shadow(6px, $red8); }
             }
-            &.button-large {
-                &.button-plain {
-                    &.button-blue { @include height-shadow(6px, $blue4); }
-                    &.button-green { @include height-shadow(6px, $green4); }
-                    &.button-yellow { @include height-shadow(6px, $yellow3); }
-                    &.button-grey { @include height-shadow(6px, $grey3); }
-                    &.button-red { @include height-shadow(6px, $red4); }
+            &.lb__button-large {
+                &.lb__button-plain {
+                    &.lb__button-blue { @include height-shadow(6px, $blue4); }
+                    &.lb__button-green { @include height-shadow(6px, $green4); }
+                    &.lb__button-yellow { @include height-shadow(6px, $yellow3); }
+                    &.lb__button-grey { @include height-shadow(6px, $grey3); }
+                    &.lb__button-red { @include height-shadow(6px, $red4); }
                 }
-                &.button-blue { @include height-shadow(8px, $blue8); }
-                &.button-green { @include height-shadow(8px, $green8); }
-                &.button-yellow { @include height-shadow(8px, $yellow7); }
-                &.button-grey { @include height-shadow(8px, $grey7); }
-                &.button-red { @include height-shadow(8px, $red8); }
+                &.lb__button-blue { @include height-shadow(8px, $blue8); }
+                &.lb__button-green { @include height-shadow(8px, $green8); }
+                &.lb__button-yellow { @include height-shadow(8px, $yellow7); }
+                &.lb__button-grey { @include height-shadow(8px, $grey7); }
+                &.lb__button-red { @include height-shadow(8px, $red8); }
             }
         }
 
         &:disabled {
             background-color: $grey2;
 
-            &.button-plain {
+            &.lb__button-plain {
                 border-color: $grey2;
                 @include height-shadow(6px, $grey3 !important);
                 &:hover { border-color: $grey2; }
             }
-            &.button-tiny { @include height-shadow(4px, $grey3); }
-            &.button-small { @include height-shadow(6px, $grey3); }
-            &.button-normal { @include height-shadow(8px, $grey3); }
-            &.button-large { @include height-shadow(10px, $grey3); }
+            &.lb__button-tiny { @include height-shadow(4px, $grey3); }
+            &.lb__button-small { @include height-shadow(6px, $grey3); }
+            &.lb__button-normal { @include height-shadow(8px, $grey3); }
+            &.lb__button-large { @include height-shadow(10px, $grey3); }
 
             cursor: not-allowed;
 

@@ -29,11 +29,11 @@
 {#if show}
     <div
         style={`background-color: ${color}; color: ${white} `}
-        class="message-bar"
+        class="lb__message-bar"
     >
         <slot name="icon" />
         <slot name="content" />
-        <div class="close">
+        <div class="lb__msg-bar-close-button">
             <LButton color="grey" flat size="tiny" on:click={closeAlert}>X</LButton>
         </div>
     </div>
@@ -42,13 +42,13 @@
 <style lang="scss">
     @import './variables.scss';
 
-    .close {
+    .lb__msg-bar-close-button {
         cursor: pointer;
         float: right;
         margin-right: 5px;
     }
 
-    .message-bar {
+    .lb__message-bar {
         min-height: 30px;
         padding: 2px 20px 2px 20px;
         border-radius: $border-radius-normal;
