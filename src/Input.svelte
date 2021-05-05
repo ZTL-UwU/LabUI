@@ -42,6 +42,7 @@
             {placeholder}
             {type}
             {value}
+            maxlength={limit}
             on:input={handleInput}
         />
 
@@ -63,6 +64,7 @@
             {disabled}
             {placeholder}
             {value}
+            maxlength={limit}
             on:input={handleInput}
         />
         {#if is_limited}

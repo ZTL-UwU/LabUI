@@ -11,7 +11,7 @@
     let input_demo_value = 'Input Demo';
     let input_disabled_demo_value = 'Disabled Input Demo';
     let textarea_demo_value = 'Text Area Demo';
-    let input_limited_demo_value = 'Demo';
+    let input_limited_demo_value = '';
 </script>
 
 <main>
@@ -139,7 +139,7 @@
         <LInput type="email" placeholder="Input Email"></LInput>
     </div>
     <div class="item-10">
-        <LInput bind:value={input_limited_demo_value} placeholder="Limited Length" limit=10></LInput>
+        <LInput bind:value={input_limited_demo_value} placeholder="Limited Input Demo" limit=10></LInput>
         <code>{ input_limited_demo_value }</code>
     </div>
     <div class="item-10">
