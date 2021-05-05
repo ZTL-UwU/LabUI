@@ -13,6 +13,7 @@ $transparent: #FFFFFF00;
 
 $white1: #FFFFFF;
 $white2: #FAFAFE;
+$white3: #EFF1F5;
 $white: $white1;
 $background: $white2;
 
@@ -73,6 +74,10 @@ $red8 :#9a473f;
 $red9: #723730;
 $red: $red6;
 
+$height-small: 24px;
+$height-normal: 30px;
+$height-large: 40px;
+
 $z-index1: 1;
 $z-index2: 10;
 $z-index3: 100;
@@ -81,7 +86,13 @@ $z-index5: 10000;
 $z-index6: 100000;
 $z-index7: 1000000;
 
+$border-small: 2px;
 $border-normal: 3px;
+$border-large: 4px;
+
+$transition-short: 0.05s;
+$transition-normal: 0.1s;
+$transition-long: 0.2s;
 
 $border-radius-normal: 5px;
 $border-radius-large: 8px;
@@ -91,6 +102,16 @@ $border-radius-round: 10000px;
     box-shadow: 0px $height 0px 0px $color;
 }
 
+@mixin disabled {
+    cursor: not-allowed;
+}
+
+@mixin border-small($color) {
+    border: $border-small solid $color;
+}
 @mixin border-normal($color) {
     border: $border-normal solid $color;
+}
+@mixin border-large($color) {
+    border: $border-large solid $color;
 }

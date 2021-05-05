@@ -44,7 +44,7 @@
         border: none;
         color: $white;
         cursor: pointer;
-        transition: 0.05s;
+        transition: $transition-short;
 
         &.lb__button-plain {
             color: $grey6;
@@ -86,7 +86,7 @@
             &.lb__button-red { @include height-shadow(4px, $red7); }
         }
         &.lb__button-small {
-            min-height: 24px;
+            min-height: $height-small;
             min-width: 80px;
             &.lb__button-plain {
                 &.lb__button-blue { @include height-shadow(4px, $blue3); }
@@ -102,7 +102,7 @@
             &.lb__button-red { @include height-shadow(6px, $red7); }
         }
         &.lb__button-normal {
-            min-height: 30px;
+            min-height: $height-normal;
             min-width: 100px;
             &.lb__button-plain {
                 &.lb__button-blue { @include height-shadow(6px, $blue3); }
@@ -118,7 +118,7 @@
             &.lb__button-red { @include height-shadow(8px, $red7); }
         }
         &.lb__button-large {
-            min-height: 40px;
+            min-height: $height-large;
             min-width: 120px;
             &.lb__button-plain {
                 &.lb__button-blue { @include height-shadow(8px, $blue3); }
@@ -298,7 +298,7 @@
             &.lb__button-normal { @include height-shadow(8px, $grey3); }
             &.lb__button-large { @include height-shadow(10px, $grey3); }
 
-            cursor: not-allowed;
+            @include disabled;
 
             &:active { transform: none; }
         }

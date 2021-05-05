@@ -1,6 +1,15 @@
 <script lang="typescript">
-    import { LBox, LButton, LProgress, LMessageBar } from '../../src/main.ts';
+    import {
+        LBox,
+        LButton,
+        LInput,
+        LProgress,
+        LMessageBar
+    } from '../../src/main.ts';
     import * as colors from '../../src/color.ts';
+
+    let input_demo_value = 'Input Demo';
+    let input_disabled_demo_value = 'Disabled Input Demo';
 </script>
 
 <main>
@@ -112,6 +121,19 @@
             <div slot="body">3D Boxes</div>
         </LBox>
     </div>
+
+    <div class="item-10">
+        <h2>Inputs</h2>
+        <LInput bind:value={input_demo_value}></LInput>
+        <code>
+            { input_demo_value }
+        </code>
+    </div>
+    <div class="item-10">
+        <LInput placeholder="Place Holder"}></LInput>
+        <LInput placeholder={input_disabled_demo_value} disabled></LInput>
+    </div>
+
 </main>
 
 <style lang="scss">
@@ -126,5 +148,9 @@
 
     .item-15 {
         margin-bottom: 15px;
+    }
+
+    .item-10 {
+        margin-bottom: 10px;
     }
 </style>
