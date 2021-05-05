@@ -131,6 +131,7 @@
     </div>
     <div class="item-10">
         <LInput placeholder="Place Holder"></LInput>
+        <LInput placeholder="3D Input" flat={false}></LInput>
         <LInput placeholder={input_disabled_demo_value} disabled></LInput>
     </div>
     <div class="item-10">
@@ -147,6 +148,7 @@
             <code>{ textarea_demo_value }</code>
         </div>
         <LInput type="textarea" placeholder="Limited Text Area Demo" limit=100></LInput>
+        <LInput type="textarea" placeholder="3D Text Area" flat={false}></LInput>
     </div>
 
 </main>

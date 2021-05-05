@@ -4,12 +4,14 @@
     export let value = '';
     export let type = 'text';
     export let limit = -1;
+    export let flat = true;
     
     $: is_limited = limit == -1 ? false : true;
 
     $: counter = limit == -1 ? '' : `${value.length} / ${limit}`;
     $: limited_class = is_limited ? 'lb__input-limited' : '';
-    $: classes = `lb__input lb__input-${type} ${limited_class}`;
+    $: show_3D_class = flat ? '' : 'lb__input-3D';
+    $: classes = `lb__input lb__input-${type} ${limited_class} ${show_3D_class}`;
 
     const handleInput = (event) => {
         if (!is_limited || event.target.value.length <= limit) {
@@ -79,6 +81,9 @@
         font-size: 13px;
 
         border-radius: $border-radius-normal;
+        &.lb__input-3D {
+            border-bottom: $border-large solid $border1;
+        }
         @include border-small($border1);
 
         transition: border-color $transition-normal;
@@ -101,9 +106,7 @@
     .lb__input-text, .lb__input-password, .lb__input-email {
         height: $height-normal;
 
-        &.lb__input-limited {
-            padding-right: 45px;
-        }
+        &.lb__input-limited { padding-right: 45px; }
         padding: 2px 10px 2px 10px;
     }
 
