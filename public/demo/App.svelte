@@ -4,12 +4,14 @@
         LButton,
         LInput,
         LProgress,
-        LMessageBar
+        LMessageBar,
     } from '../../src/main.ts';
     import * as colors from '../../src/color.ts';
 
     let input_demo_value = 'Input Demo';
     let input_disabled_demo_value = 'Disabled Input Demo';
+    let textarea_demo_value = 'Text Area Demo';
+    let input_limited_demo_value = 'Demo';
 </script>
 
 <main>
@@ -125,13 +127,26 @@
     <div class="item-10">
         <h2>Inputs</h2>
         <LInput bind:value={input_demo_value}></LInput>
-        <code>
-            { input_demo_value }
-        </code>
+        <code>{ input_demo_value }</code>
     </div>
     <div class="item-10">
-        <LInput placeholder="Place Holder"}></LInput>
+        <LInput placeholder="Place Holder"></LInput>
         <LInput placeholder={input_disabled_demo_value} disabled></LInput>
+    </div>
+    <div class="item-10">
+        <LInput type="password" placeholder="Input Password"></LInput>
+        <LInput type="email" placeholder="Input Email"></LInput>
+    </div>
+    <div class="item-10">
+        <LInput bind:value={input_limited_demo_value} placeholder="Limited Length" limit=10></LInput>
+        <code>{ input_limited_demo_value }</code>
+    </div>
+    <div class="item-10">
+        <div class="item-10">
+            <LInput type="textarea" bind:value={textarea_demo_value} placeholder="Text Area Demo"></LInput>
+            <code>{ textarea_demo_value }</code>
+        </div>
+        <LInput type="textarea" placeholder="Limited Text Area Demo" limit=100></LInput>
     </div>
 
 </main>
@@ -151,6 +166,7 @@
     }
 
     .item-10 {
+        
         margin-bottom: 10px;
     }
 </style>
