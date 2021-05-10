@@ -117,3 +117,9 @@ $border-radius-round: 10000px;
 @mixin border-large($color) {
     border: $border-large solid $color;
 }
+
+@mixin v-center {
+    display: inline-flex;
+    align-items: center;
+    height: 100%;
+}

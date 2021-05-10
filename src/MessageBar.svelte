@@ -31,8 +31,10 @@
         style={`background-color: ${color}; color: ${white} `}
         class="lb__message-bar"
     >
-        <slot name="icon" />
-        <slot name="content" />
+        <div class="lb__msg-bar-content">
+            <slot name="icon" />
+            <slot name="content" />
+        </div>
         <div class="lb__msg-bar-close-button">
             <LButton color="grey" flat size="tiny" on:click={closeAlert}>X</LButton>
         </div>
@@ -42,17 +44,24 @@
 <style lang="scss">
     @import './variables.scss';
 
-    .lb__msg-bar-close-button {
-        cursor: pointer;
-        float: right;
-        margin-right: 5px;
-    }
-
     .lb__message-bar {
         min-height: 30px;
         padding: 2px 20px 2px 20px;
         border-radius: $border-radius-normal;
 
         margin-bottom: 10px;
+
+        .lb__msg-bar-content {
+            @include v-center;
+            height: 30px;
+        }
+
+        .lb__msg-bar-close-button {
+            @include v-center;
+            height: 30px;
+
+            float: right;
+            margin-right: 5px;
+        }
     }
 </style>

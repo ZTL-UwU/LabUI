@@ -27,7 +27,9 @@
 <div class="lb__progress-background" style={backgroundStyle}>
     <div class="lb__progress-front" style={barStyle}>
         {#if show_num}
-            <span class="lb__progress-num" style={fontStyle}>{ percent }%</span>
+            <div class="lb__progress-num">
+                <span style={fontStyle}>{ percent }%</span>
+            </div>
         {/if}
     </div>
 </div>
@@ -52,7 +54,8 @@
     }
 
     .lb__progress-num {
-        vertical-align: middle;
+        @include v-center;
+
         color: $white;
         font-weight: 500;
 

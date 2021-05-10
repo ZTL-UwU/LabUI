@@ -11,6 +11,7 @@
 
     $: is_limited = limit == -1 ? false : true;
     $: counter = limit == -1 ? '' : `${value.length} / ${limit}`;
+
     $: limited_class = is_limited ? 'lb__input-limited' : '';
     $: show_3D_class = flat ? '' : 'lb__input-3D';
     $: password_class_mock = (show_pass_icon && type !== 'password') ? 'lb__input-password' : '';
@@ -92,10 +93,8 @@
             right: 12px;
         }
         right: 10px;
-        height: 100%;
 
-        display: inline-flex;
-        align-items: center;
+        @include v-center;
         font-size: 10px;
     }
 
