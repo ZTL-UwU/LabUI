@@ -1,0 +1,174 @@
+<script lang="typescript">
+    import {
+        LBox,
+        LButton,
+        LInput,
+        LProgress,
+        LMessageBar,
+    } from '../../src/main.ts';
+    import * as colors from '../../src/color.ts';
+
+    let input_demo_value = 'Input Demo';
+    let input_disabled_demo_value = 'Disabled Input Demo';
+    let textarea_demo_value = 'Text Area Demo';
+    let input_limited_demo_value = '';
+</script>
+
+<main>
+    <div class="item-15">
+        <h1>Buttons</h1>
+        <LButton>Demo</LButton>
+        <LButton disabled>Disabled</LButton>
+        <LButton>
+            <img src="https://avatars.githubusercontent.com/u/49156174?s=45&v=4" alt="avatar" />
+        </LButton>
+    </div>
+
+    <div class="item-15">
+        <h2>Sizes</h2>
+        <LButton size="tiny">Tiny</LButton>
+        <LButton size="small">Small</LButton>
+        <LButton>Normal</LButton>
+        <LButton size="large">Large</LButton>
+        <LButton height="80px" width="200px">Custom Size</LButton>
+    </div>
+
+    <div class="item-15">
+        <h2>Disabled</h2>
+        <LButton disabled size="tiny">Tiny</LButton>
+        <LButton disabled size="small">Small</LButton>
+        <LButton disabled>Normal</LButton>
+        <LButton disabled size="large">Large</LButton>
+        <LButton disabled height="80px" width="200px">Custom Size</LButton>
+    </div>
+
+    <div class="item-15">
+        <h2>Colors</h2>
+        <LButton color="blue">Blue</LButton>
+        <LButton color="green">Green</LButton>
+        <LButton color="yellow">Yellow</LButton>
+        <LButton color="red">Red</LButton>
+        <LButton color="grey" size="large">Grey Large</LButton>
+    </div>
+
+    <div class="item-15">
+        <h2>Plain</h2>
+        <LButton plain color="blue">Plain</LButton>
+        <LButton plain color="green" size="large">Plain large</LButton>
+        <LButton plain color="grey" size="tiny">T</LButton>
+        <LButton plain disabled>Plain Disabled</LButton>
+    </div>
+
+    <div class="item-20">
+        <h2>Flat</h2>
+        <LButton flat color="blue">Flat</LButton>
+        <LButton flat plain color="yellow">Flat Plain</LButton>
+        <LButton flat color="green" size="large">Flat large</LButton>
+    </div>
+
+    <div class="item-20">
+        <h2>Round</h2>
+        <LButton round flat color="blue">R</LButton>
+        <LButton round plain color="yellow">Plain Round</LButton>
+    </div>
+
+    <div class="item-20">
+        <h1>Progress Bars</h1>
+        <LProgress size="small" color={colors.red} percent="10"></LProgress>
+        <LProgress color={colors.green} percent="100" width="300px"></LProgress>
+        <LProgress size="large"></LProgress>
+    </div>
+
+    <LBox width="800px">
+        <strong slot="header">
+            Message Bars
+        </strong>
+        <div slot="body">
+            <LMessageBar type="success">
+                <span slot="content">Success</span>
+            </LMessageBar>
+            <LMessageBar type="warning">
+                <span slot="content">Warning</span>
+            </LMessageBar>
+            <LMessageBar type="error">
+                <span slot="content">
+                    Error
+                    <LButton flat plain color="red">ERR</LButton>
+                </span>
+            </LMessageBar>
+            <LMessageBar>
+                <span slot="content">Message</span>
+            </LMessageBar>
+            <LMessageBar type="other">
+                <span slot="content">Other</span>
+            </LMessageBar>
+            <LMessageBar type="primary">
+                <span slot="content">Primary</span>
+            </LMessageBar>
+        </div>
+    </LBox>
+
+    <div class="item-20">
+        <h2>Boxes</h2>
+        <LBox>
+            <span slot="header">Header</span>
+            <div slot="body">
+                <LMessageBar type="success">
+                    <span slot="content">Message</span>
+                </LMessageBar>
+                Body
+            </div>
+        </LBox>
+        <LBox noheader flat={false}>
+            <div slot="body">3D Boxes</div>
+        </LBox>
+    </div>
+
+    <div class="item-10">
+        <h2>Inputs</h2>
+        <LInput bind:value={input_demo_value}></LInput>
+        <code>{ input_demo_value }</code>
+    </div>
+    <div class="item-10">
+        <LInput placeholder="Place Holder"></LInput>
+        <LInput placeholder="3D Input" flat={false}></LInput>
+        <LInput placeholder={input_disabled_demo_value} disabled></LInput>
+    </div>
+    <div class="item-10">
+        <LInput type="password" placeholder="Input Password"></LInput>
+        <LInput type="email" placeholder="Input Email"></LInput>
+    </div>
+    <div class="item-10">
+        <LInput bind:value={input_limited_demo_value} placeholder="Limited Input Demo" limit=10></LInput>
+        <code>{ input_limited_demo_value }</code>
+    </div>
+    <div class="item-10">
+        <div class="item-10">
+            <LInput type="textarea" bind:value={textarea_demo_value} placeholder="Text Area Demo"></LInput>
+            <code>{ textarea_demo_value }</code>
+        </div>
+        <LInput type="textarea" placeholder="Limited Text Area Demo" limit=100></LInput>
+        <LInput type="textarea" placeholder="3D Text Area" flat={false}></LInput>
+    </div>
+
+</main>
+
+<style lang="scss">
+    main {
+        background-color: #FAFAFE;
+        padding: 50px 200px 50px 200px;
+    }
+
+    .item-20 {
+        margin-bottom: 20px;
+    }
+
+    .item-15 {
+        margin-bottom: 15px;
+    }
+
+    .item-10 {
+        
+        margin-bottom: 10px;
+    }
+</style>
