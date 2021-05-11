@@ -119,7 +119,7 @@
                 Body
             </div>
         </LBox>
-        <LBox noheader flat={false}>
+        <LBox noheader flat={false} width="600px">
             <div slot="body">3D Boxes</div>
         </LBox>
     </div>
