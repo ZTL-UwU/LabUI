@@ -1,4 +1,6 @@
 <script>
+    import { mix_classes } from '../scripts/utils.ts';
+
     export let disabled = false;
     export let placeholder = '';
     export let value = '';
@@ -12,10 +14,13 @@
     $: is_limited = limit == -1 ? false : true;
     $: counter = limit == -1 ? '' : `${value.length} / ${limit}`;
 
-    $: limited_class = is_limited ? 'lb__input-limited' : '';
-    $: show_3D_class = flat ? '' : 'lb__input-3D';
-    $: password_class_mock = (show_pass_icon && type !== 'password') ? 'lb__input-password' : '';
-    $: classes = `lb__input lb__input-${type} ${password_class_mock} ${limited_class} ${show_3D_class}`;
+    $: classes = mix_classes([
+        'input',
+        `input-${type}`,
+        (show_pass_icon && type !== 'password') ? 'input-password' : '',
+        is_limited ? 'input-limited' : '',
+        flat ? '' : 'input-3D',
+    ]);
 
     const handleInput = (event) => {
         if (!is_limited || event.target.value.length <= limit) {

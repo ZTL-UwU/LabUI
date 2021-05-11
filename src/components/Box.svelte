@@ -1,12 +1,18 @@
 <script lang="typescript">
+    import { mix_classes, mix_styles } from '../scripts/utils.ts';
+
     export let noheader = false;
     export let flat = true;
     export let width = '500px';
 
-    $: box_3D = flat ? '' : 'lb__box-3D';
-    $: classes = `lb__box ${box_3D}`;
-    let width_style: string = width === '' ? '' : `width: ${width};`;
-    $: styles = width_style;
+    $: classes = mix_classes([
+        'box',
+        flat ? '' : 'box-3D',
+    ]);
+
+    $: styles = mix_styles([
+        width === '' ? '' : `width: ${width}`,
+    ]);
 </script>
 
 <div

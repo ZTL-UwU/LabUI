@@ -1,4 +1,5 @@
 <script>
+    import { mix_classes, mix_styles } from '../scripts/utils.ts';
     import * as colors from '../scripts/color.ts';
 
     export let percent = 50;
@@ -9,20 +10,30 @@
 
     $: percent = Math.max(Math.min(percent, 100), 0);
     $: progress_color = typeof(color) === 'function' ? color(percent) : color;
-    $: height = ({
+
+    const height = ({
         small: '5px',
         normal: '15px',
         large: '20px',
     })[size];
-    $: font_size = ({
+    const font_size = ({
         small: '0px',
         normal: '10px',
         large: '12px',
     })[size];
 
-    $: backgroundStyle = `width: ${width}; height: ${height};`;
-    $: barStyle = `width: calc(${width} * ${percent} / 100); height: ${height}; background-color: ${progress_color};`;
-    $: fontStyle = `font-size: ${font_size};`;
+    $: backgroundStyle = mix_styles([
+        `width: ${width}`,
+        `height: ${height}`,
+    ]);
+    $: barStyle = mix_styles([
+        `width: calc(${width} * ${percent} / 100)`,
+        `height: ${height}`,
+        `background-color: ${progress_color}`,
+    ]);
+    $: fontStyle = mix_styles([
+        `font-size: ${font_size}`,
+    ]);
 </script>
 
 <div class="lb__progress-background" style={backgroundStyle}>

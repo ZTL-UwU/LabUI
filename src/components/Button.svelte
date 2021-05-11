@@ -1,4 +1,6 @@
 <script lang="typescript">
+    import { mix_classes, mix_styles } from '../scripts/utils.ts';
+
     export let disabled = false;
     export let plain = false;
     export let flat = false;
@@ -8,15 +10,19 @@
     export let height = '';
     export let width = '';
 
-    $: button_plain = plain ? 'lb__button-plain' : '';
-    $: button_color = disabled ? '' : `lb__button-${color}`;
-    $: button_flat = flat ? `lb__button-flat` : '';
-    $: button_round = round ? `lb__button-round` : '';
+    $: classes = mix_classes([
+        'button',
+        `button-${size}`,
+        plain ? 'button-plain' : '',
+        disabled ? '' : `button-${color}`,
+        flat ? `button-flat` : '',
+        round ? `button-round` : '',
+    ]);
 
-    $: classes = `lb__button lb__button-${size} ${button_color} ${button_plain} ${button_flat} ${button_round}`;
-    let height_style: string = height === '' ? '' : `height: ${height};`
-    let width_style: string = width === '' ? '' : `width: ${width};`;
-    $: styles = height_style + width_style;
+    $: styles = mix_styles([
+        height === '' ? '' : `height: ${height}`,
+        width === '' ? '' : `width: ${width}`,
+    ]);
 </script>
 
 <button
