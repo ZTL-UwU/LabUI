@@ -6,7 +6,7 @@
         LProgress,
         LMessageBar,
     } from '../../src/main.ts';
-    import * as colors from '../../src/color.ts';
+    import * as colors from '../../src/scripts/color.ts';
 
     let input_demo_value = 'Input Demo';
     let input_disabled_demo_value = 'Disabled Input Demo';
