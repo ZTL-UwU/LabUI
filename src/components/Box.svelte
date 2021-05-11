@@ -24,7 +24,7 @@
 </div>
 
 <style lang="scss">
-    @import './variables.scss';
+    @import '../styles/variables.scss';
 
     .lb__box {
         border-radius: $border-radius-large;

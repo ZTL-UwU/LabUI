@@ -1,7 +1,7 @@
 <script lang="typescript">
-    import { LButton } from './main.ts';
+    import { LButton } from '../main.ts';
     import { createEventDispatcher } from 'svelte';
-    import { error, warning, success, info, primary, white, other } from './color.ts';
+    import { error, warning, success, info, primary, white, other } from '../scripts/color.ts';
 
     export let type = 'normal';
     export let show = true;
@@ -42,7 +42,7 @@
 {/if}
 
 <style lang="scss">
-    @import './variables.scss';
+    @import '../styles/variables.scss';
 
     .lb__message-bar {
         min-height: 30px;

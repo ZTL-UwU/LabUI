@@ -1,5 +1,6 @@
 <script>
-    import * as colors from './color.ts';
+    import * as colors from '../scripts/color.ts';
+
     export let percent = 50;
     export let show_num = true;
     export let color = colors.blue;
@@ -35,7 +36,7 @@
 </div>
 
 <style lang="scss">
-    @import './variables.scss';
+    @import '../styles/variables.scss';
 
     .lb__progress-background {
         border-radius: $border-radius-round;
