@@ -86,6 +86,7 @@ $z-index5: 10000;
 $z-index6: 100000;
 $z-index7: 1000000;
 
+$border-tiny: 1px;
 $border-small: 2px;
 $border-normal: 3px;
 $border-large: 4px;
@@ -108,6 +109,9 @@ $border-radius-round: 10000px;
     cursor: not-allowed;
 }
 
+@mixin border-tiny($color) {
+    border: $border-tiny solid $color;
+}
 @mixin border-small($color) {
     border: $border-small solid $color;
 }

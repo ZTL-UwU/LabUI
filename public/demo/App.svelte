@@ -3,6 +3,7 @@
         LBox,
         LButton,
         LInput,
+        LLink,
         LProgress,
         LMessageBar,
     } from '../../src/main.ts';
@@ -142,7 +143,7 @@
         <LInput bind:value={input_limited_demo_value} placeholder="Limited Input Demo" limit=10></LInput>
         <code>{ input_limited_demo_value }</code>
     </div>
-    <div class="item-10">
+    <div class="item-20">
         <div class="item-10">
             <LInput type="textarea" bind:value={textarea_demo_value} placeholder="Text Area Demo"></LInput>
             <code>{ textarea_demo_value }</code>
@@ -151,6 +152,20 @@
         <LInput type="textarea" placeholder="3D Text Area" flat={false}></LInput>
     </div>
 
+    <LBox>
+        <strong slot="header">Links</strong>
+        <div slot="body">
+            <div class="item-10">
+                <LLink href="https://github.com/zhangtianli2006/LabUI">🔗 Link to GitHub repo</LLink>
+            </div>
+            <div class="item-10">
+                <LLink href="https://github.com/zhangtianli2006/LabUI" underline="hover" color="grey">Underline on Hover</LLink>
+                <LLink href="https://github.com/zhangtianli2006/LabUI" underline="always" color="green">Underline Always</LLink>
+                <LLink href="https://github.com/zhangtianli2006/LabUI" underline="never" color="red">No Underline</LLink>
+            </div>
+            <LLink href="https://github.com/zhangtianli2006/LabUI" disabled>Disabled</LLink>
+        </div>
+    </LBox>
 </main>
 
 <style lang="scss">
@@ -168,7 +183,6 @@
     }
 
     .item-10 {
-        
         margin-bottom: 10px;
     }
 </style>
