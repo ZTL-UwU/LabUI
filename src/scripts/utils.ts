@@ -1,4 +1,4 @@
-export function mix_classes(names) {
+export function mix_classes(names: string): string {
     let res = '';
     for (let name of names) {
         if (name !== '') {
@@ -9,7 +9,7 @@ export function mix_classes(names) {
     return res.trim();
 }
 
-export function mix_styles(rules) {
+export function mix_styles(rules: string): string {
     let res = '';
     for (let rule of rules) {
         if (rule !== '') {
