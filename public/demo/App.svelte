@@ -13,12 +13,16 @@
     let input_disabled_demo_value = 'Disabled Input Demo';
     let textarea_demo_value = 'Text Area Demo';
     let input_limited_demo_value = '';
+
+    function on_click_demo() {
+        alert('Clicked');
+    }
 </script>
 
 <main>
     <div class="item-15">
         <h1>Buttons</h1>
-        <LButton>Demo</LButton>
+        <LButton on:click={on_click_demo}>Demo</LButton>
         <LButton disabled>Disabled</LButton>
         <LButton>
             <img src="https://avatars.githubusercontent.com/u/49156174?s=45&v=4" alt="avatar" />
@@ -157,6 +161,8 @@
         <div slot="body">
             <div class="item-10">
                 <LLink href="https://github.com/zhangtianli2006/LabUI">🔗 Link to GitHub repo</LLink>
+                <br>
+                <LLink on:click={on_click_demo}>👇🏼 Catch on:click</LLink>
             </div>
             <div class="item-10">
                 <LLink href="https://github.com/zhangtianli2006/LabUI" underline="hover" color="grey">Underline on Hover</LLink>

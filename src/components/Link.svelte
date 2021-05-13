@@ -1,7 +1,7 @@
 <script lang="typescript">
     import { mix_classes, mix_styles } from '../scripts/utils.ts';
 
-    export let href = '';
+    export let href = null;
     export let underline = 'hover';
     export let disabled = false;
     export let color = 'blue';
@@ -17,6 +17,7 @@
 </script>
 
 <a
+    on:click
     {href}
     {disabled}
     class={classes}
@@ -28,6 +29,8 @@
     @import '../styles/variables.scss';
 
     .lb__link {
+        cursor: pointer;
+
         &.lb__link-blue { color: $blue6; }
         &.lb__link-green { color: $green6; }
         &.lb__link-yellow { color: $yellow5; }
