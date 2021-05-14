@@ -3,15 +3,29 @@
 
     export let value = null;
     export let label = null;
-    export let disabled = false;
+    export let disabled: boolean = false;
 
-    export let handle_click = (event) => {
+    export let handle_click = (event, disabled: boolean, value, label): string => {
+        let res: string = null;
         if (!disabled && label !== null) {
-            value = label;
+            res = label;
+        }
+
+        return res;
+    };
+
+    export let handle_on = (label, value): boolean => {
+        return value !== null && label !== null && value === label;
+    }
+
+    const handleClick = (event) => {
+        const res = handle_click(event, disabled, value, label);
+        if (res !== null) {
+            value = res;
         }
     };
 
-    $: on = value !== null && label !== null && value === label;
+    $: on = handle_on(label, value);
     $: radio_classes = mix_classes([
         'radio',
         disabled ? 'radio-disabled' : '',
@@ -30,7 +44,7 @@
 
 <span
     class={radio_classes}
-    on:click={handle_click}
+    on:click={handleClick}
 >
     <span class={radio_circle_classes}>
         {#if on}

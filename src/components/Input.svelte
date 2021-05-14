@@ -1,4 +1,4 @@
-<script>
+<script lang="typescript">
     import { mix_classes } from '../scripts/utils.ts';
 
     export let disabled = false;
@@ -7,6 +7,15 @@
     export let type = 'text';
     export let limit = -1;
     export let flat = true;
+
+    export let handle_input = (event, is_limited: boolean, limit: number) => {
+        let res: string = null;
+        if (!is_limited || event.target.value.length <= limit) {
+            res = event.target.value;
+        }
+
+        return res;
+    };
 
     let show_pass_icon = type === 'password' ? true : false;
     let show_password_icon = 'Show';
@@ -23,8 +32,9 @@
     ]);
 
     const handleInput = (event) => {
-        if (!is_limited || event.target.value.length <= limit) {
-            value = event.target.value;
+        const res = handle_input(event, is_limited, limit);
+        if (res !== null) {
+            value = res;
         }
     };
 

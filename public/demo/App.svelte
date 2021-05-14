@@ -11,6 +11,7 @@
     import * as colors from '../../src/scripts/color.ts';
 
     let input_demo_value = 'Input Demo';
+    let input_handle_demo_value = '';
     let input_disabled_demo_value = 'Disabled Input Demo';
     let textarea_demo_value = 'Text Area Demo';
     let input_limited_demo_value = '';
@@ -139,6 +140,20 @@
         <code>{ input_demo_value }</code>
     </div>
     <div class="item-10">
+        <LInput bind:value={input_handle_demo_value} placeholder="Input Handler Demo" handle_input={(event, is_limited, limit) => {
+            let res = null;
+            if (!is_limited || event.target.value.length <= limit) {
+                res = event.target.value
+                    .split('')
+                    .reverse()
+                    .join('');
+            }
+    
+            return res;}}
+        ></LInput>
+        <code>{ input_handle_demo_value }</code>
+    </div>
+    <div class="item-10">
         <LInput placeholder="Place Holder"></LInput>
         <LInput placeholder="3D Input" flat={false}></LInput>
         <LInput placeholder={input_disabled_demo_value} disabled></LInput>
@@ -177,18 +192,20 @@
         </div>
     </LBox>
 
-    <LBox>
+    <LBox width="550px">
         <strong slot="header">Radio</strong>
         <div slot="body">
             <div class="item-10">
                 <LRadio bind:value={radio_demo_value} label="1">Option 1</LRadio>
                 <LRadio bind:value={radio_demo_value} label="2">Option 2</LRadio>
                 <LRadio bind:value={radio_demo_value} label="3">Option 3</LRadio>
-                <code>Option: { radio_demo_value }</code>
+                <LRadio bind:value={radio_demo_value} handle_click={() => { return prompt('Input Value'); }}
+                    handle_on={() => { return true; }}
+                >Custom Handling</LRadio>
+                <code>value: { radio_demo_value }</code>
             </div>
             <LRadio bind:value={radio_disabled_demo_value} label="1" disabled>Disabled</LRadio>
             <LRadio bind:value={radio_disabled_demo_value} label="2" disabled>Disabled</LRadio>
-            <LRadio handle_click={on_click_demo}>Custom Click Handler</LRadio>
         </div>
     </LBox>
 </main>
