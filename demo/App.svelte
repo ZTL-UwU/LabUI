@@ -16,6 +16,7 @@
     let input_limited_demo_value = '';
 
     let radio_demo_value = '1';
+    let radio_disabled_demo_value = '2';
 
     function on_click_demo() {
         alert('Clicked');
@@ -183,7 +184,10 @@
                 <LRadio bind:value={radio_demo_value} label="1">Option 1</LRadio>
                 <LRadio bind:value={radio_demo_value} label="2">Option 2</LRadio>
                 <LRadio bind:value={radio_demo_value} label="3">Option 3</LRadio>
+                <code>Option: { radio_demo_value }</code>
             </div>
+            <LRadio bind:value={radio_disabled_demo_value} label="1" disabled>Disabled</LRadio>
+            <LRadio bind:value={radio_disabled_demo_value} label="2" disabled>Disabled</LRadio>
             <LRadio handle_click={on_click_demo}>Custom Click Handler</LRadio>
         </div>
     </LBox>
