@@ -6,6 +6,7 @@
         LLink,
         LProgress,
         LMessageBar,
+        LRadio,
     } from '../../src/main.ts';
     import * as colors from '../../src/scripts/color.ts';
 
@@ -13,6 +14,8 @@
     let input_disabled_demo_value = 'Disabled Input Demo';
     let textarea_demo_value = 'Text Area Demo';
     let input_limited_demo_value = '';
+
+    let radio_demo_value = '1';
 
     function on_click_demo() {
         alert('Clicked');
@@ -170,6 +173,18 @@
                 <LLink href="https://github.com/zhangtianli2006/LabUI" underline="never" color="red">No Underline</LLink>
             </div>
             <LLink href="https://github.com/zhangtianli2006/LabUI" disabled>Disabled</LLink>
+        </div>
+    </LBox>
+
+    <LBox>
+        <strong slot="header">Radio</strong>
+        <div slot="body">
+            <div class="item-10">
+                <LRadio bind:value={radio_demo_value} label="1">Option 1</LRadio>
+                <LRadio bind:value={radio_demo_value} label="2">Option 2</LRadio>
+                <LRadio bind:value={radio_demo_value} label="3">Option 3</LRadio>
+            </div>
+            <LRadio handle_click={on_click_demo}>Custom Click Handler</LRadio>
         </div>
     </LBox>
 </main>

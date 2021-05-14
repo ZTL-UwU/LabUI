@@ -127,3 +127,17 @@ $border-radius-round: 10000px;
     align-items: center;
     height: 100%;
 }
+
+@keyframes zoom-in {
+    0% {
+        transform: scale(0);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@mixin zoom-in-transform {
+    animation: zoom-in $transition-normal linear;
+}
