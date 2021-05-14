@@ -1,5 +1,5 @@
 <script lang="typescript">
-    import { mix_classes } from '../scripts/utils.ts';
+    import { mix_classes, mix_styles } from '../scripts/utils.ts';
 
     export let disabled = false;
     export let placeholder = '';
@@ -7,6 +7,7 @@
     export let type = 'text';
     export let limit = -1;
     export let flat = true;
+    export let width = type === 'textarea' ? '300px' : '180px';
 
     export let handle_input = (event, is_limited: boolean, limit: number) => {
         let res: string = null;
@@ -31,6 +32,10 @@
         flat ? '' : 'input-3D',
     ]);
 
+    $: styles = mix_styles([
+        `width: ${width}`,
+    ]);
+
     const handleInput = (event) => {
         const res = handle_input(event, is_limited, limit);
         if (res !== null) {
@@ -50,10 +55,11 @@
     }
 </script>
 
-{#if type!=='textarea'}
+{#if type !== 'textarea'}
     <div class="lb__input-holder">
         <input
             class={classes}
+            style={styles}
             {disabled}
             {placeholder}
             {type}
@@ -77,6 +83,7 @@
     <div class="lb__input-holder">
         <textarea
             class={classes}
+            style={styles}
             {disabled}
             {placeholder}
             {value}
