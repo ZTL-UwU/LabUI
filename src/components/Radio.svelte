@@ -3,26 +3,33 @@
 
     export let value = null;
     export let label = null;
+    export let disabled = false;
 
     export let handle_click = (event) => {
-        value = label;
+        if (!disabled && label !== null) {
+            value = label;
+        }
     };
 
     $: on = value !== null && label !== null && value === label;
-
+    $: radio_classes = mix_classes([
+        'radio',
+        disabled ? 'radio-disabled' : '',
+    ]);
     $: radio_circle_classes = mix_classes([
         'radio-circle',
         on ? 'radio-circle-on' : '',
+        disabled ? 'radio-disabled' : '',
     ]);
-
     $: radio_name_classes = mix_classes([
         'radio-name',
         on ? 'radio-name-on': '',
+        disabled ? 'radio-disabled' : '',
     ]);
 </script>
 
 <span
-    class="lb__radio"
+    class={radio_classes}
     on:click={handle_click}
 >
     <span class={radio_circle_classes}>
@@ -68,6 +75,11 @@
             border-color: $blue;
         }
 
+        &.lb__radio-disabled {
+            background-color: $grey1;
+            border-color: $transparent;
+        }
+
         .lb__radio-circle-inner {
             @include zoom-in-transform;
 
@@ -101,5 +113,13 @@
         &.lb__radio-name-on {
             color: $blue7;
         }
+
+        &.lb__radio-disabled {
+            color: $c_grey2;
+        }
+    }
+
+    .lb__radio-disabled {
+        @include disabled;
     }
 </style>
