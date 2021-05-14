@@ -5,10 +5,12 @@
     export let value = 0;
 
     const handle_minus = () => {
+        value = parseInt(value);
         value -= 1;
     };
-
+    
     const handle_add = () => {
+        value = parseInt(value);
         value += 1;
     };
 
@@ -16,7 +18,7 @@
         let res = null;
         if (!is_limited || event.target.value.length <= limit) {
             if (parseInt(event.target.value) == event.target.value || event.target.value === '') {
-                res = event.target.value;
+                res = parseInt(event.target.value);
             }
         }
 
@@ -59,6 +61,7 @@
             cursor: pointer;
             z-index: $z-index1;
             border-radius: $border-radius-normal;
+            user-select: none;
 
             height: 38px;
             width: 38px;

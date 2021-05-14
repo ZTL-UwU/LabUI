@@ -62,6 +62,7 @@
     @import '../styles/variables.scss';
 
     .lb__radio {
+        user-select: none;
         @include v-center;
         cursor: pointer;
         margin-right: 20px;

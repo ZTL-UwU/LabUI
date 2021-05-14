@@ -122,6 +122,7 @@
 
         @include v-center;
         font-size: 10px;
+        user-select: none;
     }
 
     .lb__input {

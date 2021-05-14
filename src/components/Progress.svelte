@@ -67,6 +67,7 @@
 
     .lb__progress-num {
         @include v-center;
+        user-select: none;
 
         color: $white;
         font-weight: 500;
