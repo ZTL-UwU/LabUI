@@ -163,7 +163,7 @@
         <LInput type="email" placeholder="Input Email"></LInput>
     </div>
     <div class="item-10">
-        <LInput bind:value={input_limited_demo_value} placeholder="Limited Input Demo" limit=10></LInput>
+        <LInput bind:value={input_limited_demo_value} placeholder="Limited Input Demo" width="200px" limit=30></LInput>
         <code>{ input_limited_demo_value }</code>
     </div>
     <div class="item-20">
