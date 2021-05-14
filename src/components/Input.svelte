@@ -7,9 +7,11 @@
     export let type = 'text';
     export let limit = -1;
     export let flat = true;
+    export let center = false;
     export let width = type === 'textarea' ? '300px' : '180px';
+    export let height = type === 'textarea' ? '60px' : '30px';
 
-    export let handle_input = (event, is_limited: boolean, limit: number) => {
+    export let handle_input = (event, is_limited: boolean, limit: number, value) => {
         let res: string = null;
         if (!is_limited || event.target.value.length <= limit) {
             res = event.target.value;
@@ -30,14 +32,16 @@
         (show_pass_icon && type !== 'password') ? 'input-password' : '',
         is_limited ? 'input-limited' : '',
         flat ? '' : 'input-3D',
+        center ? 'input-center' : '',
     ]);
 
     $: styles = mix_styles([
         `width: ${width}`,
+        `height: ${height}`,
     ]);
 
     const handleInput = (event) => {
-        const res = handle_input(event, is_limited, limit);
+        const res = handle_input(event, is_limited, limit, value);
         if (res !== null) {
             value = res;
         }
@@ -122,6 +126,9 @@
 
     .lb__input {
         font-size: 13px;
+        &.lb__input-center {
+            text-align: center;
+        }
 
         border-radius: $border-radius-normal;
         &.lb__input-3D {
