@@ -6,6 +6,7 @@
         LLink,
         LProgress,
         LMessageBar,
+        LNumberPicker,
         LRadio,
     } from '../../src/main.ts';
     import * as colors from '../../src/scripts/color.ts';
@@ -15,10 +16,12 @@
     let input_disabled_demo_value = 'Disabled Input Demo';
     let textarea_demo_value = 'Text Area Demo';
     let input_limited_demo_value = '';
-
+    
     let radio_demo_value = '1';
     let radio_disabled_demo_value = '2';
 
+    let number_picker_demo_value = 0;
+    
     function on_click_demo() {
         alert('Clicked');
     }
@@ -27,7 +30,7 @@
 <main>
     <div class="item-15">
         <h1>Buttons</h1>
-        <LButton on:click={on_click_demo}>Demo</LButton>
+        <LButton on:click={ on_click_demo }>Demo</LButton>
         <LButton disabled>Disabled</LButton>
         <LButton>
             <img src="https://avatars.githubusercontent.com/u/49156174?s=45&v=4" alt="avatar" />
@@ -84,8 +87,8 @@
 
     <div class="item-20">
         <h1>Progress Bars</h1>
-        <LProgress size="small" color={colors.red} percent="10"></LProgress>
-        <LProgress color={colors.green} percent="100" width="300px"></LProgress>
+        <LProgress size="small" color={ colors.red } percent="10"></LProgress>
+        <LProgress color={ colors.green } percent="100" width="300px"></LProgress>
         <LProgress size="large"></LProgress>
     </div>
 
@@ -129,18 +132,19 @@
                 Body
             </div>
         </LBox>
-        <LBox noheader flat={false} width="600px">
+        <LBox noheader flat={ false } width="600px">
             <div slot="body">3D Boxes</div>
         </LBox>
     </div>
 
     <div class="item-10">
         <h2>Inputs</h2>
-        <LInput bind:value={input_demo_value}></LInput>
+        <LInput bind:value={ input_demo_value }></LInput>
         <code>{ input_demo_value }</code>
     </div>
     <div class="item-10">
-        <LInput bind:value={input_handle_demo_value} placeholder="Input Handler Demo" handle_input={(event, is_limited, limit) => {
+        <LInput placeholder="Place Holder"></LInput>
+        <LInput bind:value={ input_handle_demo_value } placeholder="Input Handler Demo" handle_input={(event, is_limited, limit) => {
             let res = null;
             if (!is_limited || event.target.value.length <= limit) {
                 res = event.target.value
@@ -154,25 +158,31 @@
         <code>{ input_handle_demo_value }</code>
     </div>
     <div class="item-10">
-        <LInput placeholder="Place Holder"></LInput>
         <LInput placeholder="3D Input" flat={false}></LInput>
-        <LInput placeholder={input_disabled_demo_value} disabled></LInput>
+        <LInput placeholder={ input_disabled_demo_value } disabled></LInput>
+        <LInput placeholder="Center Input" center width="100px"></LInput>
     </div>
     <div class="item-10">
         <LInput type="password" placeholder="Input Password"></LInput>
         <LInput type="email" placeholder="Input Email"></LInput>
     </div>
     <div class="item-10">
-        <LInput bind:value={input_limited_demo_value} placeholder="Limited Input Demo" width="200px" limit=30></LInput>
+        <LInput bind:value={ input_limited_demo_value } placeholder="Limited Input Demo" width="200px" limit=30></LInput>
         <code>{ input_limited_demo_value }</code>
     </div>
     <div class="item-20">
         <div class="item-10">
-            <LInput type="textarea" bind:value={textarea_demo_value} placeholder="Text Area Demo"></LInput>
+            <LInput type="textarea" bind:value={ textarea_demo_value } placeholder="Text Area Demo"></LInput>
             <code>{ textarea_demo_value }</code>
         </div>
         <LInput type="textarea" placeholder="Limited Text Area Demo" limit=100></LInput>
         <LInput type="textarea" placeholder="3D Text Area" flat={false}></LInput>
+    </div>
+
+    <div class="item-20">
+        <h2>Number Pickers</h2>
+        <LNumberPicker bind:value={ number_picker_demo_value }></LNumberPicker>
+        <code>{ number_picker_demo_value }</code>
     </div>
 
     <LBox>
