@@ -1,14 +1,12 @@
-<script lang="typescript">
-    import { LButton } from '../main.ts';
+<script>
+    import { LButton } from '../main.js';
     import { createEventDispatcher } from 'svelte';
-    import { error, warning, success, info, primary, white, other } from '../scripts/color.ts';
+    import { error, warning, success, info, primary, white, other } from '../scripts/color.js';
 
     export let type = 'normal';
     export let show = true;
 
     const dispatcher = createEventDispatcher();
-    const light = '#FFF';
-    const dark = '#000';
 
     $: color = ({
         normal: info,

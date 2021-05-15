@@ -1,4 +1,4 @@
-<script lang="typescript">
+<script>
     import {
         LBox,
         LButton,
@@ -8,8 +8,8 @@
         LMessageBar,
         LNumberPicker,
         LRadio,
-    } from '../../src/main.ts';
-    import * as colors from '../../src/scripts/color.ts';
+    } from '../../src/main.js';
+    import * as colors from '../../src/scripts/color.js';
 
     let input_demo_value = 'Input Demo';
     let input_handle_demo_value = '';

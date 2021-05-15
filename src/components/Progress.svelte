@@ -1,6 +1,6 @@
 <script>
-    import { mix_classes, mix_styles } from '../scripts/utils.ts';
-    import * as colors from '../scripts/color.ts';
+    import {  mix_styles } from '../scripts/utils.js';
+    import * as colors from '../scripts/color.js';
 
     export let percent = 50;
     export let show_num = true;

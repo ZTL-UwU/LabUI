@@ -1,5 +1,5 @@
-<script lang="typescript">
-    import { mix_classes, mix_styles } from '../scripts/utils.ts';
+<script>
+    import { mix_classes, } from '../scripts/utils.js';
 
     export let href = null;
     export let underline = 'hover';

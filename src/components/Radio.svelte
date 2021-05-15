@@ -1,12 +1,12 @@
-<script lang="typescript">
-    import { mix_classes } from '../scripts/utils.ts';
+<script>
+    import { mix_classes } from '../scripts/utils.js';
 
     export let value = null;
     export let label = null;
-    export let disabled: boolean = false;
+    export let disabled = false;
 
-    export let handle_click = (event, disabled: boolean, value, label): string => {
-        let res: string = null;
+    export let handle_click = (event, disabled, value, label) => {
+        let res = null;
         if (!disabled && label !== null) {
             res = label;
         }
@@ -14,7 +14,7 @@
         return res;
     };
 
-    export let handle_on = (label, value): boolean => {
+    export let handle_on = (label, value) => {
         return value !== null && label !== null && value === label;
     }
 

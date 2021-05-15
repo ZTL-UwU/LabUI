@@ -1,5 +1,4 @@
-<script lang="typescript">
-    import { mix_classes } from '../scripts/utils.ts';
+<script>
     import { LInput } from '../main';
 
     export let value = 0;
@@ -8,7 +7,7 @@
         value = parseInt(value);
         value -= 1;
     };
-    
+
     const handle_add = () => {
         value = parseInt(value);
         value += 1;

@@ -1,5 +1,5 @@
-<script lang="typescript">
-    import { mix_classes, mix_styles } from '../scripts/utils.ts';
+<script>
+    import { mix_classes, mix_styles } from '../scripts/utils.js';
 
     export let disabled = false;
     export let placeholder = '';
@@ -11,8 +11,8 @@
     export let width = type === 'textarea' ? '300px' : '180px';
     export let height = type === 'textarea' ? '60px' : '30px';
 
-    export let handle_input = (event, is_limited: boolean, limit: number, value) => {
-        let res: string = null;
+    export let handle_input = (event, is_limited, limit, value) => {
+        let res = null;
         if (!is_limited || event.target.value.length <= limit) {
             res = event.target.value;
         }
