@@ -39,6 +39,7 @@
 
     .lb__button {
         font-weight: 800;
+        outline: none;
 
         &.lb__button-round {
             border-radius: $border-radius-round;
