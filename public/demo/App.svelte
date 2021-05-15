@@ -24,6 +24,7 @@
     let number_picker_min_max_demo_value = 0;
     let number_picker_step_demo_value = 0.5;
     let number_picker_3D_demo_value = 0;
+    let number_picker_position_right_demo_value = 0;
     
     function on_click_demo() {
         alert('Clicked');
@@ -200,6 +201,11 @@
         <div class="item-10">
             <h3>3D</h3>
             <LNumberPicker bind:value={ number_picker_3D_demo_value } flat={false}></LNumberPicker>
+        </div>
+        <div class="item-10">
+            <h3>Button Position</h3>
+            <LNumberPicker button_position="right" bind:value={ number_picker_position_right_demo_value } max="3"></LNumberPicker>
+            <LNumberPicker button_position="left" bind:value={ number_picker_position_right_demo_value } max="3"></LNumberPicker>
         </div>
     </div>
 
