@@ -88,7 +88,7 @@
         background-color: $white3;
         border: 1px solid $border1;
         border-radius: $border-radius-normal;
-        padding-bottom: 1px;
+        padding-bottom: 2px;
 
         .lb__number-picker-button {
             @include v-center;
@@ -97,10 +97,11 @@
             z-index: $z-index1;
             border-radius: $border-radius-normal;
             user-select: none;
-            margin-top: 1px;
+            margin-top: 3px;
+            margin-bottom: 1px;
 
-            &.lb__number-picker-button-minus { margin-left: 1px; }
-            &.lb__number-picker-button-add { margin-right: 1px; }
+            &.lb__number-picker-button-minus { margin-left: 3px; }
+            &.lb__number-picker-button-add { margin-right: 3px; }
 
             height: 38px;
             width: 38px;
