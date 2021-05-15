@@ -6,6 +6,7 @@
     export let min = -Infinity;
     export let max = Infinity;
     export let step = 1;
+    export let flat = true;
 
     export let handle_minus = (value, min, max, step) => {
         const val = value;
@@ -33,6 +34,10 @@
     $: minus_button_disabled = handle_min_check(value, min);
     $: add_button_disabled = handle_max_check(value, max);
 
+    $: classes = mix_classes([
+        'number-picker',
+        flat ? '' : 'number-picker-3D',
+    ]);
     $: minus_button_classes = mix_classes([
         'number-picker-button',
         'number-picker-button-minus',
@@ -56,7 +61,7 @@
     };
 </script>
 
-<span class="lb__number-picker">
+<span class={ classes }>
     <span class={ minus_button_classes } on:click={ handleMinus }>
         <span class="lb__number-picker-button-inner">-</span>
     </span>
@@ -111,6 +116,11 @@
                 @include disabled;
                 background-color: $c_grey1;
             }
+        }
+
+        &.lb__number-picker-3D {
+            padding-bottom: $border-huge;
+            border-bottom-width: $border-large;
         }
     }
 </style>
