@@ -5,25 +5,33 @@
     export let value = 0;
     export let min = -Infinity;
     export let max = Infinity;
+    export let step = 1;
 
-    export let handle_minus = (value, min, max) => {
+    export let handle_minus = (value, min, max, step) => {
         const val = value;
-        return val === min ? val : val - 1;
+        return val <= min ? val : val - step;
     };
-    export let handle_add = (value, min, max) => {
+    export let handle_add = (value, min, max, step) => {
         const val = value;
-        return val === max ? val : val + 1;
+        return val >= max ? val : val + step;
+    };
+
+    const handle_min_check = (value, min) => {
+        return parseFloat(value) <= parseFloat(min);
+    };
+    const handle_max_check = (value, max) => {
+        return parseFloat(value) >= parseFloat(max);
     };
 
     const handleMinus = () => {
-        value = handle_minus(parseInt(value), parseInt(min), parseInt(max));
-    }
+        value = handle_minus(parseFloat(value), parseFloat(min), parseFloat(max), parseFloat(step));
+    };
     const handleAdd = () => {
-        value = handle_add(parseInt(value), parseInt(min), parseInt(max));
-    }
+        value = handle_add(parseFloat(value), parseFloat(min), parseFloat(max), parseFloat(step));
+    };
 
-    $: minus_button_disabled = parseInt(value) === parseInt(min);
-    $: add_button_disabled = parseInt(value) === parseInt(max);
+    $: minus_button_disabled = handle_min_check(value, min);
+    $: add_button_disabled = handle_max_check(value, max);
 
     $: minus_button_classes = mix_classes([
         'number-picker-button',
@@ -39,8 +47,8 @@
     const handle_input = (event, is_limited, limit, value) => {
         let res = null;
         if (!is_limited || event.target.value.length <= limit) {
-            if (parseInt(event.target.value) == event.target.value || event.target.value === '') {
-                res = parseInt(event.target.value);
+            if (parseFloat(event.target.value) == event.target.value || event.target.value === '') {
+                res = parseFloat(event.target.value);
             }
         }
 
@@ -85,6 +93,7 @@
             border-radius: $border-radius-normal;
             user-select: none;
             margin-top: 1px;
+
             &.lb__number-picker-button-minus { margin-left: 1px; }
             &.lb__number-picker-button-add { margin-right: 1px; }
 

@@ -22,6 +22,7 @@
 
     let number_picker_demo_value = 0;
     let number_picker_min_max_demo_value = 0;
+    let number_picker_step_demo_value = 0.5;
     
     function on_click_demo() {
         alert('Clicked');
@@ -186,9 +187,14 @@
             <LNumberPicker bind:value={ number_picker_demo_value }></LNumberPicker>
             <code>{ number_picker_demo_value }</code>
         </div>
-        <div>
+        <div class="item-10">
+            <h3>Min & Max</h3>
             <LNumberPicker bind:value={ number_picker_min_max_demo_value } min="-1" max="5"></LNumberPicker>
             <code>{ number_picker_min_max_demo_value }</code>
+        </div>
+        <div class="item-10">
+            <h3>Step</h3>
+            <LNumberPicker bind:value={ number_picker_step_demo_value } step="0.5"></LNumberPicker>
         </div>
     </div>
 
