@@ -1,17 +1,40 @@
 <script>
+    import { mix_classes } from '../scripts/utils.js';
     import { LInput } from '../main';
 
     export let value = 0;
+    export let min = -Infinity;
+    export let max = Infinity;
 
-    const handle_minus = () => {
-        value = parseInt(value);
-        value -= 1;
+    export let handle_minus = (value, min, max) => {
+        const val = value;
+        return val === min ? val : val - 1;
+    };
+    export let handle_add = (value, min, max) => {
+        const val = value;
+        return val === max ? val : val + 1;
     };
 
-    const handle_add = () => {
-        value = parseInt(value);
-        value += 1;
-    };
+    const handleMinus = () => {
+        value = handle_minus(parseInt(value), parseInt(min), parseInt(max));
+    }
+    const handleAdd = () => {
+        value = handle_add(parseInt(value), parseInt(min), parseInt(max));
+    }
+
+    $: minus_button_disabled = parseInt(value) === parseInt(min);
+    $: add_button_disabled = parseInt(value) === parseInt(max);
+
+    $: minus_button_classes = mix_classes([
+        'number-picker-button',
+        'number-picker-button-minus',
+        minus_button_disabled ? 'number-picker-button-disabled' : '',
+    ]);
+    $: add_button_classes = mix_classes([
+        'number-picker-button',
+        'number-picker-button-add',
+        add_button_disabled ? 'number-picker-button-disabled' : '',
+    ]);
 
     const handle_input = (event, is_limited, limit, value) => {
         let res = null;
@@ -26,7 +49,7 @@
 </script>
 
 <span class="lb__number-picker">
-    <span class="lb__number-picker-button lb__number-picker-button-left" on:click={ handle_minus }>
+    <span class={ minus_button_classes } on:click={ handleMinus }>
         <span class="lb__number-picker-button-inner">-</span>
     </span>
     <span class="lb__number-picker-input">
@@ -38,7 +61,7 @@
             handle_input={ handle_input }
         />
     </span>
-    <span class="lb__number-picker-button lb__number-picker-button-right" on:click={ handle_add }>
+    <span class={ add_button_classes } on:click={ handleAdd }>
         <span class="lb__number-picker-button-inner">+</span>
     </span>
 </span>
@@ -61,6 +84,9 @@
             z-index: $z-index1;
             border-radius: $border-radius-normal;
             user-select: none;
+            margin-top: 1px;
+            &.lb__number-picker-button-minus { margin-left: 1px; }
+            &.lb__number-picker-button-add { margin-right: 1px; }
 
             height: 38px;
             width: 38px;
@@ -70,6 +96,11 @@
             .lb__number-picker-button-inner {
                 margin-left: auto;
                 margin-right: auto;
+            }
+
+            &.lb__number-picker-button-disabled {
+                @include disabled;
+                background-color: $c_grey1;
             }
         }
     }

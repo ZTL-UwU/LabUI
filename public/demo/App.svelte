@@ -21,6 +21,7 @@
     let radio_disabled_demo_value = '2';
 
     let number_picker_demo_value = 0;
+    let number_picker_min_max_demo_value = 0;
     
     function on_click_demo() {
         alert('Clicked');
@@ -181,8 +182,14 @@
 
     <div class="item-20">
         <h2>Number Pickers</h2>
-        <LNumberPicker bind:value={ number_picker_demo_value }></LNumberPicker>
-        <code>{ number_picker_demo_value }</code>
+        <div class="item-10">
+            <LNumberPicker bind:value={ number_picker_demo_value }></LNumberPicker>
+            <code>{ number_picker_demo_value }</code>
+        </div>
+        <div>
+            <LNumberPicker bind:value={ number_picker_min_max_demo_value } min="-1" max="5"></LNumberPicker>
+            <code>{ number_picker_min_max_demo_value }</code>
+        </div>
     </div>
 
     <LBox>
