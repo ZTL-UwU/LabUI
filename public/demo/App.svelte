@@ -28,7 +28,7 @@
     let number_picker_position_right_demo_value = 0;
     
     let switch_demo_value = true;
-    let switch_false_demo_value = false;
+    let switch_false_demo_value = 0;
 
     function on_click_demo() {
         alert('Clicked');
@@ -251,7 +251,17 @@
         <strong slot="header">Switches</strong>
         <div slot="body">
             <LSwitch bind:value={ switch_demo_value } />
-            <LSwitch bind:value={ switch_false_demo_value } />
+            <LSwitch bind:value={ switch_false_demo_value }
+                inactive_value="0"
+                active_value="10"
+                handle_click={ (value, inactive_value, active_value, on) => {
+                    alert('Clicked');
+                    if (!on) { return active_value; }
+                    if (on) { return inactive_value; }
+                    return active_value;
+                } }
+            />
+            <code>{ switch_false_demo_value }</code>
         </div>
     </LBox>
 </main>

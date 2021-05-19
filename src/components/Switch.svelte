@@ -1,19 +1,34 @@
 <script>
     import { mix_classes } from '../scripts/utils.js';
+
     export let value = false;
+    export let inactive_value = false;
+    export let active_value = true;
+
+    $: on = check_on(value, inactive_value, active_value);
 
     $: background_classes = mix_classes([
         'switch-background',
-        value ? 'switch-on' : 'switch-off',
+        on ? 'switch-on' : 'switch-off',
     ]);
 
     $: indicator_classes = mix_classes([
         'switch-indicator',
-        value ? 'switch-on' : 'switch-off',
+        on ? 'switch-on' : 'switch-off',
     ]);
 
+    export let check_on = (value, inactive_value, active_value) => {
+        return value == active_value;
+    }
+
+    export let handle_click = (value, inactive_value, active_value, on) => {
+        if (!on) { return active_value; }
+        if (on) { return inactive_value; }
+        return active_value;
+    }
+
     const handleClick = () => {
-        value = !value;
+        value = handle_click(value, inactive_value, active_value, on);
     }
 </script>
 
