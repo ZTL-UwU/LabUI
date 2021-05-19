@@ -31,8 +31,8 @@
         disabled ? 'radio-disabled' : '',
     ]);
     $: radio_circle_classes = mix_classes([
-        'radio-circle',
-        on ? 'radio-circle-on' : '',
+        'radio-indicator',
+        on ? 'radio-indicator-on' : '',
         disabled ? 'radio-disabled' : '',
     ]);
     $: radio_name_classes = mix_classes([
@@ -48,9 +48,9 @@
 >
     <span class={radio_circle_classes}>
         {#if on}
-            <span class="lb__radio-circle-inner" />
+            <span class="lb__radio-indicator-inner" />
         {:else}
-            <span class="lb__radio-circle-inner-holder" />
+            <span class="lb__radio-indicator-inner-holder" />
         {/if}
     </span>
     <span class={radio_name_classes}>
@@ -70,7 +70,7 @@
         transition: $transition-normal;
     }
 
-    .lb__radio-circle {
+    .lb__radio-indicator {
         transition: $transition-normal;
 
         margin-right: 5px;
@@ -81,7 +81,7 @@
         background-color: $white;
         @include border-tiny($border1);
 
-        &.lb__radio-circle-on {
+        &.lb__radio-indicator-on {
             border-color: $transparent;
             background-color: $blue;
         }
@@ -95,7 +95,7 @@
             border-color: $transparent;
         }
 
-        .lb__radio-circle-inner {
+        .lb__radio-indicator-inner {
             @include zoom-in-transform;
 
             display: inline-block;
@@ -109,7 +109,7 @@
             margin-left: 5px;
         }
 
-        .lb__radio-circle-inner-holder {
+        .lb__radio-indicator-inner-holder {
             display: inline-block;
             width: 5px;
             height: 5px;

@@ -6,6 +6,7 @@ import Progress     from './components/Progress.svelte';
 import MessageBar   from './components/MessageBar.svelte';
 import NumberPicker from './components/NumberPicker.svelte';
 import Radio        from './components/Radio.svelte';
+import Switch       from './components/Switch.svelte';
 
 export {
     Box          as LBox,
@@ -16,4 +17,5 @@ export {
     MessageBar   as LMessageBar,
     NumberPicker as LNumberPicker,
     Radio        as LRadio,
+    Switch       as LSwitch,
 };
