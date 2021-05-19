@@ -8,6 +8,7 @@
         LMessageBar,
         LNumberPicker,
         LRadio,
+        LSwitch,
     } from '../../src/main.js';
     import * as colors from '../../src/scripts/color.js';
 
@@ -26,6 +27,9 @@
     let number_picker_3D_demo_value = 0;
     let number_picker_position_right_demo_value = 0;
     
+    let switch_demo_value = true;
+    let switch_false_demo_value = false;
+
     function on_click_demo() {
         alert('Clicked');
     }
@@ -240,6 +244,14 @@
             </div>
             <LRadio bind:value={radio_disabled_demo_value} label="1" disabled>Disabled</LRadio>
             <LRadio bind:value={radio_disabled_demo_value} label="2" disabled>Disabled</LRadio>
+        </div>
+    </LBox>
+
+    <LBox>
+        <strong slot="header">Switches</strong>
+        <div slot="body">
+            <LSwitch bind:value={ switch_demo_value } />
+            <LSwitch bind:value={ switch_false_demo_value } />
         </div>
     </LBox>
 </main>
