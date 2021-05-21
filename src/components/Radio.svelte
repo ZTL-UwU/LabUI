@@ -65,7 +65,7 @@
         user-select: none;
         @include v-center;
         cursor: pointer;
-        margin-right: 20px;
+        margin-right: $gap-normal;
 
         transition: $transition-normal;
     }

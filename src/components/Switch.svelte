@@ -43,7 +43,7 @@
     @import '../styles/variables.scss';
 
     .lb__switch-background {
-        $switch-height: 20px;
+        $switch-height: $height-small;
         $switch-width: 40px;
 
         cursor: pointer;
@@ -64,7 +64,7 @@
         }
 
         .lb__switch-indicator {
-            $switch-indicator-margin: 2px;
+            $switch-indicator-margin: $buffer-tiny;
             $switch-indicator-size: $switch-height - $switch-indicator-margin * 2;
 
             transition: $transition-long;
@@ -82,6 +82,6 @@
             border-radius: $border-radius-round;
         }
 
-        margin-right: 5px;
+        margin-right: $buffer-normal;
     }
 </style>

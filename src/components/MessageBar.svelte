@@ -46,7 +46,7 @@
         $massage-bar-height: $height-normal;
         
         min-height: $massage-bar-height;
-        padding: 2px 20px 2px 20px;
+        padding: $buffer-tiny $gap-normal $buffer-tiny $gap-normal;
         border-radius: $border-radius-normal;
         margin-bottom: 10px;
 
@@ -60,7 +60,7 @@
             height: $massage-bar-height;
 
             float: right;
-            margin-right: 5px;
+            margin-right: $buffer-normal;
         }
     }
 </style>

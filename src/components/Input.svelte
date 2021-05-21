@@ -118,7 +118,7 @@
         &.lb__input-textarea-counter {
             height: 20px;
             bottom: 5px;
-            right: $input-suffix-margin-right + 2px;
+            right: $input-suffix-margin-right + $buffer-small;
         }
         right: $input-suffix-margin-right;
 
