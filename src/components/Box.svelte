@@ -33,25 +33,28 @@
     @import '../styles/variables.scss';
 
     .lb__box {
+        $box-inner-padding: 15px;
+        $box-margin-bottom: 10px;
+
         border-radius: $border-radius-large;
         @include border-normal($border1);
 
         background-color: $white;
 
         .lb__box-header {
-            padding: 15px;
+            padding: $box-inner-padding;
 
-            border-bottom: $border-normal solid $border1;
+            @include border-bottom-normal($border1);
         }
 
         .lb__box-body {
-            padding: 15px;
+            padding: $box-inner-padding;
         }
 
-        margin-bottom: 10px;
+        margin-bottom: $box-margin-bottom;
     }
 
     .lb__box-3D {
-        border-bottom: 5px solid $border1;
+        @include border-bottom-huge($border1);
     }
 </style>

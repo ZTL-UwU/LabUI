@@ -121,6 +121,25 @@ $border-radius-round: 10000px;
 @mixin border-large($color) {
     border: $border-large solid $color;
 }
+@mixin border-huge($color) {
+    border: $border-huge solid $color;
+}
+
+@mixin border-bottom-tiny($color) {
+    border-bottom: $border-tiny solid $color;
+}
+@mixin border-bottom-small($color) {
+    border-bottom: $border-small solid $color;
+}
+@mixin border-bottom-normal($color) {
+    border-bottom: $border-normal solid $color;
+}
+@mixin border-bottom-large($color) {
+    border-bottom: $border-large solid $color;
+}
+@mixin border-bottom-huge($color) {
+    border-bottom: $border-huge solid $color;
+}
 
 @mixin v-center {
     display: inline-flex;
