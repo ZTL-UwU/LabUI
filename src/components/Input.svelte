@@ -104,36 +104,38 @@
 
 <style lang="scss">
     @import '../styles/variables.scss';
-
+    
     .lb__input-holder {
         position: relative;
         display: inline-block;
     }
-
+    
+    $input-suffix-size: 45px;
     .lb__input-suffix {
         position: absolute;
+        $input-suffix-margin-right: 10px;
 
         &.lb__input-textarea-counter {
             height: 20px;
             bottom: 5px;
-            right: 12px;
+            right: $input-suffix-margin-right + 2px;
         }
-        right: 10px;
+        right: $input-suffix-margin-right;
 
         @include v-center;
-        font-size: 10px;
+        font-size: $font-size-small;
         user-select: none;
     }
 
     .lb__input {
-        font-size: 13px;
+        font-size: $font-size-normal;
         &.lb__input-center {
             text-align: center;
         }
 
         border-radius: $border-radius-normal;
         &.lb__input-3D {
-            border-bottom: $border-large solid $border1;
+            @include border-bottom-large($border1);
         }
         @include border-small($border1);
 
@@ -157,7 +159,7 @@
     .lb__input-text, .lb__input-password, .lb__input-email {
         height: $height-normal;
 
-        &.lb__input-limited, &.lb__input-password { padding-right: 45px; }
+        &.lb__input-limited, &.lb__input-password { padding-right: $input-suffix-size; }
         padding: 2px 10px 2px 10px;
     }
 
