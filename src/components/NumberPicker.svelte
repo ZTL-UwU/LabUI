@@ -112,22 +112,22 @@
 <style lang="scss">
     @import '../styles/variables.scss';
 
-    $number-picker-buffer: $buffer-small;
+    $number-picker-gutter: $gutter-small;
     .lb__number-picker {
         display: inline-block;
         position: relative;
         background-color: $white3;
         border: 1px solid $border1;
         border-radius: $border-radius-normal;
-        padding-bottom: $number-picker-buffer;
+        padding-bottom: $number-picker-gutter;
 
         &.lb__number-picker-position-right {
-            padding: $number-picker-buffer;
+            padding: $number-picker-gutter;
             margin-right: 40px;
             border-radius: $border-radius-normal 0 0 $border-radius-normal;
         }
         &.lb__number-picker-position-left {
-            padding: $number-picker-buffer;
+            padding: $number-picker-gutter;
             margin-left: 40px;
             border-radius: 0 $border-radius-normal $border-radius-normal 0;
         }
@@ -141,11 +141,11 @@
             user-select: none;
             z-index: $z-index1;
             border-radius: $border-radius-normal;
-            margin-top: $number-picker-buffer;
+            margin-top: $number-picker-gutter;
             margin-bottom: 1px;
 
-            &.lb__number-picker-button-left { margin-left: $number-picker-buffer; }
-            &.lb__number-picker-button-right { margin-right: $number-picker-buffer; }
+            &.lb__number-picker-button-left { margin-left: $number-picker-gutter; }
+            &.lb__number-picker-button-right { margin-right: $number-picker-gutter; }
 
             height: 38px;
             width: 38px;

@@ -64,7 +64,7 @@
         }
 
         .lb__switch-indicator {
-            $switch-indicator-margin: $buffer-tiny;
+            $switch-indicator-margin: $gutter-tiny;
             $switch-indicator-size: $switch-height - $switch-indicator-margin * 2;
 
             transition: $transition-long;
@@ -82,6 +82,6 @@
             border-radius: $border-radius-round;
         }
 
-        margin-right: $buffer-normal;
+        margin-right: $gutter-normal;
     }
 </style>

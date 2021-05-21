@@ -118,7 +118,7 @@
         &.lb__input-textarea-counter {
             height: 20px;
             bottom: 5px;
-            right: $input-suffix-margin-right + $buffer-small;
+            right: $input-suffix-margin-right + $gutter-small;
         }
         right: $input-suffix-margin-right;
 
@@ -160,7 +160,7 @@
         height: $height-normal;
 
         &.lb__input-limited, &.lb__input-password { padding-right: $input-suffix-size; }
-        padding: 2px 10px 2px 10px;
+        padding: $gutter-tiny $gap-tiny $gutter-tiny $gap-tiny;
     }
 
     .lb__input-textarea {

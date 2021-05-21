@@ -61,6 +61,7 @@
 <style lang="scss">
     @import '../styles/variables.scss';
 
+    $radio-gutter: $gutter-normal;
     .lb__radio {
         user-select: none;
         @include v-center;
@@ -70,14 +71,15 @@
         transition: $transition-normal;
     }
 
+    $radio-inner-size: 15px;
     .lb__radio-indicator {
         transition: $transition-normal;
 
-        margin-right: 5px;
-        height: 15px;
-        width: 15px;
+        margin-right: $radio-gutter;
+        height: $radio-inner-size;
+        width: $radio-inner-size;
 
-        border-radius: 100%;
+        border-radius: $border-radius-round;
         background-color: $white;
         @include border-tiny($border1);
 
@@ -95,43 +97,36 @@
             border-color: $transparent;
         }
 
+        $radio-inner-indicator-size: 5px;
         .lb__radio-indicator-inner {
             @include zoom-in-transform;
 
             display: inline-block;
 
-            width: 5px;
-            height: 5px;
+            width: $radio-inner-indicator-size;
+            height: $radio-inner-indicator-size;
             background-color: $white;
-            border-radius: 100%;
+            border-radius: $border-radius-round;
 
-            margin-bottom: 5px;
-            margin-left: 5px;
+            margin-bottom: $radio-gutter;
+            margin-left: $radio-gutter;
         }
 
         .lb__radio-indicator-inner-holder {
             display: inline-block;
-            width: 5px;
-            height: 5px;
-            margin-bottom: 5px;
-            margin-left: 5px;
+            width: $radio-inner-indicator-size;
+            height: $radio-inner-indicator-size;
+            margin-bottom: $radio-gutter;
+            margin-left: $radio-gutter;
         }
     }
 
     .lb__radio-name {
         transition: $transition-normal;
 
-        &:hover {
-            color: $blue;
-        }
-
-        &.lb__radio-name-on {
-            color: $blue7;
-        }
-
-        &.lb__radio-disabled {
-            color: $c_grey2;
-        }
+        &:hover { color: $blue; }
+        &.lb__radio-name-on { color: $blue7; }
+        &.lb__radio-disabled { color: $c_grey2; }
     }
 
     .lb__radio-disabled {
