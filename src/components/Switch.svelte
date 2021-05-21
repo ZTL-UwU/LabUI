@@ -43,12 +43,15 @@
     @import '../styles/variables.scss';
 
     .lb__switch-background {
+        $switch-height: 20px;
+        $switch-width: 40px;
+
         cursor: pointer;
         transition: $transition-long;
         @include v-center;
 
-        height: 20px;
-        width: 40px;
+        height: $switch-height;
+        width: $switch-width;
 
         position: relative;
         border-radius: $border-radius-round;
@@ -61,13 +64,19 @@
         }
 
         .lb__switch-indicator {
+            $switch-indicator-margin: 2px;
+            $switch-indicator-size: $switch-height - $switch-indicator-margin * 2;
+
             transition: $transition-long;
             position: absolute;
-            left: 2px;
-            &.lb__switch-on { margin-left: 20px; }
 
-            height: 16px;
-            width: 16px;
+            left: $switch-indicator-margin;
+            &.lb__switch-on {
+                margin-left: $switch-width - 2 * $switch-indicator-margin - $switch-indicator-size;
+            }
+
+            height: $switch-indicator-size;
+            width: $switch-indicator-size;
 
             background-color: $white;
             border-radius: $border-radius-round;
