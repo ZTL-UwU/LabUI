@@ -53,7 +53,7 @@
         border-radius: $border-radius-round;
         background-color: $c_grey1;
 
-        margin-bottom: 10px;
+        margin-bottom: $gap-tiny;
         text-align: right;
     }
 
@@ -62,7 +62,7 @@
         border-radius: $border-radius-round;
         background-color: $green;
 
-        transition: .5s;
+        transition: $transition-long;
     }
 
     .lb__progress-num {
@@ -72,6 +72,6 @@
         color: $white;
         font-weight: 500;
 
-        margin-right: 10px;
+        margin-right: $gap-tiny;
     }
 </style>
