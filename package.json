@@ -1,5 +1,5 @@
 {
-  "name": "lab-ui",
+  "name": "@zhangtianli2006/lab-ui",
   "version": "0.1.0",
   "scripts": {
     "build": "rollup -c",
