@@ -43,20 +43,21 @@
     @import '../styles/variables.scss';
 
     .lb__message-bar {
-        min-height: 30px;
+        $massage-bar-height: $height-normal;
+        
+        min-height: $massage-bar-height;
         padding: 2px 20px 2px 20px;
         border-radius: $border-radius-normal;
-
         margin-bottom: 10px;
 
         .lb__msg-bar-content {
             @include v-center;
-            height: 30px;
+            height: $massage-bar-height;
         }
 
         .lb__msg-bar-close-button {
             @include v-center;
-            height: 30px;
+            height: $massage-bar-height;
 
             float: right;
             margin-right: 5px;
