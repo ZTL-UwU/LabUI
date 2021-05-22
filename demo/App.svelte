@@ -283,6 +283,7 @@
                 } }
             />
             <code>{ switch_false_demo_value }</code>
+            <LSwitch bind:value={ switch_demo_value } disabled />
         </div>
     </LBox>
 </main>
