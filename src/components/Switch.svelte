@@ -4,12 +4,14 @@
     export let value = false;
     export let inactive_value = false;
     export let active_value = true;
+    export let disabled = false;
 
     $: on = check_on(value, inactive_value, active_value);
 
     $: background_classes = mix_classes([
         'switch-background',
         on ? 'switch-on' : 'switch-off',
+        disabled ? 'switch-disabled' : '',
     ]);
 
     $: indicator_classes = mix_classes([
@@ -28,7 +30,9 @@
     }
 
     const handleClick = () => {
-        value = handle_click(value, inactive_value, active_value, on);
+        if (!disabled) {
+            value = handle_click(value, inactive_value, active_value, on);
+        }
     }
 </script>
 
@@ -61,6 +65,10 @@
         }
         &.lb__switch-on {
             background-color: $blue;
+        }
+        &.lb__switch-disabled {
+            @include disabled;
+            background-color: $c_grey1;
         }
 
         .lb__switch-indicator {
