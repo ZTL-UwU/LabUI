@@ -5,7 +5,7 @@
     import * as colors from '../scripts/color.js';
 
     export let type = 'normal';
-    export let color = 'info';
+    export let color = 'blue';
     export let show = true;
 
     const dispatcher = createEventDispatcher();
@@ -17,45 +17,40 @@
 
     $: bg_color = ({
         dark: {
-            info: colors.blue,
-            primary: colors.green,
-            warning: colors.yellow,
-            error: colors.red,
-            success: colors.green50,
-            other: colors.c_grey20,
+            blue: colors.blue,
+            green: colors.green,
+            yellow: colors.yellow,
+            red: colors.red,
+            grey: colors.c_grey20,
         }, normal: {
-            info: colors.blue40,
-            primary: colors.green40,
-            warning: colors.yellow30,
-            error: colors.red40,
-            success: colors.green30,
-            other: colors.c_grey20,
+            blue: colors.blue40,
+            green: colors.green40,
+            yellow: colors.yellow30,
+            red: colors.red40,
+            grey: colors.c_grey20,
         }, light: {
-            info: colors.white,
-            primary: colors.white,
-            warning: colors.white,
-            error: colors.white,
-            success: colors.white,
-            other: colors.white,
+            blue: colors.white,
+            green: colors.white,
+            yellow: colors.white,
+            red: colors.white,
+            grey: colors.white,
         },
     })[type][color];
 
     $: border_color = ({
-        info: colors.blue,
-        primary: colors.green,
-        warning: colors.yellow,
-        error: colors.red,
-        success: colors.green50,
-        other: colors.c_grey20,
+        blue: colors.blue,
+        green: colors.green,
+        yellow: colors.yellow,
+        red: colors.red,
+        grey: colors.c_grey20,
     })[color];
 
     $: font_color = ({
-        info: colors.blue80,
-        primary: colors.green80,
-        warning: colors.yellow70,
-        error: colors.red80,
-        success: colors.green70,
-        other: colors.c_grey40,
+        blue: colors.blue80,
+        green: colors.green80,
+        yellow: colors.yellow70,
+        red: colors.red80,
+        grey: colors.c_grey40,
     })[color];
 
     $: styles = mix_styles([
