@@ -8,6 +8,7 @@
     export let limit = -1;
     export let flat = true;
     export let center = false;
+    export let readonly = false;
     export let width = type === 'textarea' ? '300px' : '180px';
     export let height = type === 'textarea' ? '60px' : '30px';
 
@@ -30,6 +31,7 @@
         'input',
         `input-${type}`,
         (show_pass_icon && type !== 'password') ? 'input-password' : '',
+        readonly ? 'input-readonly' : '',
         is_limited ? 'input-limited' : '',
         flat ? '' : 'input-3D',
         center ? 'input-center' : '',
@@ -64,6 +66,7 @@
         <input
             class={classes}
             style={styles}
+            {readonly}
             {disabled}
             {placeholder}
             {type}
@@ -88,6 +91,7 @@
         <textarea
             class={classes}
             style={styles}
+            {readonly}
             {disabled}
             {placeholder}
             {value}
@@ -142,6 +146,9 @@
         &.lb__input-3D {
             @include border-bottom-large($border1);
         }
+        &.lb__input-readonly {
+            cursor: default;
+        }
         @include border-small($border1);
 
         transition: border-color $transition-normal;
@@ -156,6 +163,10 @@
 
         &:focus-visible,
         &:focus {
+            &.lb__input-readonly {
+                border-color: $border1;
+                cursor: default;
+            }
             border-color: $blue3;
         }
     }
