@@ -42,6 +42,7 @@
         background-color: $white;
 
         .lb__box-header {
+            @include title1;
             padding: $box-inner-padding;
 
             @include border-bottom-normal($border1);

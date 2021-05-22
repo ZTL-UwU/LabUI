@@ -93,8 +93,7 @@
         border-radius: $border-radius-normal;
 
         .lb__msg-bar-title {
-            font-size: $font-size-large;
-            font-weight: 500;
+            @include title1;
         }
         .lb__msg-bar-content {
             font-size: $font-size-normal;

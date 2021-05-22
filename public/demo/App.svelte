@@ -103,9 +103,9 @@
     </div>
 
     <LBox width="800px">
-        <strong slot="header">
+        <span slot="header">
             Message Bars
-        </strong>
+        </span>
         <div slot="body">
             <LMessageBar color="green">
                 <span slot="title">Message</span>
@@ -245,7 +245,7 @@
     </div>
 
     <LBox>
-        <strong slot="header">Links</strong>
+        <span slot="header">Links</span>
         <div slot="body">
             <div class="item-10">
                 <LLink href="https://github.com/zhangtianli2006/LabUI">🔗 Link to GitHub repo</LLink>
@@ -262,7 +262,7 @@
     </LBox>
 
     <LBox width="550px">
-        <strong slot="header">Radio</strong>
+        <span slot="header">Radio</span>
         <div slot="body">
             <div class="item-10">
                 <LRadio bind:value={radio_demo_value} label="1">Option 1</LRadio>
@@ -279,7 +279,7 @@
     </LBox>
 
     <LBox>
-        <strong slot="header">Switches</strong>
+        <span slot="header">Switches</span>
         <div slot="body">
             <LSwitch bind:value={ switch_demo_value } />
             <LSwitch bind:value={ switch_false_demo_value }
