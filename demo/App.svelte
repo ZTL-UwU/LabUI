@@ -172,6 +172,7 @@
         <h2>Inputs</h2>
         <LInput bind:value={ input_demo_value }></LInput>
         <code>{ input_demo_value }</code>
+        <LInput bind:value={ input_demo_value } readonly></LInput>
     </div>
     <div class="item-10">
         <LInput placeholder="Place Holder"></LInput>
