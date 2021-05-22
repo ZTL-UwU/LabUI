@@ -12,6 +12,8 @@
     } from '../../src/main.js';
     import * as colors from '../../src/scripts/color.js';
 
+    let progress_demo_value = 15;
+
     let input_demo_value = 'Input Demo';
     let input_handle_demo_value = '';
     let input_disabled_demo_value = 'Disabled Input Demo';
@@ -78,7 +80,7 @@
         <h2>Plain</h2>
         <LButton plain color="blue">Plain</LButton>
         <LButton plain color="green" size="large">Plain large</LButton>
-        <LButton plain color="grey" size="tiny">T</LButton>
+        <LButton plain color="grey" size="tiny">Tiny</LButton>
         <LButton plain disabled>Plain Disabled</LButton>
     </div>
 
@@ -87,16 +89,25 @@
         <LButton flat color="blue">Flat</LButton>
         <LButton flat plain color="yellow">Flat Plain</LButton>
         <LButton flat color="green" size="large">Flat large</LButton>
+        <LButton flat disabled>Flat Disabled</LButton>
+        <LButton flat plain disabled>Flat Plain Disabled</LButton>
     </div>
 
     <div class="item-20">
         <h2>Round</h2>
         <LButton round flat color="blue">R</LButton>
         <LButton round plain color="yellow">Plain Round</LButton>
+        <LButton round flat plain color="blue">FPR</LButton>
+        <LButton round plain disabled>Plain Round</LButton>
+        <LButton round flat plain disabled>FPRD</LButton>
     </div>
 
     <div class="item-20">
         <h1>Progress Bars</h1>
+        <div class="item-30">
+            <LProgress bind:percent={ progress_demo_value }></LProgress>
+            <LNumberPicker bind:value={ progress_demo_value } step="5" button_position="right" min="0" max="100" />
+        </div>
         <LProgress size="small" color={ colors.red } percent="10"></LProgress>
         <LProgress color={ colors.green } percent="100" width="400px"></LProgress>
         <LProgress size="large"></LProgress>
@@ -197,6 +208,7 @@
         </div>
         <LInput type="textarea" placeholder="Limited Text Area Demo" limit=100></LInput>
         <LInput type="textarea" placeholder="3D Text Area" flat={false}></LInput>
+        <LInput type="textarea" placeholder="Disabled Text Area" disabled></LInput>
     </div>
 
     <div class="item-20">
@@ -302,6 +314,10 @@
     main {
         background-color: #FAFAFE;
         padding: 50px 200px 50px 200px;
+    }
+
+    .item-30 {
+        margin-bottom: 30px;
     }
 
     .item-20 {
