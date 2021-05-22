@@ -1,32 +1,73 @@
 <script>
+    import { mix_styles } from '../scripts/utils';
     import { LButton } from '../main.js';
     import { createEventDispatcher } from 'svelte';
-    import { error, warning, success, info, primary, white, other } from '../scripts/color.js';
+    import * as colors from '../scripts/color.js';
 
     export let type = 'normal';
+    export let color = 'info';
     export let show = true;
 
     const dispatcher = createEventDispatcher();
-
-    $: color = ({
-        normal: info,
-        info: info,
-        primary: primary,
-        warning: warning,
-        error: error,
-        success: success,
-        other: other,
-    })[type];
 
     function closeAlert() {
         show = false;
         dispatcher("close");
     }
+
+    $: bg_color = ({
+        dark: {
+            info: colors.blue,
+            primary: colors.green,
+            warning: colors.yellow,
+            error: colors.red,
+            success: colors.green50,
+            other: colors.c_grey20,
+        }, normal: {
+            info: colors.blue40,
+            primary: colors.green40,
+            warning: colors.yellow30,
+            error: colors.red40,
+            success: colors.green30,
+            other: colors.c_grey20,
+        }, light: {
+            info: colors.white,
+            primary: colors.white,
+            warning: colors.white,
+            error: colors.white,
+            success: colors.white,
+            other: colors.white,
+        },
+    })[type][color];
+
+    $: border_color = ({
+        info: colors.blue,
+        primary: colors.green,
+        warning: colors.yellow,
+        error: colors.red,
+        success: colors.green50,
+        other: colors.c_grey20,
+    })[color];
+
+    $: font_color = ({
+        info: colors.blue80,
+        primary: colors.green80,
+        warning: colors.yellow70,
+        error: colors.red80,
+        success: colors.green70,
+        other: colors.c_grey40,
+    })[color];
+
+    $: styles = mix_styles([
+        type === 'light' ? `border-color: ${border_color}` : '',
+        `background-color: ${bg_color}`,
+        type === 'dark' ? 'color: #FFFFFF' : `color: ${font_color}`,
+    ]);
 </script>
 
 {#if show}
     <div
-        style={`background-color: ${color}; color: ${white} `}
+        style={ styles }
         class="lb__message-bar"
     >
         <div class="lb__msg-bar-content">
@@ -47,8 +88,10 @@
         
         min-height: $massage-bar-height;
         padding: $gutter-tiny $gap-normal $gutter-tiny $gap-normal;
-        border-radius: $border-radius-normal;
         margin-bottom: 10px;
+
+        @include border-small($transparent);
+        border-radius: $border-radius-normal;
 
         .lb__msg-bar-content {
             @include v-center;

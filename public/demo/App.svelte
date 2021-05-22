@@ -107,27 +107,26 @@
             Message Bars
         </strong>
         <div slot="body">
-            <LMessageBar type="success">
-                <span slot="content">Success</span>
-            </LMessageBar>
-            <LMessageBar type="warning">
-                <span slot="content">Warning</span>
-            </LMessageBar>
-            <LMessageBar type="error">
-                <span slot="content">
-                    Error
-                    <LButton flat plain color="red">ERR</LButton>
-                </span>
-            </LMessageBar>
-            <LMessageBar>
-                <span slot="content">Message</span>
-            </LMessageBar>
-            <LMessageBar type="other">
-                <span slot="content">Other</span>
-            </LMessageBar>
-            <LMessageBar type="primary">
-                <span slot="content">Primary</span>
-            </LMessageBar>
+            <LMessageBar color="success"><span slot="content">Success</span></LMessageBar>
+            <LMessageBar color="warning"><span slot="content">Warning</span></LMessageBar>
+            <LMessageBar color="error"><span slot="content">Error</span></LMessageBar>
+            <LMessageBar><span slot="content">Message</span></LMessageBar>
+            <LMessageBar color="other"><span slot="content">Other</span></LMessageBar>
+            <LMessageBar color="primary"><span slot="content">Primary</span></LMessageBar>
+
+            <LMessageBar type="dark" color="success"><span slot="content">Success</span></LMessageBar>
+            <LMessageBar type="dark" color="warning"><span slot="content">Warning</span></LMessageBar>
+            <LMessageBar type="dark" color="error"><span slot="content">Error</span></LMessageBar>
+            <LMessageBar type="dark"><span slot="content">Message</span></LMessageBar>
+            <LMessageBar type="dark" color="other"><span slot="content">Other</span></LMessageBar>
+            <LMessageBar type="dark" color="primary"><span slot="content">Primary</span></LMessageBar>
+
+            <LMessageBar type="light" color="success"><span slot="content">Success</span></LMessageBar>
+            <LMessageBar type="light" color="warning"><span slot="content">Warning</span></LMessageBar>
+            <LMessageBar type="light" color="error"><span slot="content">Error</span></LMessageBar>
+            <LMessageBar type="light"><span slot="content">Message</span></LMessageBar>
+            <LMessageBar type="light" color="other"><span slot="content">Other</span></LMessageBar>
+            <LMessageBar type="light" color="primary"><span slot="content">Primary</span></LMessageBar>
         </div>
     </LBox>
 
@@ -136,7 +135,7 @@
         <LBox>
             <span slot="header">Header</span>
             <div slot="body">
-                <LMessageBar type="success">
+                <LMessageBar color="success">
                     <span slot="content">Message</span>
                 </LMessageBar>
                 Body
