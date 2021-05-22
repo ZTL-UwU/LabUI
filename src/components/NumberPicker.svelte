@@ -134,27 +134,23 @@
 
         .lb__number-picker-button {
             @include v-center;
+            @include span-button;
 
             transition: $transition-normal;
-
-            cursor: pointer;
-            user-select: none;
             z-index: $z-index1;
             border-radius: $border-radius-normal;
+
             margin-top: $number-picker-gutter;
             margin-bottom: 1px;
-
-            &.lb__number-picker-button-left { margin-left: $number-picker-gutter; }
-            &.lb__number-picker-button-right { margin-right: $number-picker-gutter; }
 
             height: 38px;
             width: 38px;
 
-            text-align: center;
+            &.lb__number-picker-button-left { margin-left: $number-picker-gutter; }
+            &.lb__number-picker-button-right { margin-right: $number-picker-gutter; }
 
             .lb__number-picker-button-inner {
-                margin-left: auto;
-                margin-right: auto;
+                @include auto-h-center;
             }
         }
 
@@ -184,10 +180,9 @@
 
         .lb__number-picker-stacked_button_add,
         .lb__number-picker-stacked_button_minus {
+            @include span-button;
+
             transition: $transition-normal;
-            cursor: pointer;
-            user-select: none;
-            text-align: center;
             width: 100%;
             height: 50%;
             &.lb__number-picker-stacked_button_add {

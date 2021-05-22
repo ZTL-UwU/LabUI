@@ -63,11 +63,10 @@
 
     $radio-gutter: $gutter-normal;
     .lb__radio {
-        user-select: none;
         @include v-center;
-        cursor: pointer;
-        margin-right: $gap-normal;
+        @include span-button;
 
+        margin-right: $gap-normal;
         transition: $transition-normal;
     }
 
@@ -109,7 +108,6 @@
             border-radius: $border-radius-round;
 
             margin-bottom: $radio-gutter;
-            margin-left: $radio-gutter;
         }
 
         .lb__radio-indicator-inner-holder {

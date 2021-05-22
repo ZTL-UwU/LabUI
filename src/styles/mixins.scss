@@ -51,9 +51,19 @@
 @mixin v-center {
     display: inline-flex;
     align-items: center;
-    height: 100%;
 }
 
 @mixin zoom-in-transform {
     animation: zoom-in $transition-normal linear;
+}
+
+@mixin span-button {
+    cursor: pointer;
+    user-select: none;
+    text-align: center;
+}
+
+@mixin auto-h-center {
+    margin-left: auto;
+    margin-right: auto;
 }

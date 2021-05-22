@@ -77,7 +77,7 @@
                 <span class="lb__input-suffix-inner">
                     {#if is_limited} {counter} {/if}
                     {#if show_pass_icon}
-                        <span on:click={show_pass}>{show_password_icon}</span>
+                        <span on:click={show_pass} class="lb__input-show-password-button">{show_password_icon}</span>
                     {/if}
                 </span>
             </span>
@@ -114,6 +114,7 @@
     .lb__input-suffix {
         position: absolute;
         $input-suffix-margin-right: 10px;
+        height: 100%;
 
         &.lb__input-textarea-counter {
             height: 20px;
@@ -125,6 +126,10 @@
         @include v-center;
         font-size: $font-size-small;
         user-select: none;
+
+        .lb__input-show-password-button {
+            @include span-button;
+        }
     }
 
     .lb__input {
@@ -145,7 +150,6 @@
 
         &:disabled {
             @include border-small($border1);
-            outline: none;
             background-color: $white3;
             @include disabled;
         }
