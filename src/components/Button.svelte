@@ -44,9 +44,9 @@
             margin: 0;
         }
         margin-bottom: 10px;
-        font-weight: 600;
-        outline: none;
 
+        font-weight: 500;
+        
         &.lb__button-round {
             border-radius: $border-radius-round;
             min-height: 34px !important;
@@ -55,6 +55,7 @@
         border-radius: $border-radius-normal;
         
         border: none;
+        outline: none;
         color: $white;
         cursor: pointer;
         transition: $transition-short;
@@ -71,7 +72,6 @@
             &.lb__button-grey { @include border-normal($grey1); }
             &.lb__button-red { @include border-normal($red2); }
         }
-
         &.lb__button-flat {
             box-shadow: none !important;
             transform: none !important;
@@ -306,6 +306,11 @@
                 @include height-shadow(6px, $grey3 !important);
                 &:hover { border-color: $grey2; }
             }
+            &.lb__button-flat {
+                box-shadow: none !important;
+                transform: none !important;
+            }
+
             &.lb__button-tiny { @include height-shadow(4px, $grey3); }
             &.lb__button-small { @include height-shadow(6px, $grey3); }
             &.lb__button-normal { @include height-shadow(8px, $grey3); }
