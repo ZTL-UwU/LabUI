@@ -26,6 +26,8 @@
     let number_picker_step_demo_value = 0.5;
     let number_picker_3D_demo_value = 0;
     let number_picker_position_right_demo_value = 0;
+    let number_picker_rating_demo_value = 0;
+    let number_picker_rating_rating_array_demo_value = 0;
     
     let switch_demo_value = true;
     let switch_false_demo_value = 0;
@@ -190,26 +192,39 @@
     <div class="item-20">
         <h2>Number Pickers</h2>
         <div class="item-10">
-            <LNumberPicker bind:value={ number_picker_demo_value }></LNumberPicker>
+            <LNumberPicker bind:value={ number_picker_demo_value } />
             <code>{ number_picker_demo_value }</code>
         </div>
         <div class="item-10">
             <h3>Min & Max</h3>
-            <LNumberPicker bind:value={ number_picker_min_max_demo_value } min="-1" max="5"></LNumberPicker>
+            <LNumberPicker bind:value={ number_picker_min_max_demo_value } min="-1" max="5" />
             <code>{ number_picker_min_max_demo_value }</code>
         </div>
         <div class="item-10">
             <h3>Step</h3>
-            <LNumberPicker bind:value={ number_picker_step_demo_value } step="0.5"></LNumberPicker>
+            <LNumberPicker bind:value={ number_picker_step_demo_value } step="0.5" />
         </div>
         <div class="item-10">
             <h3>3D</h3>
-            <LNumberPicker bind:value={ number_picker_3D_demo_value } flat={false}></LNumberPicker>
+            <LNumberPicker bind:value={ number_picker_3D_demo_value } flat={false} />
         </div>
         <div class="item-10">
             <h3>Button Position</h3>
-            <LNumberPicker button_position="right" bind:value={ number_picker_position_right_demo_value } max="3"></LNumberPicker>
-            <LNumberPicker button_position="left" bind:value={ number_picker_position_right_demo_value } max="3"></LNumberPicker>
+            <LNumberPicker button_position="right" bind:value={ number_picker_position_right_demo_value } max="3" />
+            <LNumberPicker button_position="left" bind:value={ number_picker_position_right_demo_value } max="3" />
+        </div>
+        <div>
+            <h3>Rating</h3>
+            <div>
+                <LNumberPicker bind:value={ number_picker_rating_demo_value } type="rating" max="5" />
+                <code>{ number_picker_rating_demo_value }</code>
+            </div>
+            <LNumberPicker
+                bind:value={ number_picker_rating_rating_array_demo_value }
+                type="rating"
+                rating_array={[10, 20, 30, 40, 50]}
+            />
+            <code>{ number_picker_rating_rating_array_demo_value }</code>
         </div>
     </div>
 

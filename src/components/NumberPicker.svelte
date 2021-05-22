@@ -8,6 +8,14 @@
     export let step = 1;
     export let flat = true;
     export let button_position = 'both';
+    export let type = 'normal';
+
+    export let rating_array = [];
+    if (rating_array.length === 0 && parseInt(max) !== Infinity) {
+        for (let i = 1; i <= parseInt(max); i += 1) {
+            rating_array.push(i);
+        }
+    }
 
     export let handle_minus = (value, min, max, step) => {
         const val = value;
@@ -75,39 +83,61 @@
 
         return res;
     };
+
+    const handleRatingClick = (index) => {
+        value = index;
+    };
+
+    $: handleRatingClasses = (index) => {
+        return mix_classes([
+            'number-picker-rating-indicator',
+            index > value ? 'number-picker-rating-indicator-off' : '',
+        ]);
+    }
 </script>
 
-<span class={ classes }>
-    {#if button_position === 'both'}
-        <span class={ minus_button_classes } on:click={ handleMinus }>
-            <span class="lb__number-picker-button-inner">-</span>
+{#if type === 'normal'}
+    <span class={ classes }>
+        {#if button_position === 'both'}
+            <span class={ minus_button_classes } on:click={ handleMinus }>
+                <span class="lb__number-picker-button-inner">-</span>
+            </span>
+        {:else if button_position === 'left'}
+            <span class={ stacked_button_classes }>
+                <div class={ stacked_button_add_classes } on:click={ handleAdd }>+</div>
+                <div class={ stacked_button_minus_classes } on:click={ handleMinus }>-</div>
+            </span>
+        {/if}
+        <span class="lb__number-picker-input">
+            <LInput
+                bind:value={ value }
+                center
+                width="80px"
+                height="30px"
+                { handle_input }
+            />
         </span>
-    {:else if button_position === 'left'}
-        <span class={ stacked_button_classes }>
-            <div class={ stacked_button_add_classes } on:click={ handleAdd }>+</div>
-            <div class={ stacked_button_minus_classes } on:click={ handleMinus }>-</div>
-        </span>
-    {/if}
-    <span class="lb__number-picker-input">
-        <LInput
-            bind:value={ value }
-            center
-            width="80px"
-            height="30px"
-            handle_input={ handle_input }
-        />
+        {#if button_position === 'both'}
+            <span class={ add_button_classes } on:click={ handleAdd }>
+                <span class="lb__number-picker-button-inner">+</span>
+            </span>
+        {:else if button_position === 'right'}
+            <span class={ stacked_button_classes }>
+                <div class={ stacked_button_add_classes } on:click={ handleAdd }>+</div>
+                <div class={ stacked_button_minus_classes } on:click={ handleMinus }>-</div>
+            </span>
+        {/if}
     </span>
-    {#if button_position === 'both'}
-        <span class={ add_button_classes } on:click={ handleAdd }>
-            <span class="lb__number-picker-button-inner">+</span>
-        </span>
-    {:else if button_position === 'right'}
-        <span class={ stacked_button_classes }>
-            <div class={ stacked_button_add_classes } on:click={ handleAdd }>+</div>
-            <div class={ stacked_button_minus_classes } on:click={ handleMinus }>-</div>
-        </span>
-    {/if}
-</span>
+{:else if type === 'rating'}
+    <span>
+        {#each rating_array as index}
+            <span
+                class={ handleRatingClasses(index) }
+                on:click={ handleRatingClick(index) }
+            />
+        {/each}
+    </span>
+{/if}
 
 <style lang="scss">
     @import '../styles/main.scss';
@@ -194,5 +224,19 @@
     .lb__number-picker-button-disabled {
         cursor: not-allowed !important;
         background-color: $c_grey1;
+    }
+
+    .lb__number-picker-rating-indicator {
+        display: inline-block;
+        height: 20px;
+        width: 20px;
+        margin-right: 5px;
+        border-radius: $border-radius-round;
+
+        background-color: $yellow3;
+        &.lb__number-picker-rating-indicator-off {
+            background-color: $c_grey1;
+        }
+        @include span-button;
     }
 </style>
