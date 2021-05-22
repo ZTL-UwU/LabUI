@@ -39,6 +39,10 @@
         flat ? '' : 'number-picker-3D',
     ]);
 
+    $: rating_classes = mix_classes([
+        disabled ? 'number-picker-disabled' : '',
+    ]);
+
     $: minus_button_classes = mix_classes([
         'number-picker-button',
         'number-picker-button-left',
@@ -149,7 +153,7 @@
         {/if}
     </span>
 {:else if type === 'rating'}
-    <span>
+    <span class={ rating_classes }>
         {#each rating_array as index}
             <span
                 class={ handleRatingClasses(index) }
