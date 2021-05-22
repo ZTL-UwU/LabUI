@@ -197,6 +197,7 @@
     <div class="item-10">
         <LInput type="password" placeholder="Input Password"></LInput>
         <LInput type="email" placeholder="Input Email"></LInput>
+        <LInput clearable placeholder="Clearable Input"></LInput>
     </div>
     <div class="item-10">
         <LInput bind:value={ input_limited_demo_value } placeholder="Limited Input Demo" width="200px" limit=30></LInput>

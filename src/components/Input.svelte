@@ -9,6 +9,7 @@
     export let flat = true;
     export let center = false;
     export let readonly = false;
+    export let clearable = false;
     export let width = type === 'textarea' ? '300px' : '180px';
     export let height = type === 'textarea' ? '60px' : '30px';
 
@@ -35,6 +36,7 @@
         is_limited ? 'input-limited' : '',
         flat ? '' : 'input-3D',
         center ? 'input-center' : '',
+        clearable ? 'input-clearable' : '',
     ]);
 
     $: styles = mix_styles([
@@ -49,7 +51,7 @@
         }
     };
 
-    function show_pass() {
+    const show_pass = () => {
         if (type === 'text') {
             type = 'password';
             show_password_icon = 'Show';
@@ -58,6 +60,10 @@
             show_password_icon = 'Hide';
         }
         show_pass_icon = true;
+    }
+
+    const clear_input = () => {
+        value = '';
     }
 </script>
 
@@ -75,12 +81,17 @@
             on:input={handleInput}
         />
 
-        {#if is_limited || show_pass_icon}
+        {#if is_limited || show_pass_icon || clearable}
             <span class="lb__input-suffix">
                 <span class="lb__input-suffix-inner">
-                    {#if is_limited} {counter} {/if}
+                    {#if is_limited} { counter } {/if}
                     {#if show_pass_icon}
-                        <span on:click={show_pass} class="lb__input-show-password-button">{show_password_icon}</span>
+                        <span on:click={show_pass} class="lb__input-suffix-inner-button">{show_password_icon}</span>
+                    {/if}
+                    {#if clearable && value.length > 0}
+                        <span on:click={clear_input} class="lb__input-suffix-inner-button">
+                            Clear
+                        </span>
                     {/if}
                 </span>
             </span>
@@ -131,7 +142,7 @@
         font-size: $font-size-small;
         user-select: none;
 
-        .lb__input-show-password-button {
+        .lb__input-suffix-inner-button {
             @include span-button;
         }
     }
@@ -174,7 +185,7 @@
     .lb__input-text, .lb__input-password, .lb__input-email {
         height: $height-normal;
 
-        &.lb__input-limited, &.lb__input-password { padding-right: $input-suffix-size; }
+        &.lb__input-limited, &.lb__input-password, &.lb__input-clearable { padding-right: $input-suffix-size; }
         padding: $gutter-tiny $gap-tiny $gutter-tiny $gap-tiny;
     }
 
