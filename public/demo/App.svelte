@@ -213,7 +213,7 @@
             <LNumberPicker button_position="right" bind:value={ number_picker_position_right_demo_value } max="3" />
             <LNumberPicker button_position="left" bind:value={ number_picker_position_right_demo_value } max="3" />
         </div>
-        <div>
+        <div class="item-10">
             <h3>Rating</h3>
             <div>
                 <LNumberPicker bind:value={ number_picker_rating_demo_value } type="rating" max="5" />
@@ -225,6 +225,12 @@
                 rating_array={[10, 20, 30, 40, 50]}
             />
             <code>{ number_picker_rating_rating_array_demo_value }</code>
+        </div>
+        <div class="item-10">
+            <h3>Disabled</h3>
+            <LNumberPicker disabled />
+            <LNumberPicker button_position="right" disabled />
+            <LNumberPicker type="rating" max="5" disabled />
         </div>
     </div>
 

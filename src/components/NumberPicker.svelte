@@ -9,6 +9,7 @@
     export let flat = true;
     export let button_position = 'both';
     export let type = 'normal';
+    export let disabled = false;
 
     export let rating_array = [];
     if (rating_array.length === 0 && parseInt(max) !== Infinity) {
@@ -21,23 +22,10 @@
         const val = value;
         return val <= min ? val : val - step;
     };
+
     export let handle_add = (value, min, max, step) => {
         const val = value;
         return val >= max ? val : val + step;
-    };
-
-    const handle_min_check = (value, min) => {
-        return parseFloat(value) <= parseFloat(min);
-    };
-    const handle_max_check = (value, max) => {
-        return parseFloat(value) >= parseFloat(max);
-    };
-
-    const handleMinus = () => {
-        value = handle_minus(parseFloat(value), parseFloat(min), parseFloat(max), parseFloat(step));
-    };
-    const handleAdd = () => {
-        value = handle_add(parseFloat(value), parseFloat(min), parseFloat(max), parseFloat(step));
     };
 
     $: minus_button_disabled = handle_min_check(value, min);
@@ -45,33 +33,50 @@
 
     $: classes = mix_classes([
         'number-picker',
+        disabled ? 'number-picker-disabled' : '',
         button_position === 'right' ? 'number-picker-position-right' : '',
         button_position === 'left' ? 'number-picker-position-left' : '',
         flat ? '' : 'number-picker-3D',
     ]);
+
     $: minus_button_classes = mix_classes([
         'number-picker-button',
         'number-picker-button-left',
         minus_button_disabled ? 'number-picker-button-disabled' : '',
+        disabled ? 'number-picker-disabled' : '',
     ]);
+
     $: add_button_classes = mix_classes([
         'number-picker-button',
         'number-picker-button-right',
         add_button_disabled ? 'number-picker-button-disabled' : '',
+        disabled ? 'number-picker-disabled' : '',
     ]);
 
     $: stacked_button_classes = mix_classes([
         'number-picker-stacked-button',
         button_position === 'right' ? 'number-picker-button-right' : 'number-picker-button-left',
     ]);
+
     $: stacked_button_add_classes = mix_classes([
         'number-picker-stacked_button_add',
         add_button_disabled ? 'number-picker-button-disabled' : '',
+        disabled ? 'number-picker-disabled' : '',
     ]);
+
     $: stacked_button_minus_classes = mix_classes([
         'number-picker-stacked_button_minus',
         minus_button_disabled ? 'number-picker-button-disabled' : '',
+        disabled ? 'number-picker-disabled' : '',
     ]);
+
+    $: handleRatingClasses = (index) => {
+        return mix_classes([
+            'number-picker-rating-indicator',
+            disabled ? 'number-picker-disabled' : '',
+            index > value ? 'number-picker-rating-indicator-off' : '',
+        ]);
+    };
 
     const handle_input = (event, is_limited, limit, value) => {
         let res = null;
@@ -84,16 +89,30 @@
         return res;
     };
 
-    const handleRatingClick = (index) => {
-        value = index;
+    const handle_min_check = (value, min) => {
+        return parseFloat(value) <= parseFloat(min);
     };
 
-    $: handleRatingClasses = (index) => {
-        return mix_classes([
-            'number-picker-rating-indicator',
-            index > value ? 'number-picker-rating-indicator-off' : '',
-        ]);
-    }
+    const handle_max_check = (value, max) => {
+        return parseFloat(value) >= parseFloat(max);
+    };
+
+    const handleMinus = () => {
+        if (!disabled) {
+            value = handle_minus(parseFloat(value), parseFloat(min), parseFloat(max), parseFloat(step));
+        }
+    };
+    const handleAdd = () => {
+        if (!disabled) {
+            value = handle_add(parseFloat(value), parseFloat(min), parseFloat(max), parseFloat(step));
+        }
+    };
+
+    const handleRatingClick = (index) => {
+        if (!disabled) {
+            value = index;
+        }
+    };
 </script>
 
 {#if type === 'normal'}
@@ -115,6 +134,7 @@
                 width="80px"
                 height="30px"
                 { handle_input }
+                { disabled }
             />
         </span>
         {#if button_position === 'both'}
@@ -143,6 +163,7 @@
     @import '../styles/main.scss';
 
     $number-picker-gutter: $gutter-small;
+
     .lb__number-picker {
         display: inline-block;
         position: relative;
@@ -165,7 +186,7 @@
         .lb__number-picker-button {
             @include v-center;
             @include span-button;
-
+            
             transition: $transition-normal;
             z-index: $z-index1;
             border-radius: $border-radius-normal;
@@ -225,6 +246,9 @@
         cursor: not-allowed !important;
         background-color: $c_grey1;
     }
+    .lb__number-picker-disabled {
+        cursor: not-allowed !important;
+    }
 
     .lb__number-picker-rating-indicator {
         @include border-tiny($transparent);
@@ -240,6 +264,9 @@
         transition: $transition-normal;
 
         &:hover {
+            &.lb__number-picker-disabled {
+                border-color: $transparent;
+            }
             border-color: $yellow3;
         }
 
