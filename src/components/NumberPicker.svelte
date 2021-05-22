@@ -256,7 +256,7 @@
 
     .lb__number-picker-rating-indicator {
         @include border-tiny($transparent);
-        $rating-indicator-size: $height-small;
+        $rating-indicator-size: $height-tiny;
         @include span-button;
 
         display: inline-block;

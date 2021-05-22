@@ -98,7 +98,7 @@
     <div class="item-20">
         <h1>Progress Bars</h1>
         <LProgress size="small" color={ colors.red } percent="10"></LProgress>
-        <LProgress color={ colors.green } percent="100" width="300px"></LProgress>
+        <LProgress color={ colors.green } percent="100" width="400px"></LProgress>
         <LProgress size="large"></LProgress>
     </div>
 
@@ -107,23 +107,39 @@
             Message Bars
         </strong>
         <div slot="body">
-            <LMessageBar color="green"><span slot="content">Success</span></LMessageBar>
-            <LMessageBar color="yellow"><span slot="content">Warning</span></LMessageBar>
-            <LMessageBar color="red"><span slot="content">Error</span></LMessageBar>
-            <LMessageBar><span slot="content">Message</span></LMessageBar>
-            <LMessageBar color="grey"><span slot="content">Other</span></LMessageBar>
+            <LMessageBar color="green">
+                <span slot="title">Message</span>
+                <span slot="content">
+                    More to describe ...
+                    <LProgress color={ colors.yellow } percent="30" width="720px" />
+                </span>
+            </LMessageBar>
 
-            <LMessageBar type="dark" color="green"><span slot="content">Success</span></LMessageBar>
-            <LMessageBar type="dark" color="yellow"><span slot="content">Warning</span></LMessageBar>
-            <LMessageBar type="dark" color="red"><span slot="content">Error</span></LMessageBar>
-            <LMessageBar type="dark"><span slot="content">Message</span></LMessageBar>
-            <LMessageBar type="dark" color="grey"><span slot="content">Other</span></LMessageBar>
+            <LMessageBar color="green"><span slot="title">Success</span></LMessageBar>
+            <LMessageBar color="yellow"><span slot="title">Warning</span></LMessageBar>
+            <LMessageBar color="red"><span slot="title">Error</span></LMessageBar>
+            <LMessageBar><span slot="title">Message</span></LMessageBar>
+            <LMessageBar color="grey"><span slot="title">Other</span></LMessageBar>
 
-            <LMessageBar type="light" color="green"><span slot="content">Success</span></LMessageBar>
-            <LMessageBar type="light" color="yellow"><span slot="content">Warning</span></LMessageBar>
-            <LMessageBar type="light" color="red"><span slot="content">Error</span></LMessageBar>
-            <LMessageBar type="light"><span slot="content">Message</span></LMessageBar>
-            <LMessageBar type="light" color="grey"><span slot="content">Other</span></LMessageBar>
+            <LMessageBar type="dark" color="green"><span slot="title">Success</span></LMessageBar>
+            <LMessageBar type="dark" color="yellow"><span slot="title">Warning</span></LMessageBar>
+            <LMessageBar type="dark" color="red"><span slot="title">Error</span></LMessageBar>
+            <LMessageBar type="dark"><span slot="title">Message</span></LMessageBar>
+            <LMessageBar type="dark" color="grey"><span slot="title">Other</span></LMessageBar>
+
+            <LMessageBar type="light" color="green">
+                <span slot="title">Message</span>
+                <span slot="content">
+                    More to describe ...
+                    <br>
+                    <LButton>Yup</LButton>
+                    <LButton color="red">Nope</LButton>
+                </span>
+            </LMessageBar>
+            <LMessageBar type="light" color="yellow"><span slot="title">Warning</span></LMessageBar>
+            <LMessageBar type="light" color="red"><span slot="title">Error</span></LMessageBar>
+            <LMessageBar type="light"><span slot="title">Message</span></LMessageBar>
+            <LMessageBar type="light" color="grey"><span slot="title">Other</span></LMessageBar>
         </div>
     </LBox>
 
@@ -132,7 +148,7 @@
         <LBox>
             <span slot="header">Header</span>
             <div slot="body">
-                <LMessageBar color="green"><span slot="content">Message</span></LMessageBar>
+                <LMessageBar color="green"><span slot="title">Message</span></LMessageBar>
                 Body
             </div>
         </LBox>

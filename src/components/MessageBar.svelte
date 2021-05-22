@@ -65,13 +65,17 @@
         style={ styles }
         class="lb__message-bar"
     >
-        <div class="lb__msg-bar-content">
-            <slot name="icon" />
-            <slot name="content" />
+        <div class="lb__msg-bar-title-holder">
+            <div>
+                <slot name="icon" />
+                <span class="lb__msg-bar-title"><slot name="title" /></span>
+            </div>
         </div>
         <div class="lb__msg-bar-close-button">
-            <LButton color="grey" flat size="tiny" on:click={closeAlert}>X</LButton>
+            <LButton color="grey" flat size="tiny" on:click={closeAlert} no_margin>X</LButton>
         </div>
+        <br>
+        <span class="lb__msg-bar-content"><slot name="content" /></span>
     </div>
 {/if}
 
@@ -79,16 +83,25 @@
     @import '../styles/main.scss';
 
     .lb__message-bar {
-        $massage-bar-height: $height-normal;
+        $massage-bar-height: $height-small;
         
         min-height: $massage-bar-height;
-        padding: $gutter-tiny $gap-normal $gutter-tiny $gap-normal;
+        padding: $gutter-normal $gap-normal $gutter-normal $gap-normal;
         margin-bottom: 10px;
 
         @include border-small($transparent);
         border-radius: $border-radius-normal;
 
+        .lb__msg-bar-title {
+            font-size: $font-size-large;
+            font-weight: 500;
+        }
         .lb__msg-bar-content {
+            font-size: $font-size-normal;
+            line-height: 2;
+        }
+
+        .lb__msg-bar-title-holder {
             @include v-center;
             height: $massage-bar-height;
         }

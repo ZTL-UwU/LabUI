@@ -9,6 +9,7 @@
     export let size = 'normal';
     export let height = '';
     export let width = '';
+    export let no_margin = false;
 
     $: classes = mix_classes([
         'button',
@@ -17,6 +18,7 @@
         disabled ? '' : `button-${color}`,
         flat ? `button-flat` : '',
         round ? `button-round` : '',
+        no_margin ? 'button-no-margin' : '',
     ]);
 
     $: styles = mix_styles([
@@ -38,7 +40,11 @@
     @import '../styles/main.scss';
 
     .lb__button {
-        font-weight: 800;
+        &.lb__button-no-margin {
+            margin: 0;
+        }
+        margin-bottom: 10px;
+        font-weight: 600;
         outline: none;
 
         &.lb__button-round {

@@ -47,7 +47,7 @@
     @import '../styles/main.scss';
 
     .lb__switch-background {
-        $switch-height: $height-small;
+        $switch-height: $height-tiny;
         $switch-width: 40px;
 
         cursor: pointer;
