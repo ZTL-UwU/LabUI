@@ -227,16 +227,25 @@
     }
 
     .lb__number-picker-rating-indicator {
+        @include border-tiny($transparent);
+        $rating-indicator-size: $height-small;
+        @include span-button;
+
         display: inline-block;
-        height: 20px;
-        width: 20px;
-        margin-right: 5px;
+        height: $rating-indicator-size;
+        width: $rating-indicator-size;
+
+        margin-right: $gutter-normal;
         border-radius: $border-radius-round;
+        transition: $transition-normal;
+
+        &:hover {
+            border-color: $yellow3;
+        }
 
         background-color: $yellow3;
         &.lb__number-picker-rating-indicator-off {
             background-color: $c_grey1;
         }
-        @include span-button;
     }
 </style>
