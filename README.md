@@ -7,6 +7,8 @@ A Svelte frontend UI library.
 ![Last Commit](https://img.shields.io/github/last-commit/zhangtianli2006/LabUI?color=%2357B558&label=Last%20Commit&style=flat-square)
 ![WakaTime](https://wakatime.com/badge/github/zhangtianli2006/LabUI.svg)
 
+[![NPM](https://nodei.co/npm/@zhangtianli2006/lab-ui.png?mini=true)](https://npmjs.org/package/@zhangtianli2006/lab-ui)
+
 ## Installation
 
 1. Install SCSS
