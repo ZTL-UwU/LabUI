@@ -110,7 +110,7 @@
 </span>
 
 <style lang="scss">
-    @import '../styles/variables.scss';
+    @import '../styles/main.scss';
 
     $number-picker-gutter: $gutter-small;
     .lb__number-picker {

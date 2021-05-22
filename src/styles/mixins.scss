@@ -1,0 +1,59 @@
+@import './variables.scss';
+
+@mixin height-shadow($height, $color) {
+    box-shadow: 0px $height 0px 0px $color;
+}
+
+@mixin disabled {
+    cursor: not-allowed;
+}
+
+@mixin border-tiny($color) {
+    border: $border-tiny solid $color;
+}
+
+@mixin border-small($color) {
+    border: $border-small solid $color;
+}
+
+@mixin border-normal($color) {
+    border: $border-normal solid $color;
+}
+
+@mixin border-large($color) {
+    border: $border-large solid $color;
+}
+
+@mixin border-huge($color) {
+    border: $border-huge solid $color;
+}
+
+@mixin border-bottom-tiny($color) {
+    border-bottom: $border-tiny solid $color;
+}
+
+@mixin border-bottom-small($color) {
+    border-bottom: $border-small solid $color;
+}
+
+@mixin border-bottom-normal($color) {
+    border-bottom: $border-normal solid $color;
+}
+
+@mixin border-bottom-large($color) {
+    border-bottom: $border-large solid $color;
+}
+
+@mixin border-bottom-huge($color) {
+    border-bottom: $border-huge solid $color;
+}
+
+@mixin v-center {
+    display: inline-flex;
+    align-items: center;
+    height: 100%;
+}
+
+@mixin zoom-in-transform {
+    animation: zoom-in $transition-normal linear;
+}

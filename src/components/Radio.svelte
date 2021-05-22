@@ -59,7 +59,7 @@
 </span>
 
 <style lang="scss">
-    @import '../styles/variables.scss';
+    @import '../styles/main.scss';
 
     $radio-gutter: $gutter-normal;
     .lb__radio {

@@ -35,7 +35,7 @@
 </button>
 
 <style lang="scss">
-    @import '../styles/variables.scss';
+    @import '../styles/main.scss';
 
     .lb__button {
         font-weight: 800;

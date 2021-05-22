@@ -40,7 +40,7 @@
 {/if}
 
 <style lang="scss">
-    @import '../styles/variables.scss';
+    @import '../styles/main.scss';
 
     .lb__message-bar {
         $massage-bar-height: $height-normal;

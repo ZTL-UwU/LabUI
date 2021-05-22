@@ -103,7 +103,7 @@
 {/if}
 
 <style lang="scss">
-    @import '../styles/variables.scss';
+    @import '../styles/main.scss';
     
     .lb__input-holder {
         position: relative;
