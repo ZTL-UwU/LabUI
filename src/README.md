@@ -1,5 +1,6 @@
 # LabUI
-A Svelte frontend UI library.
+
+A Svelte frontend UI library. [Demo](https://zhangtianli2006.github.io/LabUI/)
 
 ![Code Size](https://img.shields.io/github/languages/code-size/zhangtianli2006/LabUI?color=%2323a536&label=Code%20Size&logo=github&style=flat-square)
 ![License](https://img.shields.io/github/license/zhangtianli2006/LabUI?color=%235bb2ec&label=License&style=flat-square)
@@ -14,11 +15,13 @@ A Svelte frontend UI library.
 1. Install SCSS
 
     Install Components
+
     ```bash
     npm install svelte-preprocess node-sass
     ```
 
     open `rollup.config.js`
+
     ```javascript
     import preprocess from 'svelte-preprocess'; // Line to add
     /* ... */
@@ -57,6 +60,7 @@ A Svelte frontend UI library.
 ### Progress
 
 **Done**:
+
 - Box
 - Button
 - Input
