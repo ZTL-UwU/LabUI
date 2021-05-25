@@ -1,17 +1,18 @@
 <script>
-    import {  mix_styles } from '../scripts/utils.js';
+    import {  mix_styles, mix_classes } from '../scripts/utils.js';
     import * as colors from '../scripts/color.js';
 
     export let percent = 50;
     export let show_num = true;
     export let color = colors.blue;
-    export let width = '300px';
+    export let vertical = false;
+    export let length = vertical ? '200px' : '300px';
     export let size = 'normal';
 
     $: percent = Math.max(Math.min(percent, 100), 0);
     $: progress_color = typeof(color) === 'function' ? color(percent) : color;
 
-    const height = ({
+    const thickness = ({
         small: '5px',
         normal: '15px',
         large: '20px',
@@ -24,26 +25,31 @@
     })[size];
 
     $: backgroundStyle = mix_styles([
-        `width: ${width}`,
-        `height: ${height}`,
+        vertical ? `height: ${length}` : `width: ${length}`,
+        vertical ? `width: ${thickness}` : `height: ${thickness}`,
     ]);
 
     $: barStyle = mix_styles([
-        `width: ${percent}%`,
-        `height: ${height}`,
+        vertical ? `height: ${percent}%` : `width: ${percent}%`,
+        vertical ? `width: ${thickness}` : `height: ${thickness}`,
         `background-color: ${progress_color}`,
     ]);
 
     $: fontStyle = mix_styles([
         `font-size: ${font_size}`,
     ]);
+
+    $: front_classes = mix_classes([
+        'progress-front',
+        vertical ? 'progress-front-vertical' : '',
+    ]);
 </script>
 
-<div class="lb__progress-background" style={backgroundStyle}>
-    <div class="lb__progress-front" style={barStyle}>
+<div class="lb__progress-background" style={ backgroundStyle }>
+    <div class={ front_classes } style={ barStyle }>
         {#if show_num}
             <div class="lb__progress-num">
-                <span style={fontStyle}>{ percent }%</span>
+                <span style={ fontStyle }>{ percent }%</span>
             </div>
         {/if}
     </div>
@@ -65,7 +71,10 @@
             background-color: $green;
 
             transition: $transition-long;
-            animation: $transition-animation slide-in;
+            animation: $transition-animation slide-in-horizontal;
+            &.lb__progress-front-vertical {
+                animation: $transition-animation slide-in-vertical;
+            }
 
             .lb__progress-num {
                 @include v-center;

@@ -1,6 +1,16 @@
-@keyframes slide-in {
+@keyframes slide-in-horizontal {
     from {
         width: 0;
+    }
+
+    to {
+        transform: scaleX(1);
+    }
+}
+
+@keyframes slide-in-vertical {
+    from {
+        height: 0;
     }
 
     to {
