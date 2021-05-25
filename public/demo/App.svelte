@@ -319,6 +319,11 @@
             />
             <code>{ switch_false_demo_value }</code>
             <LSwitch bind:value={ switch_demo_value } disabled />
+            <br>
+            <LSwitch bind:value={ switch_demo_value }>
+                <span slot="inactive_name">Inactive</span>
+                <span slot="active_name">Active</span>
+            </LSwitch>
         </div>
     </LBox>
 </main>
