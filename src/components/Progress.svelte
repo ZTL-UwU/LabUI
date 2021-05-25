@@ -55,23 +55,24 @@
 
         margin-bottom: $gap-tiny;
         text-align: right;
-    }
 
-    .lb__progress-front {
-        line-height: 1;
-        border-radius: $border-radius-round;
-        background-color: $green;
+        .lb__progress-front {
+            line-height: 1;
+            border-radius: $border-radius-round;
+            background-color: $green;
 
-        transition: $transition-long;
-    }
+            transition: $transition-long;
+            animation: $transition-animation slide-in;
 
-    .lb__progress-num {
-        @include v-center;
-        user-select: none;
+            .lb__progress-num {
+                @include v-center;
+                user-select: none;
 
-        color: $white;
-        font-weight: 500;
+                color: $white;
+                font-weight: 500;
 
-        margin-right: $gap-tiny;
+                margin-right: $gap-tiny;
+            }
+        }
     }
 </style>

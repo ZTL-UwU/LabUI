@@ -1,0 +1,19 @@
+@keyframes slide-in {
+    from {
+        width: 0;
+    }
+
+    to {
+        transform: scaleX(1);
+    }
+}
+
+@keyframes zoom-in {
+    from {
+        transform: scale(0);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}
