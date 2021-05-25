@@ -125,6 +125,17 @@
                     <LProgress color={ colors.yellow } percent="30" width="720px" />
                 </span>
             </LMessageBar>
+            <LMessageBar
+                type="light"
+                color="red"
+                handle_close={ () => {
+                    on_click_demo();
+                    return false;
+                } }
+            >
+                <span slot="title">Error</span>
+                <span slot="content">Custom close handling.</span>
+            </LMessageBar>
 
             <LMessageBar color="green"><span slot="title">Success</span></LMessageBar>
             <LMessageBar color="yellow"><span slot="title">Warning</span></LMessageBar>
