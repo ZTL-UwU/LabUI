@@ -45,7 +45,9 @@
         <LButton on:click={ on_click_demo }>Demo</LButton>
         <LButton disabled>Disabled</LButton>
         <LButton>
-            <img src="https://avatars.githubusercontent.com/u/49156174?s=45&v=4" alt="avatar" />
+            <strong>Strong</strong>
+            <br>
+            More to describe ... 
         </LButton>
     </div>
 
