@@ -16,6 +16,7 @@
         normal: '15px',
         large: '20px',
     })[size];
+
     const font_size = ({
         small: '0px',
         normal: '10px',
@@ -26,11 +27,13 @@
         `width: ${width}`,
         `height: ${height}`,
     ]);
+
     $: barStyle = mix_styles([
-        `width: calc(${width} * ${percent} / 100)`,
+        `width: ${percent}%`,
         `height: ${height}`,
         `background-color: ${progress_color}`,
     ]);
+
     $: fontStyle = mix_styles([
         `font-size: ${font_size}`,
     ]);
