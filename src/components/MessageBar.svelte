@@ -1,17 +1,20 @@
 <script>
-    import { mix_styles } from '../scripts/utils';
-    import { LButton } from '../main.js';
     import { createEventDispatcher } from 'svelte';
+
+    import { mix_styles } from '../scripts/utils';
     import * as colors from '../scripts/color.js';
 
     export let type = 'normal';
     export let color = 'blue';
     export let show = true;
+    export let handle_close = () => {
+        return false;
+    }
 
     const dispatcher = createEventDispatcher();
 
-    function closeAlert() {
-        show = false;
+    const closeAlert = () => {
+        show = handle_close();
         dispatcher("close");
     }
 
@@ -71,9 +74,7 @@
                 <span class="lb__msg-bar-title"><slot name="title" /></span>
             </div>
         </div>
-        <div class="lb__msg-bar-close-button">
-            <LButton color="grey" flat size="tiny" on:click={closeAlert} no_margin>X</LButton>
-        </div>
+        <span class="lb__msg-bar-close-button" on:click={ closeAlert }>x</span>
         <br>
         <span class="lb__msg-bar-content"><slot name="content" /></span>
     </div>
@@ -106,7 +107,9 @@
         }
 
         .lb__msg-bar-close-button {
+            @include span-button;
             @include v-center;
+
             height: $massage-bar-height;
 
             float: right;

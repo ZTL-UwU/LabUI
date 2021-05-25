@@ -46,14 +46,14 @@
         margin-bottom: 10px;
 
         font-weight: 500;
-        
+
         &.lb__button-round {
             border-radius: $border-radius-round;
             min-height: 34px !important;
             min-width: 34px !important;
         }
         border-radius: $border-radius-normal;
-        
+
         border: none;
         outline: none;
         color: $white;
