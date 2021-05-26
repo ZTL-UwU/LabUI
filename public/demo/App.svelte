@@ -111,9 +111,13 @@
             <LNumberPicker bind:value={ progress_demo_value } step="5" button_position="right" min="0" max="100" />
         </div>
         <LProgress size="small" color={ colors.red } percent="10"></LProgress>
+        <br>
         <LProgress color={ colors.green } percent="100" width="400px"></LProgress>
+        <br>
         <LProgress size="large"></LProgress>
-        <LProgress vertical></LProgress>
+        <br>
+        <LProgress percent="80" vertical></LProgress>
+        <LProgress percent="20" vertical></LProgress>
     </div>
 
     <LBox width="800px">

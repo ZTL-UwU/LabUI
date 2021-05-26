@@ -8,16 +8,6 @@
     }
 }
 
-@keyframes slide-in-vertical {
-    from {
-        height: 0;
-    }
-
-    to {
-        transform: scaleX(1);
-    }
-}
-
 @keyframes zoom-in {
     from {
         transform: scale(0);

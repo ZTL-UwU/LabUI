@@ -32,6 +32,7 @@
     $: barStyle = mix_styles([
         vertical ? `height: ${percent}%` : `width: ${percent}%`,
         vertical ? `width: ${thickness}` : `height: ${thickness}`,
+        vertical ? `top: ${100 - percent}%` : '',
         `background-color: ${progress_color}`,
     ]);
 
@@ -45,20 +46,22 @@
     ]);
 </script>
 
-<div class="lb__progress-background" style={ backgroundStyle }>
+<span class="lb__progress-background" style={ backgroundStyle }>
     <div class={ front_classes } style={ barStyle }>
         {#if show_num}
             <div class="lb__progress-num">
-                <span style={ fontStyle }>{ percent }%</span>
+                <span style={ fontStyle }>{ percent }{#if !vertical}%{/if}</span>
             </div>
         {/if}
     </div>
-</div>
+</span>
 
 <style lang="scss">
     @import '../styles/main.scss';
 
     .lb__progress-background {
+        display: inline-block;
+        overflow: hidden;
         border-radius: $border-radius-round;
         background-color: $c_grey1;
 
@@ -73,7 +76,8 @@
             transition: $transition-long;
             animation: $transition-animation slide-in-horizontal;
             &.lb__progress-front-vertical {
-                animation: $transition-animation slide-in-vertical;
+                animation: none;
+                position: relative;
             }
 
             .lb__progress-num {
