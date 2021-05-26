@@ -112,7 +112,7 @@
         </div>
         <LProgress size="small" color={ colors.red } percent="10"></LProgress>
         <br>
-        <LProgress color={ colors.green } percent="100" width="400px"></LProgress>
+        <LProgress color={ colors.green } percent="100" length="400px"></LProgress>
         <br>
         <LProgress size="large"></LProgress>
         <br>
