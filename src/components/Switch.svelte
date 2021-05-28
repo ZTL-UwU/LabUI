@@ -20,10 +20,12 @@
     ]);
 
     $: inactive_name_classes = mix_classes([
+        'switch-name',
         on ? 'inactive_name-off' : 'inactive_name-on',
     ]);
 
     $: active_name_classes = mix_classes([
+        'switch-name',
         on ? 'active_name-on' : 'active_name-off',
     ]);
 
@@ -44,13 +46,12 @@
     }
 </script>
 
-<span class="lb__switch">
+<span class="lb__switch" on:click={ handleClick }>
     <span class={ inactive_name_classes }>
         <slot name="inactive_name" />
     </span>
     <span
         class={ background_classes }
-        on:click={ handleClick }
     >
         <span class={ indicator_classes }></span>
     </span>
@@ -66,17 +67,25 @@
         display: inline-block;
         margin-right: $gutter-normal;
 
+        .lb__switch-name {
+            @include span-button;
+            transition: $transition-normal;
+
+            &:hover { color: $blue; }
+        }
+
         .lb__inactive_name-on, .lb__active_name-on {
             color: $blue7;
         }
 
         .lb__switch-background {
+            @include v-center;
+            @include span-button;
+
             $switch-height: $height-tiny;
             $switch-width: 40px;
 
-            cursor: pointer;
             transition: $transition-long;
-            @include v-center;
 
             height: $switch-height;
             width: $switch-width;
@@ -84,12 +93,9 @@
             position: relative;
             border-radius: $border-radius-round;
 
-            &.lb__switch-off {
-                background-color: $c_grey1;
-            }
-            &.lb__switch-on {
-                background-color: $blue;
-            }
+            &.lb__switch-off { background-color: $c_grey1; }
+            &.lb__switch-on { background-color: $blue; }
+
             &.lb__switch-disabled {
                 @include disabled;
                 background-color: $c_grey1;
