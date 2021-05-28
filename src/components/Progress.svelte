@@ -75,10 +75,6 @@
 
             transition: $transition-long;
             animation: $transition-animation slide-in-horizontal;
-            &.lb__progress-front-vertical {
-                animation: none;
-                position: relative;
-            }
 
             .lb__progress-num {
                 @include v-center;
@@ -88,6 +84,13 @@
                 font-weight: 500;
 
                 margin-right: $gap-tiny;
+            }
+
+            &.lb__progress-front-vertical {
+                text-align: center;
+                animation: none;
+                position: relative;
+                .lb__progress-num { margin-right: 0; }
             }
         }
     }

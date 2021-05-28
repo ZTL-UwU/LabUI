@@ -117,7 +117,7 @@
         <LProgress size="large"></LProgress>
         <br>
         <LProgress percent="80" vertical></LProgress>
-        <LProgress percent="20" vertical></LProgress>
+        <LProgress percent="20" color={ colors.grey } vertical></LProgress>
     </div>
 
     <LBox width="800px">
@@ -129,7 +129,7 @@
                 <span slot="title">Message</span>
                 <span slot="content">
                     More to describe ...
-                    <LProgress color={ colors.yellow } percent="30" width="720px" />
+                    <LProgress color={ colors.yellow } percent="30" length="720px" />
                 </span>
             </LMessageBar>
             <LMessageBar
