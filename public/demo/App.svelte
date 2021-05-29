@@ -337,15 +337,17 @@
         </div>
     </LBox>
 
-    <LBox>
-        <LMDContainer slot="header" bind:content={ md_container_demo_value } />
-        <LInput slot="body" type="textarea" bind:value={ md_container_demo_value } />
+    <LBox noheader>
+        <div slot="body">
+            <LMDContainer bind:content={ md_container_demo_value } />
+            <LInput type="textarea" bind:value={ md_container_demo_value } />
+        </div>
     </LBox>
 
     <LBox>
         <div slot="header">MD Container Code Block</div>
         <LMDContainer slot="body" content=
-            { "```cpp\n#include <iostream>\nusing namespace std;\n\nint main() {\n    int a, b;\n    std::cin >> a >> b;\n    std::cout << a + b;\n    return 0;\n}\n```" } />
+            { "```cpp\n#include <iostream>\nusing namespace std;\n\nint main() {\n    int a = 0, b;\n    std::cin >> a >> b;\n    std::cout << a + b;\n    return 0;\n}\n```" } />
     </LBox>
 </main>
 

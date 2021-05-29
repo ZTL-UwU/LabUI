@@ -2,7 +2,7 @@
     import { Remarkable } from 'remarkable';
     import DOMPurify from 'dompurify';
     import hljs from 'highlight.js';
-    import 'highlight.js/styles/tomorrow.css';
+    import '../styles/hljs_ayu.css';
 
     let rmd = new Remarkable({
         highlight: function (str, lang) {
