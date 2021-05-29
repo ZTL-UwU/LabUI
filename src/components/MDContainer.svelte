@@ -1,11 +1,32 @@
 <script>
     import { Remarkable } from 'remarkable';
     import DOMPurify from 'dompurify';
+    import hljs from 'highlight.js';
+    import 'highlight.js/styles/tomorrow.css';
 
-    let rmd = new Remarkable();
+    let rmd = new Remarkable({
+        highlight: function (str, lang) {
+            if (lang == 'text' || lang == 'plain') {
+                return str;
+            }
+
+            if (lang && hljs.getLanguage(lang)) {
+                try {
+                    return hljs.highlight(lang, str).value;
+                } catch (err) {}
+            }
+
+            try {
+                return hljs.highlightAuto(str).value;
+            } catch (err) {}
+
+            return '';
+        }
+    });
+    rmd.inline.ruler.enable(['mark']);
 
     export let content;
-    export let purify = true;
+    export let purify = false;
 
     export let renderer = (content, purify, rmd, DOMPurify) => {
         return rmd.render(purify ? DOMPurify.sanitize(content) : content);

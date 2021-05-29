@@ -341,6 +341,12 @@
         <LMDContainer slot="header" bind:content={ md_container_demo_value } />
         <LInput slot="body" type="textarea" bind:value={ md_container_demo_value } />
     </LBox>
+
+    <LBox>
+        <div slot="header">MD Container Code Block</div>
+        <LMDContainer slot="body" content=
+            { "```cpp\n#include <iostream>\nusing namespace std;\n\nint main() {\n    int a, b;\n    std::cin >> a >> b;\n    std::cout << a + b;\n    return 0;\n}\n```" } />
+    </LBox>
 </main>
 
 <style lang="scss">
