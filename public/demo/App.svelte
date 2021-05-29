@@ -4,6 +4,7 @@
         LButton,
         LInput,
         LLink,
+        LMDContainer,
         LProgress,
         LMessageBar,
         LNumberPicker,
@@ -33,6 +34,8 @@
     
     let switch_demo_value = true;
     let switch_false_demo_value = 0;
+    
+    let md_container_demo_value = "## MD Container Demo\n\n- **LabUI** is _awesome_ `!!!`";
 
     function on_click_demo() {
         alert('Clicked');
@@ -332,6 +335,11 @@
                 <span slot="active_name">Active</span>
             </LSwitch>
         </div>
+    </LBox>
+
+    <LBox>
+        <LMDContainer slot="header" bind:content={ md_container_demo_value } />
+        <LInput slot="body" type="textarea" bind:value={ md_container_demo_value } />
     </LBox>
 </main>
 
