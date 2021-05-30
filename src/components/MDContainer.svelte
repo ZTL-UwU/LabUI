@@ -3,6 +3,7 @@
     import DOMPurify from 'dompurify';
     import hljs from 'highlight.js';
     import '../styles/hljs_ayu.css';
+    import '../styles/markdown.css';
 
     let rmd = new Remarkable({
         highlight: function (str, lang) {
