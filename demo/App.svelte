@@ -12,6 +12,7 @@
         LSwitch,
     } from '../../src/main.js';
     import * as colors from '../../src/scripts/color.js';
+    import * as code_demo from './code_demo.js';
 
     let progress_demo_value = 15;
 
@@ -346,8 +347,10 @@
 
     <LBox>
         <div slot="header">MD Container Code Block</div>
-        <LMDContainer slot="body" content=
-            { "```cpp\n#include <iostream>\nusing namespace std;\n\nint main() {\n    int a = 0, b;\n    std::cin >> a >> b;\n    std::cout << a + b;\n    return 0;\n}\n```" } />
+        <div slot="body">
+            <LMDContainer content={ code_demo.cpp } />
+            <LMDContainer content={ code_demo.css } />
+        </div>
     </LBox>
 </main>
 
