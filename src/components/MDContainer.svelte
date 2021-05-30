@@ -6,6 +6,7 @@
     import '../styles/markdown.css';
 
     let rmd = new Remarkable({
+        typographer: true,
         highlight: function (str, lang) {
             if (lang == 'text' || lang == 'plain') {
                 return str;
@@ -24,7 +25,20 @@
             return '';
         }
     });
-    rmd.inline.ruler.enable(['mark']);
+    rmd.core.ruler.enable([
+        'abbr'
+    ]);
+    rmd.block.ruler.enable([
+        'footnote',
+        'deflist'
+    ]);
+    rmd.inline.ruler.enable([
+        'footnote_inline',
+        'ins',
+        'mark',
+        'sub',
+        'sup'
+    ]);
 
     export let content;
     export let purify = false;
