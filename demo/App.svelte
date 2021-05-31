@@ -345,7 +345,7 @@
         </div>
     </LBox>
 
-    <LBox>
+    <LBox width="800px">
         <div slot="header">MD Container Code Block</div>
         <div slot="body">
             <LMDContainer content={ code_demo.cpp } />

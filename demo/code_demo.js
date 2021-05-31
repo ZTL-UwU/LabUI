@@ -186,9 +186,6 @@ export let markdown = "# Remarkable\n" +
     "\n" +
     "## Images\n" +
     "\n" +
-    "![Minion](https://octodex.github.com/images/minion.png)\n" +
-    "![Stormtroopocat](https://octodex.github.com/images/stormtroopocat.jpg \"The Stormtroopocat\")\n" +
-    "\n" +
     "Like links, Images also have a footnote style syntax\n" +
     "\n" +
     "![Alt text][id]\n" +
