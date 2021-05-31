@@ -2,6 +2,7 @@
 
 A Svelte frontend UI library. [Demo](https://zhangtianli2006.github.io/LabUI/)
 
+![Build](https://img.shields.io/github/workflow/status/zhangtianli2006/LabUI/Build%20and%20Deploy?style=flat-square)
 ![Code Size](https://img.shields.io/github/languages/code-size/zhangtianli2006/LabUI?color=%2323a536&label=Code%20Size&logo=github&style=flat-square)
 ![License](https://img.shields.io/github/license/zhangtianli2006/LabUI?color=%235bb2ec&label=License&style=flat-square)
 ![Version](https://img.shields.io/npm/v/@zhangtianli2006/lab-ui?color=%23f9b705&label=Version&style=flat-square)
@@ -65,6 +66,7 @@ A Svelte frontend UI library. [Demo](https://zhangtianli2006.github.io/LabUI/)
 - Button
 - Input
 - Link
+- MDContainer 🔧
 - MessageBar
 - NumberPicker
 - Progress

@@ -1,4 +1,97 @@
-pre {
+.lb__md-container pre {
     padding: 20px;
     border-radius: 5px;
+}
+
+.lb__md-container code {
+    padding: 5px;
+    border-radius: 5px;
+    background-color: #FAFAFA;
+}
+
+.lb__md-container pre > code {
+    padding: 0;
+    background-color: transparent;
+}
+
+.lb__md-container img {
+    max-width: 100%;
+}
+
+.lb__md-container hr  {
+    border: none;
+    background-color: #dce0e6;
+    height: 3px;
+}
+
+.lb__md-container a {
+    color: #5bb2ec;
+    transition: color 0.5s;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    font-weight: normal;
+}
+
+.lb__md-container a:hover {
+    border-color: #4e92c0;
+    color: #4e92c0;
+}
+
+.lb__md-container a:active {
+    border-color: #407397;
+    color: #407397;
+}
+
+.lb__md-container mark {
+    background-color: #ffe6b7;
+    padding: 0.3em;
+    border-radius: 3px;
+}
+
+.lb__md-container ins {
+    text-decoration: none;
+    border-bottom: 1px solid #000000;
+}
+
+.lb__md-container blockquote {
+    margin-left: 0;
+    margin-right: 0;
+    padding: 5px 10px 5px 15px;
+    border-left: 4px solid #b4b7bc;
+}
+
+.lb__md-container li {
+    margin: 5px 0 5px 0;
+}
+
+.lb__md-container dd {
+    margin: 0;
+    padding: 5px 0 5px 30px;
+}
+
+.lb__md-container table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.lb__md-container th {
+    padding: 15px;
+    border-bottom: 2px solid #8d8f93;
+}
+
+.lb__md-container td {
+    border-top: 1.5px solid #dce0e6;
+    padding: 15px;
+}
+
+.lb__md-container hr {
+    background-color: #b4b7bc;
+    height: 2px;
+    border: none;
+    margin: 20px 0 20px 0;
+}
+
+.lb__md-container thead {
+    background-color: #FAFAFA;
 }

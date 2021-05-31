@@ -58,9 +58,8 @@
 pre {
     display: block;
     overflow-x: auto;
-    background: #FAFAFA;
+    background-color: #FAFAFA;
     color: #575F66;
-    padding: 0.5em;
 
     font-weight: 500;
     font-size: 14px;

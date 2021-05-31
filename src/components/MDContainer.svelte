@@ -50,6 +50,6 @@
     $: rendered = renderer(content, purify, rmd, DOMPurify);
 </script>
 
-<div>
+<div class="lb__md-container">
     {@html rendered}
 </div>
