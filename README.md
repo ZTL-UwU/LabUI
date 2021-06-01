@@ -66,7 +66,7 @@ A Svelte frontend UI library. [Demo](https://zhangtianli2006.github.io/LabUI/)
 - Button
 - Input
 - Link
-- MDContainer 🔧
+- MDContainer
 - MessageBar
 - NumberPicker
 - Progress

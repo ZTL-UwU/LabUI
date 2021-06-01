@@ -1,6 +1,6 @@
 <script>
     import { mix_classes } from '../scripts/utils.js';
-    import { LInput } from '../main';
+    import LInput from './Input.svelte';
 
     export let value = 0;
     export let min = -Infinity;
