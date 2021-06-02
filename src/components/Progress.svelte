@@ -9,6 +9,7 @@
     export let vertical = false;
     export let length = vertical ? '200px' : '300px';
     export let size = 'normal';
+    export let close_on_finish = true;
 
     $: percent = Math.max(Math.min(percent, 100), 0);
     $: progress_color = typeof(color) === 'function' ? color(percent) : color;
@@ -28,7 +29,7 @@
     $: background_style = mix_styles([
         vertical ? `height: ${length}` : `width: ${length}`,
         vertical ? `width: ${thickness}` : `height: ${thickness}`,
-        (type === 'loader' && percent == 100) ? 'display: none' : '',
+        (close_on_finish && type === 'loader' && percent == 100) ? 'display: none' : '',
     ]);
 
     $: background_classes = mix_classes([
