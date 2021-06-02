@@ -41,6 +41,16 @@
     function on_click_demo() {
         alert('Clicked');
     }
+
+    let progress_loader_demo_value = 0;
+    let progress_loader_demo = () => {
+        if (progress_loader_demo_value > 100)
+            return;
+
+        progress_loader_demo_value += 10;
+        setTimeout(progress_loader_demo, Math.random() * 500);
+    }
+    progress_loader_demo();
 </script>
 
 <main>
@@ -122,6 +132,7 @@
         <br>
         <LProgress percent="80" vertical></LProgress>
         <LProgress percent="20" color={ colors.grey } vertical></LProgress>
+        <LProgress size="small" type="loader" percent={ progress_loader_demo_value } color={ colors.blue }></LProgress>
     </div>
 
     <LBox width="800px">
