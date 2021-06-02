@@ -2,6 +2,7 @@
     import {  mix_styles, mix_classes } from '../scripts/utils.js';
     import * as colors from '../scripts/color.js';
 
+    export let type = 'normal';
     export let percent = 50;
     export let show_num = true;
     export let color = colors.blue;
@@ -24,19 +25,25 @@
         large: '12px',
     })[size];
 
-    $: backgroundStyle = mix_styles([
+    $: background_style = mix_styles([
         vertical ? `height: ${length}` : `width: ${length}`,
         vertical ? `width: ${thickness}` : `height: ${thickness}`,
+        (type === 'loader' && percent == 100) ? 'display: none' : '',
     ]);
 
-    $: barStyle = mix_styles([
+    $: background_classes = mix_classes([
+        'progress-background',
+        type === 'loader' ? 'progress-loader' : '',
+    ]);
+
+    $: bar_style = mix_styles([
         vertical ? `height: ${percent}%` : `width: ${percent}%`,
         vertical ? `width: ${thickness}` : `height: ${thickness}`,
         vertical ? `top: ${100 - percent}%` : '',
         `background-color: ${progress_color}`,
     ]);
 
-    $: fontStyle = mix_styles([
+    $: font_style = mix_styles([
         `font-size: ${font_size}`,
     ]);
 
@@ -46,11 +53,11 @@
     ]);
 </script>
 
-<span class="lb__progress-background" style={ backgroundStyle }>
-    <div class={ front_classes } style={ barStyle }>
+<span class={ background_classes } style={ background_style }>
+    <div class={ front_classes } style={ bar_style }>
         {#if show_num}
             <div class="lb__progress-num">
-                <span style={ fontStyle }>{ percent }{#if !vertical}%{/if}</span>
+                <span style={ font_style }>{ percent }{#if !vertical}%{/if}</span>
             </div>
         {/if}
     </div>
@@ -67,6 +74,7 @@
 
         margin-bottom: $gap-tiny;
         text-align: right;
+        transition: $transition-long;
 
         .lb__progress-front {
             line-height: 1;
@@ -93,5 +101,16 @@
                 .lb__progress-num { margin-right: 0; }
             }
         }
+    }
+
+    .lb__progress-loader {
+        width: 100vw !important;
+
+        position: fixed;
+        top: 0;
+        left: 0;
+
+        z-index: $z-index7;
+        transition: $transition-animation;
     }
 </style>
