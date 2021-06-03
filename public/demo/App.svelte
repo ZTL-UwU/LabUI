@@ -2,6 +2,7 @@
     import {
         LBox,
         LButton,
+        LCover,
         LInput,
         LLink,
         LMDContainer,
@@ -51,6 +52,17 @@
         setTimeout(progress_loader_demo, Math.random() * 500);
     }
     progress_loader_demo();
+
+    let show_cover = true;
+    let show_cover_demo = () => {
+        if (progress_loader_demo_value === 100) {
+            show_cover = false;
+            return;
+        }
+
+        setTimeout(show_cover_demo, 0);
+    }
+    show_cover_demo();
 </script>
 
 <main>
@@ -371,6 +383,8 @@
             <LMDContainer content={ code_demo.markdown } />
         </div>
     </LBox>
+
+    <LCover show={ show_cover }></LCover>
 </main>
 
 <style lang="scss">
