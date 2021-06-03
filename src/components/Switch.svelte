@@ -6,17 +6,21 @@
     export let active_value = true;
     export let disabled = false;
 
+    export let on_color = 'blue';
+    export let off_color = 'c_grey1';
+
     $: on = check_on(value, inactive_value, active_value);
 
     $: background_classes = mix_classes([
         'switch-background',
         on ? 'switch-on' : 'switch-off',
+        on ? `switch-color-${on_color}` : `switch-color-${off_color}`,
         disabled ? 'switch-disabled' : '',
     ]);
 
     $: indicator_classes = mix_classes([
         'switch-indicator',
-        on ? 'switch-on' : 'switch-off',
+        on ? 'switch-indicator-on' : 'switch-indicator-off',
     ]);
 
     $: inactive_name_classes = mix_classes([
@@ -93,8 +97,11 @@
             position: relative;
             border-radius: $border-radius-round;
 
-            &.lb__switch-off { background-color: $c_grey1; }
-            &.lb__switch-on { background-color: $blue; }
+            @each $name, $val in $color_map {
+                &.lb__switch-color-#{$name} {
+                    background-color: $val;
+                }
+            }
 
             &.lb__switch-disabled {
                 @include disabled;
@@ -109,7 +116,7 @@
                 position: absolute;
 
                 left: $switch-indicator-margin;
-                &.lb__switch-on {
+                &.lb__switch-indicator-on {
                     margin-left: $switch-width - 2 * $switch-indicator-margin - $switch-indicator-size;
                 }
 

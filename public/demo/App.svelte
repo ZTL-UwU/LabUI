@@ -359,6 +359,7 @@
                 } }
             />
             <code>{ switch_false_demo_value }</code>
+            <LSwitch on_color="green" off_color="red" />
             <LSwitch bind:value={ switch_demo_value } disabled />
             <br>
             <LSwitch bind:value={ switch_demo_value }>
