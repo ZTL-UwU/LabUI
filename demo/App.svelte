@@ -384,7 +384,7 @@
         </div>
     </LBox>
 
-    <LCover show={ show_cover }></LCover>
+    <LCover show={ show_cover } on:click={ on_click_demo }></LCover>
 </main>
 
 <style lang="scss">
