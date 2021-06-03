@@ -39,6 +39,21 @@
 <style lang="scss">
     @import '../styles/main.scss';
 
+    @mixin inner-style($size) {
+        @if $size == "tiny" {
+            padding: 4px;
+        } @else if $size == "small" {
+            min-height: $height-small;
+            min-width: 80px;
+        } @else if $size == "normal" {
+            min-height: $height-normal;
+            min-width: 100px;
+        } @else if $size == "large" {
+            min-height: $height-large;
+            min-width: 120px;
+        }
+    }
+
     .lb__button {
         &.lb__button-no-margin {
             margin: 0;
@@ -62,89 +77,53 @@
 
         &.lb__button-plain {
             color: $grey6;
-
             background-color: $transparent !important;
 
             &:disabled { @include border-normal($grey2); }
-            &.lb__button-blue { @include border-normal($blue2); }
-            &.lb__button-green { @include border-normal($green2); }
-            &.lb__button-yellow { @include border-normal($yellow1); }
-            &.lb__button-grey { @include border-normal($grey1); }
-            &.lb__button-red { @include border-normal($red2); }
+            @each $name, $val in $basic-color-map {
+                &.lb__button-#{$name} {
+                    @include border-normal(map-get($color-map, #{$name}#{map-get($basic-base-id, #{$name}) - 4}));
+                }
+            }
         }
+
         &.lb__button-flat {
             box-shadow: none !important;
             transform: none !important;
         }
 
-        &.lb__button-blue { background-color: $blue; }
-        &.lb__button-green { background-color: $green; }
-        &.lb__button-yellow { background-color: $yellow; }
-        &.lb__button-grey { background-color: $grey; }
-        &.lb__button-red { background-color: $red; }
+        @each $name, $val in $basic-color-map {
+            &.lb__button-#{$name} {
+                background-color: $val;
+            }
+        }
 
-        &.lb__button-tiny {
-            padding: 4px;
-            &.lb__button-plain {
-                &.lb__button-blue { @include height-shadow(4px, $blue3); }
-                &.lb__button-green { @include height-shadow(4px, $green3); }
-                &.lb__button-yellow { @include height-shadow(4px, $yellow2); }
-                &.lb__button-grey { @include height-shadow(4px, $grey2); }
-                &.lb__button-red { @include height-shadow(4px, $red3); }
+        $shadow-height: ("tiny": 4px, "small": 6px, "normal": 8px, "large": 10px);
+        $plain-shadow-height-shift: ("tiny": 0px, "small": -2px, "normal": -2px, "large": -2px);
+
+        @each $size in (tiny, small, normal, large) {
+            &.lb__button-#{$size} {
+                @include inner-style($size);
+                &.lb__button-plain {
+                    @each $name, $val in $basic-color-map {
+                        &.lb__button-#{$name} {
+                            @include height-shadow(
+                                map-get($shadow-height, $size) + map-get($plain-shadow-height-shift, $size),
+                                map-get($color-map, #{$name}#{map-get($basic-base-id, $name) - 3})
+                            );
+                        }
+                    }
+                }
+
+                @each $name, $val in $basic-color-map {
+                    &.lb__button-#{$name} {
+                        @include height-shadow(
+                            map-get($shadow-height, $size),
+                            map-get($color-map, #{$name}#{map-get($basic-base-id, $name) + 1})
+                        );
+                    }
+                }
             }
-            &.lb__button-blue { @include height-shadow(4px, $blue7); }
-            &.lb__button-green { @include height-shadow(4px, $green7); }
-            &.lb__button-yellow { @include height-shadow(4px, $yellow6); }
-            &.lb__button-grey { @include height-shadow(4px, $grey6); }
-            &.lb__button-red { @include height-shadow(4px, $red7); }
-        }
-        &.lb__button-small {
-            min-height: $height-small;
-            min-width: 80px;
-            &.lb__button-plain {
-                &.lb__button-blue { @include height-shadow(4px, $blue3); }
-                &.lb__button-green { @include height-shadow(4px, $green3); }
-                &.lb__button-yellow { @include height-shadow(4px, $yellow2); }
-                &.lb__button-grey { @include height-shadow(4px, $grey2); }
-                &.lb__button-red { @include height-shadow(4px, $red3); }
-            }
-            &.lb__button-blue { @include height-shadow(6px, $blue7); }
-            &.lb__button-green { @include height-shadow(6px, $green7); }
-            &.lb__button-yellow { @include height-shadow(6px, $yellow6); }
-            &.lb__button-grey { @include height-shadow(6px, $grey6); }
-            &.lb__button-red { @include height-shadow(6px, $red7); }
-        }
-        &.lb__button-normal {
-            min-height: $height-normal;
-            min-width: 100px;
-            &.lb__button-plain {
-                &.lb__button-blue { @include height-shadow(6px, $blue3); }
-                &.lb__button-green { @include height-shadow(6px, $green3); }
-                &.lb__button-yellow { @include height-shadow(6px, $yellow2); }
-                &.lb__button-grey { @include height-shadow(6px, $grey2); }
-                &.lb__button-red { @include height-shadow(6px, $red3); }
-            }
-            &.lb__button-green { @include height-shadow(8px, $green7); }
-            &.lb__button-blue { @include height-shadow(8px, $blue7); }
-            &.lb__button-yellow { @include height-shadow(8px, $yellow6); }
-            &.lb__button-grey { @include height-shadow(8px, $grey6); }
-            &.lb__button-red { @include height-shadow(8px, $red7); }
-        }
-        &.lb__button-large {
-            min-height: $height-large;
-            min-width: 120px;
-            &.lb__button-plain {
-                &.lb__button-blue { @include height-shadow(8px, $blue3); }
-                &.lb__button-green { @include height-shadow(8px, $green3); }
-                &.lb__button-yellow { @include height-shadow(8px, $yellow2); }
-                &.lb__button-grey { @include height-shadow(8px, $grey2); }
-                &.lb__button-red { @include height-shadow(8px, $red3); }
-            }
-            &.lb__button-blue { @include height-shadow(10px, $blue7); }
-            &.lb__button-green { @include height-shadow(10px, $green7); }
-            &.lb__button-yellow { @include height-shadow(10px, $yellow6); }
-            &.lb__button-grey { @include height-shadow(10px, $grey6); }
-            &.lb__button-red { @include height-shadow(10px, $red7); }
         }
 
         &:hover {
@@ -152,80 +131,50 @@
 
             &.lb__button-plain {
                 &:disabled { @include border-normal($grey2); }
-                &.lb__button-blue { @include border-normal($blue3); }
-                &.lb__button-green { @include border-normal($green3); }
-                &.lb__button-yellow { @include border-normal($yellow2); }
-                &.lb__button-grey { @include border-normal($grey2); }
-                &.lb__button-red { @include border-normal($red3); }
+                @each $name, $val in $basic-color-map {
+                    &.lb__button-#{$name} {
+                        @include border-normal(map-get($color-map, #{$name}#{map-get($basic-base-id, #{$name}) - 3}));
+                    }
+                }
             }
-            &.lb__button-flat {
-                &.lb__button-blue { background-color: $blue5; }
-                &.lb__button-green { background-color: $green5; }
-                &.lb__button-yellow { background-color: $yellow4; }
-                &.lb__button-grey { background-color: $grey4; }
-                &.lb__button-red { background-color: $red5; }
-            }
-            &.lb__button-blue { background-color: $blue7; }
-            &.lb__button-green { background-color: $green7; }
-            &.lb__button-yellow { background-color: $yellow6; }
-            &.lb__button-grey { background-color: $grey6; }
-            &.lb__button-red { background-color: $red7; }
 
-            &.lb__button-tiny {
-                &.lb__button-plain {
-                    &.lb__button-blue { @include height-shadow(4px, $blue4); }
-                    &.lb__button-green { @include height-shadow(4px, $green4); }
-                    &.lb__button-yellow { @include height-shadow(4px, $yellow3); }
-                    &.lb__button-grey { @include height-shadow(4px, $grey3); }
-                    &.lb__button-red { @include height-shadow(4px, $red4); }
+            &.lb__button-flat {
+                @each $name, $val in $basic-color-map {
+                    &.lb__button-#{$name} {
+                        background-color: map-get($color-map, #{$name}#{map-get($basic-base-id, #{$name}) - 1});
+                    }
                 }
-                &.lb__button-blue { @include height-shadow(4px, $blue8); }
-                &.lb__button-green { @include height-shadow(4px, $green8); }
-                &.lb__button-yellow { @include height-shadow(4px, $yellow7); }
-                &.lb__button-grey { @include height-shadow(4px, $grey7); }
-                &.lb__button-red { @include height-shadow(4px, $red8); }
             }
-            &.lb__button-small {
-                &.lb__button-plain {
-                    &.lb__button-blue { @include height-shadow(4px, $blue4); }
-                    &.lb__button-green { @include height-shadow(4px, $green4); }
-                    &.lb__button-yellow { @include height-shadow(4px, $yellow3); }
-                    &.lb__button-grey { @include height-shadow(4px, $grey3); }
-                    &.lb__button-red { @include height-shadow(4px, $red4); }
+
+            @each $name, $val in $basic-color-map {
+                &.lb__button-#{$name} {
+                    background-color: map-get($color-map, #{$name}#{map-get($basic-base-id, #{$name}) + 1});
                 }
-                &.lb__button-blue { @include height-shadow(6px, $blue8); }
-                &.lb__button-green { @include height-shadow(6px, $green8); }
-                &.lb__button-yellow { @include height-shadow(6px, $yellow7); }
-                &.lb__button-grey { @include height-shadow(6px, $grey7); }
-                &.lb__button-red { @include height-shadow(6px, $red8); }
             }
-            &.lb__button-normal {
-                &.lb__button-plain {
-                    &.lb__button-blue { @include height-shadow(6px, $blue4); }
-                    &.lb__button-green { @include height-shadow(6px, $green4); }
-                    &.lb__button-yellow { @include height-shadow(6px, $yellow3); }
-                    &.lb__button-grey { @include height-shadow(6px, $grey3); }
-                    &.lb__button-red { @include height-shadow(6px, $red4); }
+
+            @each $size in (tiny, small, normal, large) {
+                &.lb__button-#{$size} {
+                    @include inner-style($size);
+                    &.lb__button-plain {
+                        @each $name, $val in $basic-color-map {
+                            &.lb__button-#{$name} {
+                                @include height-shadow(
+                                    map-get($shadow-height, $size) + map-get($plain-shadow-height-shift, $size),
+                                    map-get($color-map, #{$name}#{map-get($basic-base-id, $name) - 2})
+                                );
+                            }
+                        }
+                    }
+
+                    @each $name, $val in $basic-color-map {
+                        &.lb__button-#{$name} {
+                            @include height-shadow(
+                                map-get($shadow-height, $size),
+                                map-get($color-map, #{$name}#{map-get($basic-base-id, $name) + 2})
+                            );
+                        }
+                    }
                 }
-                &.lb__button-blue { @include height-shadow(8px, $blue8); }
-                &.lb__button-green { @include height-shadow(8px, $green8); }
-                &.lb__button-yellow { @include height-shadow(8px, $yellow7); }
-                &.lb__button-grey { @include height-shadow(8px, $grey7); }
-                &.lb__button-red { @include height-shadow(8px, $red8); }
-            }
-            &.lb__button-large {
-                &.lb__button-plain {
-                    &.lb__button-blue { @include height-shadow(8px, $blue4); }
-                    &.lb__button-green { @include height-shadow(8px, $green4); }
-                    &.lb__button-yellow { @include height-shadow(8px, $yellow3); }
-                    &.lb__button-grey { @include height-shadow(8px, $grey3); }
-                    &.lb__button-red { @include height-shadow(8px, $red4); }
-                }
-                &.lb__button-blue { @include height-shadow(10px, $blue8); }
-                &.lb__button-green { @include height-shadow(10px, $green8); }
-                &.lb__button-yellow { @include height-shadow(10px, $yellow7); }
-                &.lb__button-grey { @include height-shadow(10px, $grey7); }
-                &.lb__button-red { @include height-shadow(10px, $red8); }
             }
         }
 
@@ -233,68 +182,36 @@
             transform: translateY(2px);
 
             &.lb__button-flat {
-                &.lb__button-blue { background-color: $blue6; }
-                &.lb__button-green { background-color: $green6; }
-                &.lb__button-yellow { background-color: $yellow5; }
-                &.lb__button-grey { background-color: $grey5; }
-                &.lb__button-red { background-color: $red6; }
+                @each $name, $val in $basic-color-map {
+                    &.lb__button-#{$name} {
+                        background-color: $val;
+                    }
+                }
             }
 
-            &.lb__button-tiny {
-                &.lb__button-plain {
-                    &.lb__button-blue { @include height-shadow(2px, $blue4); }
-                    &.lb__button-green { @include height-shadow(2px, $green4); }
-                    &.lb__button-yellow { @include height-shadow(2px, $yellow3); }
-                    &.lb__button-grey { @include height-shadow(2px, $grey3); }
-                    &.lb__button-red { @include height-shadow(2px, $red4); }
+            @each $size in (tiny, small, normal, large) {
+                &.lb__button-#{$size} {
+                    @include inner-style($size);
+                    &.lb__button-plain {
+                        @each $name, $val in $basic-color-map {
+                            &.lb__button-#{$name} {
+                                @include height-shadow(
+                                    map-get($shadow-height, $size) + map-get($plain-shadow-height-shift, $size) - 2px,
+                                    map-get($color-map, #{$name}#{map-get($basic-base-id, $name) - 2})
+                                );
+                            }
+                        }
+                    }
+
+                    @each $name, $val in $basic-color-map {
+                        &.lb__button-#{$name} {
+                            @include height-shadow(
+                                map-get($shadow-height, $size) - 2px,
+                                map-get($color-map, #{$name}#{map-get($basic-base-id, $name) + 2})
+                            );
+                        }
+                    }
                 }
-                &.lb__button-blue { @include height-shadow(2px, $blue8); }
-                &.lb__button-green { @include height-shadow(2px, $green8); }
-                &.lb__button-yellow { @include height-shadow(2px, $yellow7); }
-                &.lb__button-grey { @include height-shadow(2px, $grey7); }
-                &.lb__button-red { @include height-shadow(2px, $red8); }
-            }
-            &.lb__button-small {
-                &.lb__button-plain {
-                    &.lb__button-blue { @include height-shadow(2px, $blue4); }
-                    &.lb__button-green { @include height-shadow(2px, $green4); }
-                    &.lb__button-yellow { @include height-shadow(2px, $yellow3); }
-                    &.lb__button-grey { @include height-shadow(2px, $grey3); }
-                    &.lb__button-red { @include height-shadow(2px, $red4); }
-                }
-                &.lb__button-blue { @include height-shadow(4px, $blue8); }
-                &.lb__button-green { @include height-shadow(4px, $green8); }
-                &.lb__button-yellow { @include height-shadow(4px, $yellow7); }
-                &.lb__button-grey { @include height-shadow(4px, $grey7); }
-                &.lb__button-red { @include height-shadow(4px, $red8); }
-            }
-            &.lb__button-normal {
-                &.lb__button-plain {
-                    &.lb__button-blue { @include height-shadow(4px, $blue4); }
-                    &.lb__button-green { @include height-shadow(4px, $green4); }
-                    &.lb__button-yellow { @include height-shadow(4px, $yellow3); }
-                    &.lb__button-grey { @include height-shadow(4px, $grey3); }
-                    &.lb__button-red { @include height-shadow(4px, $red4); }
-                }
-                &.lb__button-blue { @include height-shadow(6px, $blue8); }
-                &.lb__button-green { @include height-shadow(6px, $green8); }
-                &.lb__button-yellow { @include height-shadow(6px, $yellow7); }
-                &.lb__button-grey { @include height-shadow(6px, $grey7); }
-                &.lb__button-red { @include height-shadow(6px, $red8); }
-            }
-            &.lb__button-large {
-                &.lb__button-plain {
-                    &.lb__button-blue { @include height-shadow(6px, $blue4); }
-                    &.lb__button-green { @include height-shadow(6px, $green4); }
-                    &.lb__button-yellow { @include height-shadow(6px, $yellow3); }
-                    &.lb__button-grey { @include height-shadow(6px, $grey3); }
-                    &.lb__button-red { @include height-shadow(6px, $red4); }
-                }
-                &.lb__button-blue { @include height-shadow(8px, $blue8); }
-                &.lb__button-green { @include height-shadow(8px, $green8); }
-                &.lb__button-yellow { @include height-shadow(8px, $yellow7); }
-                &.lb__button-grey { @include height-shadow(8px, $grey7); }
-                &.lb__button-red { @include height-shadow(8px, $red8); }
             }
         }
 
@@ -303,7 +220,7 @@
 
             &.lb__button-plain {
                 border-color: $grey2;
-                @include height-shadow(6px, $grey3 !important);
+                @include height-shadow(6px, $grey3);
                 &:hover { border-color: $grey2; }
             }
             &.lb__button-flat {

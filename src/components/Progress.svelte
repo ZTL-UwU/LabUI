@@ -84,7 +84,7 @@
             transition: $transition-long;
             animation: $transition-animation slide-in-horizontal;
 
-            @each $name, $val in $color_map {
+            @each $name, $val in $color-map {
                 &.lb__progress-color-#{$name} {
                     background-color: $val;
                 }

@@ -97,7 +97,7 @@
             position: relative;
             border-radius: $border-radius-round;
 
-            @each $name, $val in $color_map {
+            @each $name, $val in $color-map {
                 &.lb__switch-color-#{$name} {
                     background-color: $val;
                 }
