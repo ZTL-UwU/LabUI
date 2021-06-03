@@ -2,9 +2,9 @@
     import {
         LBox,
         LButton,
-        LCover,
         LInput,
         LLink,
+        LMask,
         LMDContainer,
         LProgress,
         LMessageBar,
@@ -384,7 +384,7 @@
         </div>
     </LBox>
 
-    <LCover show={ show_cover } on:click={ on_click_demo }></LCover>
+    <LMask show={ show_cover } on:click={ on_click_demo }></LMask>
 </main>
 
 <style lang="scss">
