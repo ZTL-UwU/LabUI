@@ -10,7 +10,11 @@
 </script>
 
 {#if show}
-    <div class="lb__cover" style={ cover_styles }></div>
+    <div
+        on:click
+        class="lb__cover"
+        style={ cover_styles }
+    ></div>
 {/if}
 
 <style lang="scss">

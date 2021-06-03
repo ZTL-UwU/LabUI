@@ -30,6 +30,7 @@
         vertical ? `height: ${length}` : `width: ${length}`,
         vertical ? `width: ${thickness}` : `height: ${thickness}`,
         (close_on_finish && type === 'loader' && percent == 100) ? 'display: none' : '',
+        type === 'loader' ? 'background: transparent' : '',
     ]);
 
     $: background_classes = mix_classes([
