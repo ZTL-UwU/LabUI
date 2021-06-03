@@ -1,5 +1,5 @@
 <script>
-    import {  mix_styles, mix_classes } from '../scripts/utils.js';
+    import {  mix_styles, mix_classes, color_mask } from '../scripts/utils.js';
     import * as colors from '../scripts/color.js';
 
     export let type = 'normal';
@@ -12,7 +12,7 @@
     export let close_on_finish = true;
 
     $: percent = Math.max(Math.min(percent, 100), 0);
-    $: progress_color = typeof(color) === 'function' ? color(percent) : color;
+    $: progress_color = color_mask(typeof(color) === 'function' ? color(percent) : color);
 
     const thickness = ({
         small: '5px',

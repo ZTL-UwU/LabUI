@@ -131,7 +131,7 @@
         <LProgress size="large"></LProgress>
         <br>
         <LProgress percent="80" vertical></LProgress>
-        <LProgress percent="20" color={ colors.grey } vertical></LProgress>
+        <LProgress percent="20" color="grey" vertical></LProgress>
         <LProgress size="small" type="loader" percent={ progress_loader_demo_value } color={ colors.blue }></LProgress>
     </div>
 
