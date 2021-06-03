@@ -14,7 +14,7 @@
     import * as colors from '../../src/scripts/color.js';
     import * as code_demo from './code_demo.js';
 
-    let progress_demo_value = 15;
+    let progress_demo_value = 10;
 
     let input_demo_value = 'Input Demo';
     let input_handle_demo_value = '';
@@ -121,7 +121,13 @@
     <div class="item-20">
         <h1>Progress Bars</h1>
         <div class="item-30">
-            <LProgress bind:percent={ progress_demo_value }></LProgress>
+            <LProgress bind:percent={ progress_demo_value } color={ (percent) => {
+                if (percent <= 10) { return 'grey'; }
+                if (percent <= 30) { return 'red'; }
+                if (percent <= 50) { return 'yellow'; }
+                if (percent <= 70) { return 'blue'; }
+                return 'green';
+            } }></LProgress>
             <LNumberPicker bind:value={ progress_demo_value } step="5" button_position="right" min="0" max="100" />
         </div>
         <LProgress size="small" color={ colors.red } percent="10"></LProgress>
@@ -132,6 +138,7 @@
         <br>
         <LProgress percent="80" vertical></LProgress>
         <LProgress percent="20" color="grey" vertical></LProgress>
+        <LProgress size="small" percent="50" color="yellow" vertical></LProgress>
         <LProgress size="small" type="loader" percent={ progress_loader_demo_value } color={ colors.blue }></LProgress>
     </div>
 
