@@ -12,7 +12,6 @@
         LRadio,
         LSwitch,
     } from '../../src/main.js';
-    import * as colors from '../../src/scripts/color.js';
     import * as code_demo from './code_demo.js';
 
     let progress_demo_value = 10;
@@ -142,16 +141,16 @@
             } }></LProgress>
             <LNumberPicker bind:value={ progress_demo_value } step="5" button_position="right" min="0" max="100" />
         </div>
-        <LProgress size="small" color={ colors.red } percent="10"></LProgress>
+        <LProgress size="small" color="red" percent="10"></LProgress>
         <br>
-        <LProgress color={ colors.green } percent="100" length="400px"></LProgress>
+        <LProgress color="green" percent="100" length="400px"></LProgress>
         <br>
         <LProgress size="large"></LProgress>
         <br>
         <LProgress percent="80" vertical></LProgress>
         <LProgress percent="20" color="grey" vertical></LProgress>
         <LProgress size="small" percent="50" color="yellow" vertical></LProgress>
-        <LProgress size="small" type="loader" percent={ progress_loader_demo_value } color={ colors.blue }></LProgress>
+        <LProgress size="small" type="loader" percent={ progress_loader_demo_value } color="blue"></LProgress>
     </div>
 
     <LBox width="800px">
@@ -163,7 +162,7 @@
                 <span slot="title">Message</span>
                 <span slot="content">
                     More to describe ...
-                    <LProgress color={ colors.yellow } percent="30" length="720px" />
+                    <LProgress color="yellow" percent="30" length="720px" />
                 </span>
             </LMessageBar>
             <LMessageBar

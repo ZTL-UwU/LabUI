@@ -1,18 +1,17 @@
 <script>
-    import {  mix_styles, mix_classes, color_mask } from '../scripts/utils.js';
-    import * as colors from '../scripts/color.js';
+    import {  mix_styles, mix_classes } from '../scripts/utils.js';
 
     export let type = 'normal';
     export let percent = 50;
     export let show_num = true;
-    export let color = colors.blue;
+    export let color = 'blue';
     export let vertical = false;
     export let length = vertical ? '200px' : '300px';
     export let size = 'normal';
     export let close_on_finish = true;
 
     $: percent = Math.max(Math.min(percent, 100), 0);
-    $: progress_color = color_mask(typeof(color) === 'function' ? color(percent) : color);
+    $: progress_color = typeof(color) === 'function' ? color(percent) : color;
 
     const thickness = ({
         small: '5px',
@@ -42,7 +41,6 @@
         vertical ? `height: ${percent}%` : `width: ${percent}%`,
         vertical ? `width: ${thickness}` : `height: ${thickness}`,
         vertical ? `top: ${100 - percent}%` : '',
-        `background-color: ${progress_color}`,
     ]);
 
     $: font_style = mix_styles([
@@ -52,6 +50,7 @@
     $: front_classes = mix_classes([
         'progress-front',
         vertical ? 'progress-front-vertical' : '',
+        `progress-color-${progress_color}`
     ]);
 </script>
 
@@ -81,10 +80,15 @@
         .lb__progress-front {
             line-height: 1;
             border-radius: $border-radius-round;
-            background-color: $green;
 
             transition: $transition-long;
             animation: $transition-animation slide-in-horizontal;
+
+            @each $name, $val in $color_map {
+                &.lb__progress-color-#{$name} {
+                    background-color: $val;
+                }
+            }
 
             .lb__progress-num {
                 @include v-center;
