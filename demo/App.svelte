@@ -150,7 +150,7 @@
         <LProgress percent="80" vertical></LProgress>
         <LProgress percent="20" color="grey" vertical></LProgress>
         <LProgress size="small" percent="50" color="yellow" vertical></LProgress>
-        <LProgress size="small" type="loader" percent={ progress_loader_demo_value } color="blue"></LProgress>
+        <LProgress size="tiny" type="loader" percent={ progress_loader_demo_value } color="blue"></LProgress>
     </div>
 
     <LBox width="800px">
