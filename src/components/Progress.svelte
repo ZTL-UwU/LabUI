@@ -14,6 +14,7 @@
     $: progress_color = typeof(color) === 'function' ? color(percent) : color;
 
     const thickness = ({
+        tiny: '2px',
         small: '5px',
         normal: '15px',
         large: '20px',

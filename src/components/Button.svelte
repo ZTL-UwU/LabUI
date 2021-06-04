@@ -187,6 +187,14 @@
                         background-color: $val;
                     }
                 }
+
+                &.lb__button-plain {
+                    @each $name, $val in $basic-color-map {
+                        &.lb__button-#{$name} {
+                            @include border-normal(map-get($color-map, #{$name}#{map-get($basic-base-id, #{$name}) - 2}));
+                        }
+                    }
+                }
             }
 
             @each $size in (tiny, small, normal, large) {
