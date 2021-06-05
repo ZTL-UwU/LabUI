@@ -6,9 +6,10 @@
         LLink,
         LMask,
         LMDContainer,
-        LProgress,
         LMessageBar,
+        LNotification,
         LNumberPicker,
+        LProgress,
         LRadio,
         LSwitch,
     } from '../../src/main.js';
@@ -119,7 +120,7 @@
         <LButton flat disabled>Flat Disabled</LButton>
         <LButton flat plain disabled>Flat Plain Disabled</LButton>
     </div>
-
+    
     <div class="item-20">
         <h2>Round</h2>
         <LButton round flat color="blue">R</LButton>
@@ -367,6 +368,24 @@
             </LSwitch>
         </div>
     </LBox>
+
+    <div class="item-20">
+        <h2>Notification</h2>
+        <LNotification content="1">
+            <LButton flat color="blue">Button</LButton>
+        </LNotification>
+        <LNotification content="999" color="green">
+            <LButton color="yellow">Button</LButton>
+        </LNotification>
+        <br>
+        <LNotification content="new">
+            <LBox noheader><span slot="body">Box</span></LBox>
+        </LNotification>
+        <br>
+        <LNotification dot>
+            <LButton flat>Button</LButton>
+        </LNotification>
+    </div>
 
     <LBox noheader>
         <div slot="body">
