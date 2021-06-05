@@ -148,6 +148,8 @@
         <br>
         <LProgress size="large"></LProgress>
         <br>
+        <LProgress color="grey" show_num={ false } percent="80"></LProgress>
+        <br>
         <LProgress percent="80" vertical></LProgress>
         <LProgress percent="20" color="grey" vertical></LProgress>
         <LProgress size="small" percent="50" color="yellow" vertical></LProgress>
