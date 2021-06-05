@@ -407,9 +407,15 @@
 </main>
 
 <style lang="scss">
-    main {
+    body {
         background-color: #FAFAFE;
-        padding: 50px 200px 50px 200px;
+    }
+
+    main {
+        padding: 50px 20px 50px 20px;
+        max-width: 1400px;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .item-30 {
