@@ -58,6 +58,12 @@ A Svelte frontend UI library. [Demo](https://zhangtianli2006.github.io/LabUI/)
 
 ## Development
 
+### Tested on
+
+|Firefox|Chrome|Edge|Opera|
+|:-:|:-:|:-:|:-:|
+| ![Firefox](https://raw.fastgit.org/alrra/browser-logos/main/src/firefox/firefox_64x64.png) | ![Chrome](https://raw.fastgit.org/alrra/browser-logos/main/src/chrome/chrome_64x64.png) | ![Edge](https://raw.fastgit.org/alrra/browser-logos/main/src/edge/edge_64x64.png) | ![Opera](https://raw.fastgit.org/alrra/browser-logos/main/src/opera/opera_64x64.png) |
+
 ### Progress
 
 **Done**:
