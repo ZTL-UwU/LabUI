@@ -17,6 +17,8 @@ jobs:
           npm install
           npm run build
 
+          cp -r ./src/styles/fonts ./public/build/
+
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@4.1.1
         with:
