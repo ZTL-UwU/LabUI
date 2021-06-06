@@ -123,12 +123,12 @@
     <span class={ classes }>
         {#if button_position === 'both'}
             <span class={ minus_button_classes } on:click={ handleMinus }>
-                <span class="lb__number-picker-button-inner">-</span>
+                <span class="lb__number-picker-button-inner"><i class="ti ti-minus"></i></span>
             </span>
         {:else if button_position === 'left'}
             <span class={ stacked_button_classes }>
-                <div class={ stacked_button_add_classes } on:click={ handleAdd }>+</div>
-                <div class={ stacked_button_minus_classes } on:click={ handleMinus }>-</div>
+                <div class={ stacked_button_add_classes } on:click={ handleAdd }><i class="ti ti-chevron-up"></i></div>
+                <div class={ stacked_button_minus_classes } on:click={ handleMinus }><i class="ti ti-chevron-down"></i></div>
             </span>
         {/if}
         <span class="lb__number-picker-input">
@@ -143,12 +143,12 @@
         </span>
         {#if button_position === 'both'}
             <span class={ add_button_classes } on:click={ handleAdd }>
-                <span class="lb__number-picker-button-inner">+</span>
+                <span class="lb__number-picker-button-inner"><i class="ti ti-plus"></i></span>
             </span>
         {:else if button_position === 'right'}
             <span class={ stacked_button_classes }>
-                <div class={ stacked_button_add_classes } on:click={ handleAdd }>+</div>
-                <div class={ stacked_button_minus_classes } on:click={ handleMinus }>-</div>
+                <div class={ stacked_button_add_classes } on:click={ handleAdd }><i class="ti ti-chevron-up"></i></div>
+                <div class={ stacked_button_minus_classes } on:click={ handleMinus }><i class="ti ti-chevron-down"></i></div>
             </span>
         {/if}
     </span>
@@ -221,12 +221,14 @@
         width: 38px;
         background-color: $white3;
         border: 1px solid $border1;
+
         &.lb__number-picker-button-left {
             border-top-left-radius: $border-radius-normal;
             border-bottom-left-radius: $border-radius-normal;
             margin: -4px 0 0 0px;
             left: -40px;
         }
+
         &.lb__number-picker-button-right {
             border-top-right-radius: $border-radius-normal;
             border-bottom-right-radius: $border-radius-normal;
