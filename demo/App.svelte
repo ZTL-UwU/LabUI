@@ -316,7 +316,7 @@
         <span slot="header">Links</span>
         <div slot="body">
             <div class="item-10">
-                <LLink href="https://github.com/zhangtianli2006/LabUI">🔗 Link to GitHub repo</LLink>
+                <LLink href="https://github.com/zhangtianli2006/LabUI"><i class="ti ti-link"></i> Link to GitHub repo</LLink>
                 <br>
                 <LLink on:click={on_click_demo}>👇🏼 Catch on:click</LLink>
             </div>
