@@ -211,8 +211,9 @@
 
     <div class="item-20">
         <h2>Boxes</h2>
-        <LBox>
+        <LBox foldable>
             <span slot="header">Header</span>
+            <LLink slot="header-suffix">Header Suffix</LLink>
             <div slot="body">
                 <LMessageBar color="green"><span slot="title">Message</span></LMessageBar>
                 Body
