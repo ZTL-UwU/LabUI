@@ -1,9 +1,13 @@
 <script>
     import { mix_classes, mix_styles } from '../scripts/utils.js';
+	import { fade } from 'svelte/transition';
 
     export let noheader = false;
     export let flat = true;
     export let width = '500px';
+    export let folded = false;
+    export let foldable = false;
+    export let handle_fold = (old_state) => { return !old_state; };
 
     $: classes = mix_classes([
         'box',
@@ -13,20 +17,48 @@
     $: styles = mix_styles([
         width === '' ? '' : `width: ${width}`,
     ]);
+
+    $: header_classes = mix_classes([
+        'box-header',
+    ]);
+
+    $: body_classes = mix_classes([
+        'box-body',
+        noheader ? '' : 'box-has-header',
+    ]);
+
+    const HandleFold = () => {
+        folded = handle_fold(folded);
+    };
 </script>
 
 <div
-    class={classes}
-    style={styles}
+    class={ classes }
+    style={ styles }
 >
-    {#if !noheader}
-        <div class="lb__box-header">
+    {#if !noheader }
+        <div class={ header_classes }>
             <slot name="header" />
+            <span class="lb__box-header-suffix">
+                <slot name="header-suffix" />
+                {#if foldable }
+                    <span on:click={ HandleFold }>
+                        {#if folded }
+                            <i class="ti ti-chevron-down"></i>
+                        {:else}
+                            <i class="ti ti-chevron-up"></i>
+                        {/if}
+                    </span>
+                {/if}
+            </span>
         </div>
     {/if}
-    <div class="lb__box-body">
-        <slot name="body" />
-    </div>
+
+    {#if !folded }
+        <div class={ body_classes } transition:fade="{{ duration: 100 }}">
+            <slot name="body" />
+        </div>
+    {/if}
 </div>
 
 <style lang="scss">
@@ -45,10 +77,15 @@
             @include title1;
             padding: $box-inner-padding;
 
-            @include border-bottom-normal($border1);
+            .lb__box-header-suffix {
+                float: right;
+            }
         }
 
         .lb__box-body {
+            &.lb__box-has-header {
+                border-top: $border-normal solid $border1;
+            }
             padding: $box-inner-padding;
         }
 
