@@ -42,7 +42,7 @@
             <span class="lb__box-header-suffix">
                 <slot name="header-suffix" />
                 {#if foldable }
-                    <span on:click={ HandleFold }>
+                    <span on:click={ HandleFold } class="lb__box-header-suffix-fold-button">
                         {#if folded }
                             <i class="ti ti-chevron-down"></i>
                         {:else}
@@ -79,6 +79,10 @@
 
             .lb__box-header-suffix {
                 float: right;
+
+                .lb__box-header-suffix-fold-button {
+                    @include span-button;
+                }
             }
         }
 
