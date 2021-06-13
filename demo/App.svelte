@@ -211,7 +211,7 @@
 
     <div class="item-20">
         <h2>Boxes</h2>
-        <LBox foldable>
+        <LBox foldable closable>
             <span slot="header">Header</span>
             <LLink slot="header-suffix">Header Suffix</LLink>
             <div slot="body">
