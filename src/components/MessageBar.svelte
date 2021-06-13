@@ -1,5 +1,6 @@
 <script>
     import { createEventDispatcher } from 'svelte';
+	import { fly, fade } from 'svelte/transition';
 
     import { mix_styles } from '../scripts/utils';
     import * as colors from '../scripts/color.js';
@@ -67,6 +68,7 @@
     <div
         style={ styles }
         class="lb__message-bar"
+        in:fly="{{ y: 10, duration: 100 }}" out:fade="{{ duration: 100 }}"
     >
         <div class="lb__msg-bar-title-holder">
             <div>
