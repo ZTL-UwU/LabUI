@@ -100,9 +100,12 @@
         .lb__box-header {
             @include title1;
             padding: $box-inner-padding;
+            position: relative;
 
             .lb__box-header-suffix {
-                float: right;
+                position: absolute;
+                right: $box-inner-padding;
+                top: $box-inner-padding;
 
                 .lb__box-header-suffix-fold-button,
                 .lb__box-header-suffix-close-button {

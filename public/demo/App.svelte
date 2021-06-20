@@ -157,7 +157,7 @@
         <LProgress size="tiny" type="loader" percent={ progress_loader_demo_value } color="blue"></LProgress>
     </div>
 
-    <LBox width="800px">
+    <LBox width="800px" foldable>
         <span slot="header">
             Message Bars
         </span>
@@ -401,8 +401,8 @@
         </div>
     </LBox>
 
-    <LBox width="800px">
-        <div slot="header">MD Container Code Block</div>
+    <LBox width="800px" foldable folded="true">
+        <div slot="header">MD Container</div>
         <div slot="body">
             <LMDContainer content={ code_demo.cpp } />
             <LMDContainer content={ code_demo.css } />
