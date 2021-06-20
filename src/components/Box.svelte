@@ -3,6 +3,7 @@
 	import { fade } from 'svelte/transition';
 
     export let noheader = false;
+    export let has_suffix = false;
     export let show = true;
     export let flat = true;
     export let width = '500px';
@@ -43,6 +44,7 @@
 <div
     class={ classes }
     style={ styles }
+    transition:fade="{{ duration: 100 }}"
 >
     {#if !noheader }
         <div class={ header_classes }>
@@ -72,6 +74,12 @@
         <div class={ body_classes } transition:fade="{{ duration: 100 }}">
             <slot name="body" />
         </div>
+
+        {#if has_suffix}
+            <div class="lb__box-suffix" transition:fade="{{ duration: 100 }}">
+                <slot name="suffix" />
+            </div>
+        {/if}
     {/if}
 </div>
 {/if}
@@ -81,6 +89,7 @@
 
     .lb__box {
         $box-inner-padding: 15px;
+        $box-inner-padding-small: 10px;
         $box-margin-bottom: 10px;
 
         border-radius: $border-radius-large;
@@ -107,6 +116,11 @@
                 border-top: $border-normal solid $border1;
             }
             padding: $box-inner-padding;
+        }
+
+        .lb__box-suffix {
+            border-top: $border-small solid $border1;
+            padding: $box-inner-padding-small $box-inner-padding $box-inner-padding-small $box-inner-padding;
         }
 
         margin-bottom: $box-margin-bottom;

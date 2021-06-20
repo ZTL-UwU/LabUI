@@ -211,12 +211,15 @@
 
     <div class="item-20">
         <h2>Boxes</h2>
-        <LBox foldable closable>
+        <LBox foldable closable has_suffix>
             <span slot="header">Header</span>
             <LLink slot="header-suffix">Header Suffix</LLink>
             <div slot="body">
                 <LMessageBar color="green"><span slot="title">Message</span></LMessageBar>
                 Body
+            </div>
+            <div slot="suffix">
+                <LProgress percent="27" length="100%"></LProgress>
             </div>
         </LBox>
         <LBox noheader flat={ false } width="600px">

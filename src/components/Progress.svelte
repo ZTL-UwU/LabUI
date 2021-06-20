@@ -74,7 +74,6 @@
         border-radius: $border-radius-round;
         background-color: $c_grey1;
 
-        margin-bottom: $gap-tiny;
         text-align: right;
         transition: $transition-long;
 
