@@ -2,6 +2,7 @@
     import {
         LBox,
         LButton,
+        LIcon,
         LInput,
         LLink,
         LMask,
@@ -163,6 +164,7 @@
         </span>
         <div slot="body">
             <LMessageBar color="green">
+                <LIcon name="message" slot="icon"></LIcon>
                 <span slot="title">Message</span>
                 <span slot="content">
                     More to describe ...
@@ -177,7 +179,7 @@
                     return false;
                 } }
             >
-                <i class="ti ti-circle-x" slot="icon"></i>
+                <LIcon name="circle-x" slot="icon"></LIcon>
                 <span slot="title">Error</span>
                 <span slot="content">Custom close handling.</span>
             </LMessageBar>
@@ -322,7 +324,7 @@
         <span slot="header">Links</span>
         <div slot="body">
             <div class="item-10">
-                <LLink href="https://github.com/zhangtianli2006/LabUI"><i class="ti ti-link"></i> Link to GitHub repo</LLink>
+                <LLink href="https://github.com/zhangtianli2006/LabUI"><LIcon name="link"></LIcon> Link to GitHub repo</LLink>
                 <br>
                 <LLink on:click={on_click_demo}>👇🏼 Catch on:click</LLink>
             </div>
