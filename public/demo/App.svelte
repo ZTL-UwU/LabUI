@@ -177,6 +177,7 @@
                     return false;
                 } }
             >
+                <i class="ti ti-circle-x" slot="icon"></i>
                 <span slot="title">Error</span>
                 <span slot="content">Custom close handling.</span>
             </LMessageBar>
@@ -222,7 +223,7 @@
                 <LProgress percent="27" length="100%"></LProgress>
             </div>
         </LBox>
-        <LBox noheader flat={ false } width="600px">
+        <LBox no_header flat={ false } width="600px">
             <div slot="body">3D Boxes</div>
         </LBox>
     </div>
@@ -386,7 +387,7 @@
         </LNotification>
         <br>
         <LNotification content="new">
-            <LBox noheader><span slot="body">Box</span></LBox>
+            <LBox no_header><span slot="body">Box</span></LBox>
         </LNotification>
         <br>
         <LNotification dot>
@@ -394,7 +395,7 @@
         </LNotification>
     </div>
 
-    <LBox noheader>
+    <LBox no_header>
         <div slot="body">
             <LMDContainer bind:content={ md_container_demo_value } />
             <LInput type="textarea" bind:value={ md_container_demo_value } />

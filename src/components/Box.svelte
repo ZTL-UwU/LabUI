@@ -2,7 +2,7 @@
     import { mix_classes, mix_styles } from '../scripts/utils.js';
 	import { fade } from 'svelte/transition';
 
-    export let noheader = false;
+    export let no_header = false;
     export let has_suffix = false;
     export let show = true;
     export let flat = true;
@@ -28,7 +28,7 @@
 
     $: body_classes = mix_classes([
         'box-body',
-        noheader ? '' : 'box-has-header',
+        no_header ? '' : 'box-has-header',
     ]);
 
     const HandleFold = () => {
@@ -46,7 +46,7 @@
     style={ styles }
     transition:fade="{{ duration: 100 }}"
 >
-    {#if !noheader }
+    {#if !no_header }
         <div class={ header_classes }>
             <slot name="header" />
             <span class="lb__box-header-suffix">
