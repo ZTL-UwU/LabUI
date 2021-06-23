@@ -92,6 +92,6 @@ npm run dev
 
 ## Contributing [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 
-## Demo Snapshot (2021-7-23)
+## Demo Snapshot (2021-6-23)
 
-![Demo 2021-7-23](https://z3.ax1x.com/2021/06/23/RneJ9s.png)
+![Demo 2021-6-23](https://z3.ax1x.com/2021/06/23/RneJ9s.png)
