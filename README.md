@@ -66,18 +66,19 @@ A Svelte frontend UI library. [Demo](https://zhangtianli2006.github.io/LabUI/)
 
 ### Progress
 
-**Done**:
-
-- Box
-- Button
-- Input
-- Link
-- MDContainer
-- MessageBar
-- NumberPicker
-- Progress
-- Radio
-- Switch
+- [x] Box
+- [x] Button
+- [x] Icon
+- [x] Input
+- [ ] Link
+- [x] Mask
+- [x] MDContainer
+- [x] MessageBar
+- [x] Notification
+- [x] NumberPicker
+- [x] Progress
+- [x] Radio
+- [x] Switch
 
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/zhangtianli2006/LabUI)
 
@@ -91,6 +92,6 @@ npm run dev
 
 ## Contributing [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 
-## Demo Snapshot (2021-6-5)
+## Demo Snapshot (2021-7-23)
 
-![Demo 2021-6-5](https://z3.ax1x.com/2021/06/05/2NleL4.png)
+![Demo 2021-7-23](https://z3.ax1x.com/2021/06/23/RneJ9s.png)
