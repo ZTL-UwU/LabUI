@@ -12,6 +12,7 @@
         LNumberPicker,
         LProgress,
         LRadio,
+        LRating,
         LSwitch,
     } from '../../src/main.js';
     import * as code_demo from './code_demo.js';
@@ -24,7 +25,7 @@
     let input_disabled_demo_value = 'Disabled Input Demo';
     let textarea_demo_value = 'Text Area Demo';
     let input_limited_demo_value = '';
-    
+
     let radio_demo_value = '1';
     let radio_disabled_demo_value = '2';
 
@@ -33,12 +34,13 @@
     let number_picker_step_demo_value = 0.5;
     let number_picker_3D_demo_value = 0;
     let number_picker_position_right_demo_value = 0;
-    let number_picker_rating_demo_value = 0;
-    let number_picker_rating_rating_array_demo_value = 0;
-    
+    let rating_demo_value = 0;
+
+    let rating_array_demo_value = 'bad';
+
     let switch_demo_value = true;
     let switch_false_demo_value = 0;
-    
+
     let md_container_demo_value = "## MD Container Demo\n\n- **LabUI** is _awesome_ `!!!`";
 
     function on_click_demo() {
@@ -300,24 +302,25 @@
             <LNumberPicker button_position="left" bind:value={ number_picker_position_right_demo_value } max="3" />
         </div>
         <div class="item-10">
-            <h3>Rating</h3>
-            <div>
-                <LNumberPicker bind:value={ number_picker_rating_demo_value } type="rating" max="5" />
-                <code>{ number_picker_rating_demo_value }</code>
-            </div>
-            <LNumberPicker
-                bind:value={ number_picker_rating_rating_array_demo_value }
-                type="rating"
-                rating_array={[10, 20, 30, 40, 50]}
-            />
-            <code>{ number_picker_rating_rating_array_demo_value }</code>
-        </div>
-        <div class="item-10">
             <h3>Disabled</h3>
             <LNumberPicker disabled />
             <LNumberPicker button_position="right" disabled />
-            <LNumberPicker type="rating" max="5" disabled />
         </div>
+    </div>
+
+    <div class="item-10">
+        <h2>Rating</h2>
+        <div>
+            <LRating bind:value={ rating_demo_value } max="5" />
+            <code>{ rating_demo_value }</code>
+        </div>
+        <LRating
+            bind:value={ rating_array_demo_value }
+            rating_array={['bad', 'just so so', 'great', 'excellent', 'the best']}
+        />
+        <code>{ rating_array_demo_value }</code>
+        <br>
+        <LRating bind:value={ rating_demo_value } max="5" disabled />
     </div>
 
     <LBox>
