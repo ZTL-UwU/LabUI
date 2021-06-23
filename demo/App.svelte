@@ -321,8 +321,10 @@
         <code>{ rating_array_demo_value }</code>
         <br>
         <LRating bind:value={ rating_demo_value } max="5" disabled />
+        <h3>Read Only</h3>
+        <LRating read_only value=2.5 />
     </div>
-
+    
     <LBox>
         <span slot="header">Links</span>
         <div slot="body">
