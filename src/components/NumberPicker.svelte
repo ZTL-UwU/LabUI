@@ -11,13 +11,6 @@
     export let type = 'normal';
     export let disabled = false;
 
-    export let rating_array = [];
-    if (rating_array.length === 0 && parseInt(max) !== Infinity) {
-        for (let i = 1; i <= parseInt(max); i += 1) {
-            rating_array.push(i);
-        }
-    }
-
     export let handle_minus = (value, min, max, step) => {
         const val = value;
         return val <= min ? val : val - step;
@@ -37,10 +30,6 @@
         button_position === 'right' ? 'number-picker-position-right' : '',
         button_position === 'left' ? 'number-picker-position-left' : '',
         flat ? '' : 'number-picker-3D',
-    ]);
-
-    $: rating_classes = mix_classes([
-        disabled ? 'number-picker-disabled' : '',
     ]);
 
     $: minus_button_classes = mix_classes([
@@ -74,14 +63,6 @@
         disabled ? 'number-picker-disabled' : '',
     ]);
 
-    $: handleRatingClasses = (index) => {
-        return mix_classes([
-            'number-picker-rating-indicator',
-            disabled ? 'number-picker-disabled' : '',
-            index > value ? 'number-picker-rating-indicator-off' : '',
-        ]);
-    };
-
     const handle_input = (event, is_limited, limit, value) => {
         let res = null;
         if (!is_limited || event.target.value.length <= limit) {
@@ -106,15 +87,10 @@
             value = handle_minus(parseFloat(value), parseFloat(min), parseFloat(max), parseFloat(step));
         }
     };
+
     const handleAdd = () => {
         if (!disabled) {
             value = handle_add(parseFloat(value), parseFloat(min), parseFloat(max), parseFloat(step));
-        }
-    };
-
-    const handleRatingClick = (index) => {
-        if (!disabled) {
-            value = index;
         }
     };
 </script>
@@ -151,15 +127,6 @@
                 <div class={ stacked_button_minus_classes } on:click={ handleMinus }><i class="ti ti-chevron-down"></i></div>
             </span>
         {/if}
-    </span>
-{:else if type === 'rating'}
-    <span class={ rating_classes }>
-        {#each rating_array as index}
-            <span
-                class={ handleRatingClasses(index) }
-                on:click={ handleRatingClick(index) }
-            />
-        {/each}
     </span>
 {/if}
 
@@ -252,33 +219,8 @@
         cursor: not-allowed !important;
         background-color: $c_grey1;
     }
+
     .lb__number-picker-disabled {
         cursor: not-allowed !important;
-    }
-
-    .lb__number-picker-rating-indicator {
-        @include border-tiny($transparent);
-        $rating-indicator-size: $height-tiny;
-        @include span-button;
-
-        display: inline-block;
-        height: $rating-indicator-size;
-        width: $rating-indicator-size;
-
-        margin-right: $gutter-normal;
-        border-radius: $border-radius-round;
-        transition: $transition-normal;
-
-        &:hover {
-            &.lb__number-picker-disabled {
-                border-color: $transparent;
-            }
-            border-color: $yellow3;
-        }
-
-        background-color: $yellow3;
-        &.lb__number-picker-rating-indicator-off {
-            background-color: $c_grey1;
-        }
     }
 </style>

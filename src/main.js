@@ -10,6 +10,7 @@ import Notification from './components/Notification.svelte';
 import NumberPicker from './components/NumberPicker.svelte';
 import Progress     from './components/Progress.svelte';
 import Radio        from './components/Radio.svelte';
+import Rating       from './components/Rating.svelte';
 import Switch       from './components/Switch.svelte';
 
 export {
@@ -25,5 +26,6 @@ export {
     NumberPicker as LNumberPicker,
     Progress     as LProgress,
     Radio        as LRadio,
+    Rating       as LRating,
     Switch       as LSwitch,
 };
