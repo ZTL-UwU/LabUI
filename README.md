@@ -78,6 +78,7 @@ A Svelte frontend UI library. [Demo](https://zhangtianli2006.github.io/LabUI/)
 - [x] NumberPicker
 - [x] Progress
 - [x] Radio
+- [ ] Rating
 - [x] Switch
 
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/zhangtianli2006/LabUI)

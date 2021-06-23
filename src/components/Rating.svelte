@@ -12,6 +12,11 @@
         }
     }
 
+    export let handle_comp = (index, value, rating_array) => {
+        console.log(rating_array.indexOf(index), value, rating_array.indexOf(value));
+        return rating_array.indexOf(index) <= rating_array.indexOf(value);
+    };
+
     const handleRatingClick = (index) => {
         if (!disabled) {
             value = index;
@@ -26,7 +31,7 @@
         return mix_classes([
             'number-picker-rating-indicator',
             disabled ? 'number-picker-disabled' : '',
-            index > value ? 'number-picker-rating-indicator-off' : '',
+            handle_comp(index, value, rating_array) ? 'number-picker-rating-indicator-on' : 'number-picker-rating-indicator-off',
         ]);
     };
 </script>
@@ -44,8 +49,8 @@
     @import '../styles/main.scss';
 
     .lb__number-picker-rating-indicator {
-        @include border-tiny($transparent);
-        $rating-indicator-size: $height-tiny;
+        @include border-small($transparent);
+        $rating-indicator-size: $height-tiny - 2px;
         @include span-button;
 
         display: inline-block;
@@ -65,6 +70,9 @@
                 border-color: $transparent;
             }
             border-color: $yellow3;
+            &.lb__number-picker-rating-indicator-on {
+                border-color: $c_grey2;
+            }
         }
 
         background-color: $yellow3;
