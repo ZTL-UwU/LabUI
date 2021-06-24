@@ -6,6 +6,9 @@
     export let disabled = false;
     export let max = Infinity;
     export let read_only = false;
+    export let full_icon = 'star';
+    export let half_icon = 'star-half';
+    export let color = read_only ? 'grey8' : 'yellow3';
 
     export let rating_array = [];
     if (rating_array.length === 0 && parseInt(read_only ? value : max) !== Infinity) {
@@ -28,26 +31,31 @@
         }
     };
 
+    $: read_only_classes = mix_classes([
+        `rating-read-only-${color}`,
+    ]);
+
     $: rating_classes = mix_classes([
-        disabled ? 'number-picker-disabled' : '',
+        disabled ? 'rating-disabled' : '',
     ]);
 
     $: handleRatingClasses = (index) => {
         return mix_classes([
-            'number-picker-rating-indicator',
-            disabled ? 'number-picker-disabled' : '',
-            handle_comp(index, value, rating_array) ? 'number-picker-rating-indicator-on' : 'number-picker-rating-indicator-off',
+            'rating-indicator',
+            `rating-indicator-${color}`,
+            disabled ? 'rating-disabled' : '',
+            handle_comp(index, value, rating_array) ? 'rating-indicator-on' : 'rating-indicator-off',
         ]);
     };
 </script>
 
 {#if read_only}
-    <span>
+    <span class={ read_only_classes }>
         {#each rating_array as index}
             {#if index === '@'}
-                <LIcon name="star" />
+                <LIcon name={ full_icon } />
             {:else}
-                <LIcon name="star-half" />
+                <LIcon name={ half_icon } />
             {/if}
         {/each}
     </span>
@@ -65,7 +73,7 @@
 <style lang="scss">
     @import '../styles/main.scss';
 
-    .lb__number-picker-rating-indicator {
+    .lb__rating-indicator {
         @include border-small($transparent);
         $rating-indicator-size: $height-tiny - 2px;
         @include span-button;
@@ -78,23 +86,40 @@
         border-radius: $border-radius-round;
         transition: $transition-normal;
 
-        &.lb__number-picker-disabled {
+        &.lb__rating-disabled {
             @include disabled;
         }
 
         &:hover {
-            &.lb__number-picker-disabled {
-                border-color: $transparent;
+            @each $name, $val in $color_map {
+                &.lb__rating-indicator-#{$name} {
+                    border-color: $val;
+                }
             }
-            border-color: $yellow3;
-            &.lb__number-picker-rating-indicator-on {
+
+            &.lb__rating-indicator-on {
                 border-color: $c_grey2;
+            }
+
+            &.lb__rating-disabled {
+                border-color: $transparent;
             }
         }
 
-        background-color: $yellow3;
-        &.lb__number-picker-rating-indicator-off {
+        @each $name, $val in $color_map {
+            &.lb__rating-indicator-#{$name} {
+                background-color: $val;
+            }
+        }
+
+        &.lb__rating-indicator-off {
             background-color: $c_grey1;
+        }
+    }
+
+    @each $name, $val in $color_map {
+        .lb__rating-read-only-#{$name} {
+            color: $val;
         }
     }
 </style>

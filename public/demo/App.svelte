@@ -34,8 +34,8 @@
     let number_picker_step_demo_value = 0.5;
     let number_picker_3D_demo_value = 0;
     let number_picker_position_right_demo_value = 0;
-    let rating_demo_value = 0;
-
+    
+    let rating_demo_value = 2;
     let rating_array_demo_value = 'bad';
 
     let switch_demo_value = true;
@@ -320,9 +320,17 @@
         />
         <code>{ rating_array_demo_value }</code>
         <br>
+        <LRating bind:value={ rating_demo_value } max="5" color="blue" />
+        <br>
         <LRating bind:value={ rating_demo_value } max="5" disabled />
+    </div>
+    <div class="item-10">
         <h3>Read Only</h3>
-        <LRating read_only value=2.5 />
+        <LRating read_only value="2.5" />
+        <br>
+        <LRating read_only value="4.5" full_icon="circle" half_icon="circle-dashed" />
+        <br>
+        <LRating read_only value="3.5" full_icon="square" half_icon="square-toggle" color="yellow6" />
     </div>
     
     <LBox>
