@@ -9,7 +9,7 @@
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^19.0.0",
-    "@rollup/plugin-node-resolve": "^13.0.0",
+    "@rollup/plugin-node-resolve": "^13.0.4",
     "@rollup/plugin-typescript": "^8.0.0",
     "@tsconfig/svelte": "^2.0.1",
     "node-sass": "^6.0.0",
@@ -19,14 +19,14 @@
     "rollup-plugin-svelte": "^7.0.0",
     "rollup-plugin-terser": "^7.0.0",
     "svelte": "^3.38.3",
-    "svelte-check": "^2.2.0",
+    "svelte-check": "^2.2.3",
     "svelte-preprocess": "^4.7.3",
     "tslib": "^2.3.0",
     "typescript": "^4.3.5"
   },
   "dependencies": {
     "dompurify": "^2.2.9",
-    "highlight.js": "^11.0.1",
+    "highlight.js": "^11.1.0",
     "remarkable": "^2.0.1",
     "sirv-cli": "^1.0.0"
   }
