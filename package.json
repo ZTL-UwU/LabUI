@@ -29,5 +29,8 @@
     "highlight.js": "^11.2.0",
     "remarkable": "^2.0.1",
     "sirv-cli": "^1.0.14"
+  },
+  "exports": {
+    "main": "./src/main.js"
   }
 }
