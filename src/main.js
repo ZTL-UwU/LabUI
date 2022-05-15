@@ -12,6 +12,7 @@ import Progress     from './components/Progress.svelte';
 import Radio        from './components/Radio.svelte';
 import Rating       from './components/Rating.svelte';
 import Switch       from './components/Switch.svelte';
+import Tabs         from './components/Tabs.svelte';
 
 export {
     Box          as LBox,
@@ -28,4 +29,5 @@ export {
     Radio        as LRadio,
     Rating       as LRating,
     Switch       as LSwitch,
+    Tabs         as LTabs,
 };
