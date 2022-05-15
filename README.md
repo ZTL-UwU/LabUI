@@ -88,6 +88,8 @@ A Svelte frontend UI library. [Demo](https://zhangtianli2006.github.io/LabUI/)
 
 ```bash
 git clone https://github.com/zhangtianli2006/LabUI
+cd LabUI
+cp -r ./src/styles/fonts ./public/build/
 npm install
 npm run dev
 ```
