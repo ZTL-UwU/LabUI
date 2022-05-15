@@ -8,6 +8,7 @@
     export let type = 'normal';
     export let color = 'blue';
     export let show = true;
+    export let uncloseable = false;
     export let handle_close = () => {
         return false;
     }
@@ -76,7 +77,9 @@
                 <span class="lb__msg-bar-title"><slot name="title" /></span>
             </div>
         </div>
-        <span class="lb__msg-bar-close-button" on:click={ closeAlert }><i class="ti ti-x"></i></span>
+        {#if !uncloseable}
+            <span class="lb__msg-bar-close-button" on:click={ closeAlert }><i class="ti ti-x"></i></span>
+        {/if}
         <br>
         <span class="lb__msg-bar-content"><slot name="content" /></span>
     </div>

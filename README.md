@@ -73,7 +73,7 @@ A Svelte frontend UI library. [Demo](https://zhangtianli2006.github.io/LabUI/)
 - [ ] Link
 - [x] Mask
 - [x] MDContainer
-- [ ] MessageBar
+- [x] MessageBar
 - [x] Notification
 - [x] NumberPicker
 - [x] Progress
