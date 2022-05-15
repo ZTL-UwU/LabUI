@@ -206,10 +206,12 @@
                 <span slot="title">Error</span>
                 <span slot="content">Custom close handling.</span>
             </LMessageBar>
+            <LMessageBar color="yellow" uncloseable type="dark">
+                <LIcon name="square-x" slot="icon" />
+                <span slot="title">Warning</span>
+                <span slot="content">This message is not closable</span>
+            </LMessageBar>
 
-            <LMessageBar color="green"
-                ><span slot="title">Success</span></LMessageBar
-            >
             <LMessageBar color="yellow"
                 ><span slot="title">Warning</span></LMessageBar
             >
@@ -249,9 +251,6 @@
             <LMessageBar type="light" color="yellow"
                 ><span slot="title">Warning</span></LMessageBar
             >
-            <LMessageBar type="light" color="red"
-                ><span slot="title">Error</span></LMessageBar
-            >
             <LMessageBar type="light"
                 ><span slot="title">Message</span></LMessageBar
             >
@@ -280,7 +279,6 @@
             <div slot="body">3D Boxes</div>
         </LBox>
     </div>
-
 
     <div class="item-20">
         <h2>Tabs</h2>
