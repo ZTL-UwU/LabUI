@@ -11,8 +11,8 @@
     "@rollup/plugin-commonjs": "^22.0.0",
     "@rollup/plugin-node-resolve": "^13.0.4",
     "@rollup/plugin-typescript": "^8.2.5",
-    "@tsconfig/svelte": "^2.0.1",
-    "node-sass": "^6.0.0",
+    "node-sass": "^7.0.1",
+    "@tsconfig/svelte": "^3.0.0",
     "rollup": "^2.56.2",
     "rollup-plugin-css-only": "^3.1.0",
     "rollup-plugin-livereload": "^2.0.5",
@@ -28,7 +28,7 @@
     "dompurify": "^2.3.1",
     "highlight.js": "^11.2.0",
     "remarkable": "^2.0.1",
-    "sirv-cli": "^1.0.14"
+    "sirv-cli": "^2.0.2"
   },
   "exports": {
     "main": "./src/main.js"
