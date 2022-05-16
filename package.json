@@ -37,6 +37,8 @@
     "sirv-cli": "^2.0.2"
   },
   "exports": {
-    "main": "./src/main.js"
+    "./main": "./src/main.js",
+    ".": "./src/main.js",
+    "./package.json": "./package.json",
   }
 }
