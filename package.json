@@ -39,6 +39,6 @@
   "exports": {
     "./main": "./src/main.js",
     ".": "./src/main.js",
-    "./package.json": "./package.json",
+    "./package.json": "./package.json"
   }
 }
