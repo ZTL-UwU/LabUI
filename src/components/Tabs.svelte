@@ -13,7 +13,13 @@
                     selected = tab;
                 }}
             >
-                {tab}
+                {#if selected === tab}
+                    <div class="lb__tab-selected-indicator" />
+                    <div class="lb__tab-selected-indicator-border-hider" />
+                {/if}
+                <div class="lb__tab-selector-content">
+                    {tab}
+                </div>
             </span>
         {/each}
     </div>
@@ -47,7 +53,6 @@
 
     .lb__tab-selector {
         display: inline-block;
-        padding: $gap-tiny;
         height: 100%;
 
         margin-left: -3px;
@@ -57,6 +62,11 @@
         @include border-normal($transparent);
         transition: all $transition-normal;
         @include span-button;
+        position: relative;
+    }
+
+    .lb__tab-selector-content {
+        padding: $gap-tiny;
     }
 
     .lb__tab-body {
@@ -66,7 +76,21 @@
 
     .lb__tab-selected {
         @include border-normal($border1);
-        border-bottom-color: $white;
-        border-top-color: $blue;
+    }
+
+    .lb__tab-selected-indicator {
+        background-color: $blue;
+        margin-top: -$border-normal;
+        margin-left: -$border-normal;
+        height: $border-normal;
+        width: calc(100% + 6px);
+    }
+
+    .lb__tab-selected-indicator-border-hider {
+        position: absolute;
+        background-color: $white;
+        bottom: -$border-normal;
+        height: $border-normal;
+        width: 100%;
     }
 </style>
