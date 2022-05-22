@@ -282,7 +282,7 @@
 
     <div class="item-20">
         <h2>Tabs</h2>
-        <LTabs tabs={["Tabs", "Tab 2", "Tab 3", "Tab 4"]} let:tab>
+        <LTabs tabs={["Tabs", "Tab 2", "Tab 3", "Tab 4", "Looooooong Tab"]} let:tab>
             {#if tab === "Tabs"}
                 <h1>LTabs</h1>
             {:else}
