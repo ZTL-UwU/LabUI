@@ -1,4 +1,4 @@
-name: CI
+name: Test NPM
 
 on:
   push:
@@ -13,8 +13,7 @@ jobs:
         run: wget https://raw.githubusercontent.com/zhangtianli2006/LabUI/main/test-template.zip
 
       - name: Unzip
-        run:
-          unzip test-template.zip
+        run: unzip test-template.zip
 
   install:
     runs-on: ubuntu-latest
@@ -27,9 +26,11 @@ jobs:
         run: npm i @zhangtianli2006/lab-ui
 
       - name: NPM Install
-        run:
-          npm i
+        run: npm i
 
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
       - name: Build
-        run:
-          npm run build
+        run: npm run build
