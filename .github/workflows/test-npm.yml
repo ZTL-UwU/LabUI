@@ -5,7 +5,7 @@ on:
     branches: [ "main" ]
 
 jobs:
-  get-template:
+  test-npm:
     runs-on: ubuntu-latest
 
     steps:
@@ -15,10 +15,6 @@ jobs:
       - name: Unzip
         run: unzip test-template.zip
 
-  install:
-    runs-on: ubuntu-latest
-
-    steps:
       - name: Install Dependencies
         run: npm i svelte-preprocess node-sass
 
@@ -28,9 +24,5 @@ jobs:
       - name: NPM Install
         run: npm i
 
-  build:
-    runs-on: ubuntu-latest
-
-    steps:
       - name: Build
         run: npm run build
