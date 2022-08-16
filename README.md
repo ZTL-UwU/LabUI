@@ -7,7 +7,7 @@ A Svelte frontend UI library. [Demo](https://zhangtianli2006.github.io/LabUI/)
 ![License](https://img.shields.io/github/license/zhangtianli2006/LabUI?color=%235bb2ec&label=License&style=flat-square)
 ![Version](https://img.shields.io/npm/v/@zhangtianli2006/lab-ui?color=%23f9b705&label=Version&style=flat-square)
 ![Last Commit](https://img.shields.io/github/last-commit/zhangtianli2006/LabUI?color=%2357B558&label=Last%20Commit&style=flat-square)
-![WakaTime](https://wakatime.com/badge/github/zhangtianli2006/LabUI.svg)
+![WakaTime](https://wakatime.com/badge/github/zhangtianli2006/LabUI.svg?style=flat-square)
 
 [![NPM](https://nodei.co/npm/@zhangtianli2006/lab-ui.png?mini=true)](https://npmjs.org/package/@zhangtianli2006/lab-ui)
 
@@ -44,6 +44,17 @@ A Svelte frontend UI library. [Demo](https://zhangtianli2006.github.io/LabUI/)
     npm i @zhangtianli2006/lab-ui
     ```
 
+3. Move icon font to your public folder
+
+    **This step is needed because LabUI is still in development and there is no easy solution**  
+    **It will be fixed later**
+
+    [⚠️ Issue Page](https://github.com/zhangtianli2006/LabUI/issues/166)
+
+    ```bash
+    cp -r LabUI/src/styles/fonts {your-project}/public/build/
+    ```
+
 ## Usage
 
 ```html
@@ -73,14 +84,15 @@ A Svelte frontend UI library. [Demo](https://zhangtianli2006.github.io/LabUI/)
 - [ ] Link
 - [x] Mask
 - [x] MDContainer
-- [x] MessageBar
+- [ ] ⚒️MessageBar
+- [ ] ⚒️NavBar
 - [x] Notification
 - [x] NumberPicker
 - [x] Progress
 - [x] Radio
 - [x] Rating
 - [x] Switch
-- [ ] 🔨 Tab
+- [x] Tab
 
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/zhangtianli2006/LabUI)
 
@@ -95,7 +107,3 @@ npm run dev
 ```
 
 ## Contributing [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
-
-## Demo Snapshot (2021-6-23)
-
-![Demo 2021-6-23](https://z3.ax1x.com/2021/06/23/RneJ9s.png)

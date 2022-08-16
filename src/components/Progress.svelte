@@ -21,6 +21,7 @@
     })[size];
 
     const font_size = ({
+        tiny: '0px',
         small: '0px',
         normal: '10px',
         large: '12px',
@@ -57,7 +58,7 @@
 
 <span class={ background_classes } style={ background_style }>
     <div class={ front_classes } style={ bar_style }>
-        {#if show_num}
+        {#if show_num && type !== 'loader'}
             <div class="lb__progress-num">
                 <span style={ font_style }>{ percent }{#if !vertical}%{/if}</span>
             </div>
