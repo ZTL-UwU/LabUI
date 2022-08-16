@@ -1,5 +1,5 @@
 <script>
-    import {  mix_styles, mix_classes } from '../scripts/utils.js';
+    import { mix_styles, mix_classes } from '../scripts/utils.js';
 
     export let type = 'normal';
     export let percent = 50;
