@@ -34,6 +34,7 @@ $c_grey3: #8d8f93;
 $c_grey4: #68696c;
 $c_grey5: #454648;
 $c_grey6: #252526;
+$c_grey: $c_grey4;
 
 $border1: $c_grey1;
 $border2: $c_grey2;
@@ -109,6 +110,7 @@ $color-map: ("green1": $green1,
     "c_grey4": $c_grey4,
     "c_grey5": $c_grey5,
     "c_grey6": $c_grey6,
+    "c_grey": $c_grey4,
 
     "border1": $border1,
     "border2": $border2,
@@ -185,6 +187,7 @@ $base-id: ("green1": 6,
     "c_grey4": 4,
     "c_grey5": 4,
     "c_grey6": 4,
+    "c_grey": 4,
 
     "border1": 3,
     "border2": 3,
@@ -231,6 +234,7 @@ $basic-color-map: ("green": $green,
     "yellow": $yellow,
     "blue": $blue,
     "red": $red,
+    "c_grey": $c_grey,
 );
 
 $basic-base-id: ("green": 6,
@@ -238,4 +242,5 @@ $basic-base-id: ("green": 6,
     "yellow": 5,
     "blue": 6,
     "red": 6,
+    "c_grey": 4,
 );
