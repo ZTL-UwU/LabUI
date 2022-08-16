@@ -8,6 +8,7 @@
         LMask,
         LMDContainer,
         LMessageBar,
+        LNavBar,
         LNotification,
         LNumberPicker,
         LProgress,

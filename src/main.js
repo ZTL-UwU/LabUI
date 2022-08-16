@@ -6,6 +6,7 @@ import Link         from './components/Link.svelte';
 import Mask         from './components/Mask.svelte';
 import MDContainer  from './components/MDContainer.svelte';
 import MessageBar   from './components/MessageBar.svelte';
+import NavBar       from './components/NavBar.svelte';
 import Notification from './components/Notification.svelte';
 import NumberPicker from './components/NumberPicker.svelte';
 import Progress     from './components/Progress.svelte';
@@ -23,6 +24,7 @@ export {
     Mask         as LMask,
     MDContainer  as LMDContainer,
     MessageBar   as LMessageBar,
+    NavBar       as LNavBar,
     Notification as LNotification,
     NumberPicker as LNumberPicker,
     Progress     as LProgress,
