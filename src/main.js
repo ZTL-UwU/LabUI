@@ -14,6 +14,7 @@ import Radio        from './components/Radio.svelte';
 import Rating       from './components/Rating.svelte';
 import Switch       from './components/Switch.svelte';
 import Tabs         from './components/Tabs.svelte';
+import Tags         from './components/Tags.svelte';
 
 export {
     Box          as LBox,
@@ -32,4 +33,5 @@ export {
     Rating       as LRating,
     Switch       as LSwitch,
     Tabs         as LTabs,
+    Tags         as LTags,
 };
