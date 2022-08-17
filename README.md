@@ -69,21 +69,23 @@ A Svelte frontend UI library. [Demo](https://zhangtianli2006.github.io/LabUI/)
 
 ## Development
 
-### Tested on
-
-|Firefox|Chrome|Edge|Opera|
-|:-:|:-:|:-:|:-:|
-| ![Firefox](https://raw.githubusercontent.com/alrra/browser-logos/main/src/firefox/firefox_64x64.png) | ![Chrome](https://raw.githubusercontent.com/alrra/browser-logos/main/src/chrome/chrome_64x64.png) | ![Edge](https://raw.githubusercontent.com/alrra/browser-logos/main/src/edge/edge_64x64.png) | ![Opera](https://raw.githubusercontent.com/alrra/browser-logos/main/src/opera/opera_64x64.png) |
+### Contributing [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 
 ### Progress
 
+**Components**
+- [ ] Avatar
 - [x] Box
 - [x] Button
+- [ ] Button Group
+- [ ] Card
+- [ ] Form
 - [x] Icon
 - [x] Input
 - [ ] Link
 - [x] Mask
 - [x] MDContainer
+- [ ] Message
 - [ ] ⚒️MessageBar
 - [ ] ⚒️NavBar
 - [x] Notification
@@ -91,8 +93,21 @@ A Svelte frontend UI library. [Demo](https://zhangtianli2006.github.io/LabUI/)
 - [x] Progress
 - [x] Radio
 - [x] Rating
+- [ ] Select
+- [ ] Separator
 - [x] Switch
 - [x] Tab
+- [ ] Table
+- [ ] Tag
+
+**Fixes**
+- [ ] Icon Font Problem
+
+**Other**
+- [ ] Logo
+- [ ] Design Guide
+- [ ] Docs / New Demo
+- [ ] Themes
 
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/zhangtianli2006/LabUI)
 
@@ -105,5 +120,3 @@ cp -r ./src/styles/fonts ./public/build/
 npm install
 npm run dev
 ```
-
-## Contributing [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
