@@ -16,6 +16,7 @@
         LRating,
         LSwitch,
         LTabs,
+        LTags,
     } from "../../src/main.js";
     import * as code_demo from "./code_demo.js";
     import "../../src/styles/tabler-icons.min.css";
@@ -539,6 +540,19 @@
                 <span slot="inactive_name">Inactive</span>
                 <span slot="active_name">Active</span>
             </LSwitch>
+        </div>
+    </LBox>
+
+    <LBox>
+        <span slot="header">Tags</span>
+        <div slot="body">
+            <LTags>
+                <span slot="text">Tag</span>
+            </LTags>
+            <LTags>
+                <i slot="icon" class="ti ti-tag"></i>
+                <span slot="text">Tag</span>
+            </LTags>
         </div>
     </LBox>
 
