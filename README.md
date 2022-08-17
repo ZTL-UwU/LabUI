@@ -1,4 +1,4 @@
-# LabUI
+![banner_github](https://user-images.githubusercontent.com/49156174/185135446-24784d9a-c4bb-4148-acdc-cc2b17f88ad2.svg)
 
 A Svelte frontend UI library. [Demo](https://zhangtianli2006.github.io/LabUI/)
 
@@ -104,7 +104,7 @@ A Svelte frontend UI library. [Demo](https://zhangtianli2006.github.io/LabUI/)
 - [ ] Icon Font Problem
 
 **Other**
-- [ ] Logo
+- [x] Logo
 - [ ] Design Guide
 - [ ] Docs / New Demo
 - [ ] Themes
