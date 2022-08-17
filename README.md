@@ -9,7 +9,7 @@ A Svelte frontend UI library. [Demo](https://zhangtianli2006.github.io/LabUI/)
 ![Last Commit](https://img.shields.io/github/last-commit/zhangtianli2006/LabUI?color=%2357B558&label=Last%20Commit&style=flat-square)
 ![WakaTime](https://wakatime.com/badge/github/zhangtianli2006/LabUI.svg?style=flat-square)
 
-![NPM](https://nodei.co/npm/@zhangtianli2006/lab-ui.png?mini=true)](https://npmjs.org/package/@zhangtianli2006/lab-ui)
+[![NPM](https://nodei.co/npm/@zhangtianli2006/lab-ui.png?mini=true)](https://npmjs.org/package/@zhangtianli2006/lab-ui)
 
 ## Installation
 
