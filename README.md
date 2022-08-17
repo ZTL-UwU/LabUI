@@ -1,15 +1,23 @@
 ![banner_github](https://user-images.githubusercontent.com/49156174/185135446-24784d9a-c4bb-4148-acdc-cc2b17f88ad2.svg)
 
-A Svelte frontend UI library. [Demo](https://zhangtianli2006.github.io/LabUI/)
+<p align="center">
+    A Svelte frontend UI library.
+    <br>
+    <a href="https://zhangtianli2006.github.io/LabUI/">Demo</a>
+</p>
 
-![Build](https://img.shields.io/github/workflow/status/zhangtianli2006/LabUI/Build%20and%20Deploy?style=flat-square)
-![Code Size](https://img.shields.io/github/languages/code-size/zhangtianli2006/LabUI?color=%2323a536&label=Code%20Size&logo=github&style=flat-square)
-![License](https://img.shields.io/github/license/zhangtianli2006/LabUI?color=%235bb2ec&label=License&style=flat-square)
-![Version](https://img.shields.io/npm/v/@zhangtianli2006/lab-ui?color=%23f9b705&label=Version&style=flat-square)
-![Last Commit](https://img.shields.io/github/last-commit/zhangtianli2006/LabUI?color=%2357B558&label=Last%20Commit&style=flat-square)
-![WakaTime](https://wakatime.com/badge/github/zhangtianli2006/LabUI.svg?style=flat-square)
-
-[![NPM](https://nodei.co/npm/@zhangtianli2006/lab-ui.png?mini=true)](https://npmjs.org/package/@zhangtianli2006/lab-ui)
+<p align="center">
+    <img src="https://img.shields.io/github/workflow/status/zhangtianli2006/LabUI/Build%20and%20Deploy?style=flat-square" />
+    <img src="https://img.shields.io/github/languages/code-size/zhangtianli2006/LabUI?color=%2323a536&label=Code%20Size&logo=github&style=flat-square" />
+    <img src="https://img.shields.io/github/license/zhangtianli2006/LabUI?color=%235bb2ec&label=License&style=flat-square" />
+    <img src="https://img.shields.io/npm/v/@zhangtianli2006/lab-ui?color=%23f9b705&label=Version&style=flat-square" />
+    <img src="https://img.shields.io/github/last-commit/zhangtianli2006/LabUI?color=%2357B558&label=Last%20Commit&style=flat-square" />
+    <img src="https://wakatime.com/badge/github/zhangtianli2006/LabUI.svg?style=flat-square" />
+    <br>
+    <a href="https://npmjs.org/package/@zhangtianli2006/lab-ui">
+        <img src="https://nodei.co/npm/@zhangtianli2006/lab-ui.png?mini=true" />
+    </a>
+</p>
 
 ## Installation
 
