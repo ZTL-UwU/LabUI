@@ -14,7 +14,7 @@
         background: $white3;
         padding: 7px 13px 7px 13px;
         height: 17px;
-        border-radius: 10px;
+        border-radius: $border-radius-large;
         font-weight: 500;
         color: $grey;
         font-size: 14px;
