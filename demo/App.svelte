@@ -553,7 +553,12 @@
                 <i slot="icon" class="ti ti-tag"></i>
                 <span slot="text">Tag</span>
             </LTags>
-            <LTags color="red4">
+            <LTags href="https://github.com/zhangtianli2006/LabUI">
+                <i slot="icon" class="ti ti-link"></i>
+                <span slot="text">Linked</span>
+            </LTags>
+            <br>
+            <LTags color="red">
                 <span slot="text">Red</span>
             </LTags>
             <LTags color="green1">
