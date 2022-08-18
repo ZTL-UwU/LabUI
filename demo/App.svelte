@@ -553,6 +553,27 @@
                 <i slot="icon" class="ti ti-tag"></i>
                 <span slot="text">Tag</span>
             </LTags>
+            <LTags color="red4">
+                <span slot="text">Red</span>
+            </LTags>
+            <LTags color="green1">
+                <span slot="text">Green1</span>
+            </LTags>
+            <LTags color="green4">
+                <span slot="text">Green4</span>
+            </LTags>
+            <LTags color="green">
+                <span slot="text">Green</span>
+            </LTags>
+            <LTags color="yellow4">
+                <span slot="text">Yellow</span>
+            </LTags>
+            <LTags color="blue4">
+                <span slot="text">Blue</span>
+            </LTags>
+            <LTags color="grey1">
+                <span slot="text">Grey1</span>
+            </LTags>
         </div>
     </LBox>
 
