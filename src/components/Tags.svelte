@@ -2,17 +2,22 @@
     import { mix_classes } from '../scripts/utils';
 
     export let color = 'white3';
+    export let href = null;
+
     $: classes = mix_classes([
         'tag-container',
         `tag-${color}`,
+        href ? 'clickable' : '',
     ]);
 </script>
 
-<span class={classes}>
-    <slot name="icon" />
-    <slot name="text" />
-</span>
-
+<a href={href}>
+    <span class={classes}>
+        <slot name="icon" />
+        <slot name="text" />
+    </span>
+</a>
+    
 <style lang="scss">
     @import '../styles/main.scss';
 
@@ -24,6 +29,10 @@
         font-weight: 500;
         font-size: 14px;
         margin: 2px;
+    }
+
+    .lb__tag-clickable {
+        @include span-button;
     }
 
     @each $name, $val in $color-map {
