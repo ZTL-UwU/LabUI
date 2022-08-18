@@ -90,6 +90,7 @@
 - [ ] Form
 - [x] Icon
 - [x] Input
+- [ ] Layout
 - [ ] Link
 - [x] Mask
 - [x] MDContainer
@@ -104,9 +105,9 @@
 - [ ] Select
 - [ ] Separator
 - [x] Switch
-- [x] Tab
+- [x] Tabs
 - [ ] Table
-- [ ] Tag
+- [x] Tags
 
 **Fixes**
 - [ ] Icon Font Problem
