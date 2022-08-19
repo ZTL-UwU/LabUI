@@ -1,4 +1,4 @@
-![banner_github](https://user-images.githubusercontent.com/49156174/185135446-24784d9a-c4bb-4148-acdc-cc2b17f88ad2.svg)
+![banner-svelte](https://user-images.githubusercontent.com/49156174/185533654-e5f15fb6-d93d-4232-9512-e578097b8173.svg)
 
 <p align="center">
     A Svelte frontend UI library.
