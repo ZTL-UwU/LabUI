@@ -129,3 +129,5 @@ cp -r ./src/styles/fonts ./public/build/
 npm install
 npm run dev
 ```
+
+![together](https://user-images.githubusercontent.com/49156174/185579786-0006d1d7-f5b5-4a0d-97a6-d6ab1054d1c9.png)
