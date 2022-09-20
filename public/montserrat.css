@@ -1,0 +1,131 @@
+/* Normal */
+@font-face {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 100;
+    src: local('Montserrat Thin'), url(Montserrat/Montserrat-Thin.ttf);
+}
+
+@font-face {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 200;
+    src: local('Montserrat ExtraLight'), url(Montserrat/Montserrat-ExtraLight.ttf);
+}
+
+@font-face {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 300;
+    src: local('Montserrat Light'), url(Montserrat/Montserrat-Light.ttf);
+}
+
+@font-face {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 400;
+    src: local('Montserrat'), url(Montserrat/Montserrat-Regular.ttf);
+}
+
+@font-face {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 500;
+    src: local('Montserrat Medium'), url(Montserrat/Montserrat-Medium.ttf);
+}
+
+@font-face {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 600;
+    src: local('Montserrat SemiBold'), url(Montserrat/Montserrat-SemiBold.ttf);
+}
+
+@font-face {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 700;
+    src: local('Montserrat Bold'), url(Montserrat/Montserrat-Bold.ttf);
+}
+
+@font-face {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 800;
+    src: local('Montserrat ExtraBold'), url(Montserrat/Montserrat-ExtraBold.ttf);
+}
+
+@font-face {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 900;
+    src: local('Montserrat Black'), url(Montserrat/Montserrat-Black.ttf);
+}
+
+/* Italic */
+@font-face {
+    font-family: Montserrat;
+    font-style: italic;
+    font-weight: 100;
+    src: local('Montserrat Thin'), url(Montserrat/Montserrat-ThinItalic.ttf);
+}
+
+@font-face {
+    font-family: Montserrat;
+    font-style: italic;
+    font-weight: 200;
+    src: local('Montserrat ExtraLight'), url(Montserrat/Montserrat-ExtraLightItalic.ttf);
+}
+
+@font-face {
+    font-family: Montserrat;
+    font-style: italic;
+    font-weight: 300;
+    src: local('Montserrat Light'), url(Montserrat/Montserrat-LightItalic.ttf);
+}
+
+@font-face {
+    font-family: Montserrat;
+    font-style: italic;
+    font-weight: 400;
+    src: local('Montserrat'), url(Montserrat/Montserrat-Italic.ttf);
+}
+
+@font-face {
+    font-family: Montserrat;
+    font-style: italic;
+    font-weight: 500;
+    src: local('Montserrat Medium'), url(Montserrat/Montserrat-MediumItalic.ttf);
+}
+
+@font-face {
+    font-family: Montserrat;
+    font-style: italic;
+    font-weight: 600;
+    src: local('Montserrat SemiBold'), url(Montserrat/Montserrat-SemiBoldItalic.ttf);
+}
+
+@font-face {
+    font-family: Montserrat;
+    font-style: italic;
+    font-weight: 700;
+    src: local('Montserrat Bold'), url(Montserrat/Montserrat-BoldItalic.ttf);
+}
+
+@font-face {
+    font-family: Montserrat;
+    font-style: italic;
+    font-weight: 800;
+    src: local('Montserrat ExtraBold'), url(Montserrat/Montserrat-ExtraBoldItalic.ttf);
+}
+
+@font-face {
+    font-family: Montserrat;
+    font-style: italic;
+    font-weight: 900;
+    src: local('Montserrat Black'), url(Montserrat/Montserrat-BlackItalic.ttf);
+}
+
+body, button, input {
+    font-family: 'Montserrat', 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', '微软雅黑', Arial, sans-serif;
+}
