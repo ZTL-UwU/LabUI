@@ -1,9 +1,10 @@
 <script>
     export let tabs;
     export let selected = tabs[0];
+    export let width = '500px';
 </script>
 
-<div class="lb__tab-container">
+<div class="lb__tab-container" style={`width: ${width}`}>
     <div class="lb__tab-header">
         {#each tabs as tab, i}
             <span

@@ -88,6 +88,7 @@
     @import '../styles/main.scss';
 
     .lb__box {
+        max-width: 100%;
         $box-inner-padding: 15px;
         $box-inner-padding-small: 10px;
         $box-margin-bottom: 10px;

@@ -195,7 +195,7 @@
                 <span slot="title">Message</span>
                 <span slot="content">
                     More to describe ...
-                    <LProgress color="yellow" percent="30" length="720px" />
+                    <LProgress color="yellow" percent="30" length="100%" />
                 </span>
             </LMessageBar>
             <LMessageBar
@@ -483,7 +483,7 @@
         </div>
     </LBox>
 
-    <LBox width="550px">
+    <LBox width="500px">
         <span slot="header">Radio</span>
         <div slot="body">
             <div class="item-10">
@@ -607,7 +607,7 @@
         </div>
     </LBox>
 
-    <LBox width="800px" foldable folded="true">
+    <LBox foldable folded="true">
         <div slot="header">MD Container</div>
         <div slot="body">
             <LMDContainer content={code_demo.cpp} />
