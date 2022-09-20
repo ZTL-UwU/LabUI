@@ -72,8 +72,8 @@
     show_cover_demo();
 </script>
 
+<LNavBar/>
 <main>
-    <LNavBar/>
 
     <div class="item-15">
         <h1>Buttons</h1>
@@ -621,7 +621,7 @@
 
 <style lang="scss">
     main {
-        padding: 50px 20px 50px 20px;
+        padding: 20px 100px 50px 100px;
         max-width: 1400px;
         margin-left: auto;
         margin-right: auto;

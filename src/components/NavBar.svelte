@@ -2,7 +2,7 @@
     import { mix_styles, mix_classes } from '../scripts/utils.js';
 
     export let size = 'normal';
-    export let position = 'fixed';
+    export let position = 'sticky';
     export let color = 'white';
 
     const height = ({
