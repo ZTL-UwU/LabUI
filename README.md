@@ -27,7 +27,7 @@
     Install Components
 
     ```bash
-    npm install svelte-preprocess node-sass
+    npm install --save svelte-preprocess node-sass
     ```
 
     open `rollup.config.js`
@@ -50,7 +50,7 @@
 2. Install LabUI
 
     ```bash
-    npm i @zhangtianli2006/lab-ui
+    npm i --save @zhangtianli2006/lab-ui
     ```
 
 3. Move icon font to your public folder
