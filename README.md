@@ -11,7 +11,7 @@
     <img src="https://img.shields.io/github/workflow/status/ZTL-UwU/LabUI/Build%20and%20Deploy?style=flat-square" />
     <img src="https://img.shields.io/github/languages/code-size/ZTL-UwU/LabUI?color=%2323a536&label=Code%20Size&logo=github&style=flat-square" />
     <img src="https://img.shields.io/github/license/ZTL-UwU/LabUI?color=%235bb2ec&label=License&style=flat-square" />
-    <img src="https://img.shields.io/npm/v/@ZTL-UwU/lab-ui?color=%23f9b705&label=Version&style=flat-square" />
+    <img src="https://img.shields.io/npm/v/@ztl-uwu/labui?color=%23f9b705&label=Version&style=flat-square" />
     <img src="https://img.shields.io/github/last-commit/ZTL-UwU/LabUI?color=%2357B558&label=Last%20Commit&style=flat-square" />
     <img src="https://wakatime.com/badge/github/ZTL-UwU/LabUI.svg?style=flat-square" />
     <br>
