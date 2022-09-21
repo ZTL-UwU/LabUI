@@ -1,11 +1,11 @@
 {
-  "name": "@zhangtianli2006/lab-ui",
+  "name": "@ztl-uwu/labui",
   "version": "0.1.5",
   "license": "MIT",
   "description": "A Svelte frontend UI library.",
   "repository": {
     "type": "git",
-    "url": "https://github.com/zhangtianli2006/LabUI.git"
+    "url": "https://github.com/ZTL-UwU/LabUI.git"
   },
   "scripts": {
     "build": "rollup -c",

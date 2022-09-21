@@ -4,19 +4,19 @@
 <p align="center">
     A Svelte frontend UI library.
     <br>
-    <a href="https://zhangtianli2006.github.io/LabUI/">Demo</a>
+    <a href="https://ZTL-UwU.github.io/LabUI/">Demo</a>
 </p>
 
 <p align="center">
-    <img src="https://img.shields.io/github/workflow/status/zhangtianli2006/LabUI/Build%20and%20Deploy?style=flat-square" />
-    <img src="https://img.shields.io/github/languages/code-size/zhangtianli2006/LabUI?color=%2323a536&label=Code%20Size&logo=github&style=flat-square" />
-    <img src="https://img.shields.io/github/license/zhangtianli2006/LabUI?color=%235bb2ec&label=License&style=flat-square" />
-    <img src="https://img.shields.io/npm/v/@zhangtianli2006/lab-ui?color=%23f9b705&label=Version&style=flat-square" />
-    <img src="https://img.shields.io/github/last-commit/zhangtianli2006/LabUI?color=%2357B558&label=Last%20Commit&style=flat-square" />
-    <img src="https://wakatime.com/badge/github/zhangtianli2006/LabUI.svg?style=flat-square" />
+    <img src="https://img.shields.io/github/workflow/status/ZTL-UwU/LabUI/Build%20and%20Deploy?style=flat-square" />
+    <img src="https://img.shields.io/github/languages/code-size/ZTL-UwU/LabUI?color=%2323a536&label=Code%20Size&logo=github&style=flat-square" />
+    <img src="https://img.shields.io/github/license/ZTL-UwU/LabUI?color=%235bb2ec&label=License&style=flat-square" />
+    <img src="https://img.shields.io/npm/v/@ZTL-UwU/lab-ui?color=%23f9b705&label=Version&style=flat-square" />
+    <img src="https://img.shields.io/github/last-commit/ZTL-UwU/LabUI?color=%2357B558&label=Last%20Commit&style=flat-square" />
+    <img src="https://wakatime.com/badge/github/ZTL-UwU/LabUI.svg?style=flat-square" />
     <br>
-    <a href="https://npmjs.org/package/@zhangtianli2006/lab-ui">
-        <img src="https://nodei.co/npm/@zhangtianli2006/lab-ui.png?mini=true" />
+    <a href="https://www.npmjs.com/package/@ztl-uwu/labui">
+        <img src="https://nodei.co/npm/@ztl-uwu/labui.png?mini=true" />
     </a>
 </p>
 
@@ -50,7 +50,7 @@
 2. Install LabUI
 
     ```bash
-    npm i --save @zhangtianli2006/lab-ui
+    npm i --save @ztl-uwu/labui
     ```
 
 3. Move icon font to your public folder
@@ -58,7 +58,7 @@
     **This step is needed because LabUI is still in development and there is no easy solution**  
     **It will be fixed later**
 
-    [⚠️ Issue Page](https://github.com/zhangtianli2006/LabUI/issues/166)
+    [⚠️ Issue Page](https://github.com/ZTL-UwU/LabUI/issues/166)
 
     ```bash
     cp -r LabUI/src/styles/fonts {your-project}/public/build/
@@ -72,7 +72,7 @@
         LButton,
         LBox,
         //...
-    } from '@zhangtianli2006/lab-ui/main';
+    } from '@ZTL-UwU/lab-ui/main';
 </script>
 ```
 
@@ -119,12 +119,12 @@
 - [ ] Docs / New Demo
 - [ ] Themes
 
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/zhangtianli2006/LabUI)
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/ZTL-UwU/LabUI)
 
 ### Start Demo Server
 
 ```bash
-git clone https://github.com/zhangtianli2006/LabUI
+git clone https://github.com/ZTL-UwU/LabUI
 cd LabUI
 cp -r ./src/styles/fonts ./public/build/
 npm install
