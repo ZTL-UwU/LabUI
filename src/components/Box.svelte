@@ -98,6 +98,7 @@
 
         .lb__box-header {
             @include title1;
+            color: $c_grey4;
             padding: $box-inner-padding;
             position: relative;
 
