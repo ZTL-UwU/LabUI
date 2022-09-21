@@ -44,7 +44,7 @@
 
     const handleInput = (event) => {
         const res = handle_input(event, is_limited, limit, value);
-        if (res !== null) {
+        if (res != null) {
             value = res;
         }
     };

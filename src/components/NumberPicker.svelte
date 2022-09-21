@@ -63,9 +63,17 @@
 
     const handle_input = (event, is_limited, limit, value) => {
         let res = null;
+
         if (!is_limited || event.target.value.length <= limit) {
             if (parseFloat(event.target.value) == event.target.value || event.target.value === '') {
-                res = parseFloat(event.target.value);
+                if (event.target.value === '') {
+                } else if (parseFloat(event.target.value) < min || parseFloat(event.target.value) > max) {
+                    return null;
+                } else {
+                    res = parseFloat(event.target.value);
+                }
+            } else {
+                return null;
             }
         }
 

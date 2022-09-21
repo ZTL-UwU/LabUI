@@ -68,6 +68,7 @@
 
     .lb__tab-selector-content {
         padding: $gap-tiny;
+        font-weight: 500;
     }
 
     .lb__tab-body {
