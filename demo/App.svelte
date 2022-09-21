@@ -598,6 +598,10 @@
 </main>
 
 <style lang="scss">
+    h1, h2, h3, h4, h5 {
+        color: #454648;
+    }
+
     main {
         padding: 20px 100px 50px 100px;
         max-width: 1100px;
