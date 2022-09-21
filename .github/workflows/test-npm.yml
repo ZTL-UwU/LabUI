@@ -10,16 +10,16 @@ jobs:
 
     steps:
       - name: Download
-        run: wget https://raw.githubusercontent.com/zhangtianli2006/LabUI/main/test-template.zip
+        run: wget https://raw.githubusercontent.com/ZTL-UwU/LabUI/main/test-template.zip
 
       - name: Unzip
         run: unzip test-template.zip
 
       - name: Install Dependencies
-        run: npm i svelte-preprocess node-sass
+        run: npm i --save svelte-preprocess node-sass
 
       - name: Install LabUI
-        run: npm i @zhangtianli2006/lab-ui
+        run: npm i --save @ztl-uwu/labui
 
       - name: NPM Install
         run: npm i
