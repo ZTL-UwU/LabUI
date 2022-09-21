@@ -2,8 +2,7 @@
     import { mix_classes, mix_styles } from '../scripts/utils.js';
 
     export let disabled = false;
-    export let plain = false;
-    export let flat = false;
+    export let noborder = false;
     export let round = false;
     export let color = disabled ? '' : 'green';
     export let size = 'normal';
@@ -14,9 +13,8 @@
     $: classes = mix_classes([
         'button',
         `button-${size}`,
-        plain ? 'button-plain' : '',
         disabled ? '' : `button-${color}`,
-        flat ? `button-flat` : '',
+        noborder ? `button-noborder` : '',
         round ? `button-round` : '',
         no_margin ? 'button-no-margin' : '',
     ]);
@@ -43,13 +41,16 @@
         @if $size == "tiny" {
             padding: 4px;
         } @else if $size == "small" {
-            min-height: $height-small;
+            padding: 6px;
+            min-height: 28px;
             min-width: 80px;
         } @else if $size == "normal" {
-            min-height: $height-normal;
+            padding: 6px 10px 6px 10px;
+            min-height: 35px;
             min-width: 100px;
         } @else if $size == "large" {
-            min-height: $height-large;
+            padding: 8px 14px 8px 14px;
+            min-height: 45px;
             min-width: 120px;
         }
     }
@@ -69,27 +70,13 @@
         }
         border-radius: $border-radius-normal;
 
-        border: none;
         outline: none;
         color: $white;
         cursor: pointer;
         transition: $transition-short;
 
-        &.lb__button-plain {
-            color: $grey6;
-            background-color: $transparent !important;
-
-            &:disabled { @include border-normal($grey2); }
-            @each $name, $val in $basic-color-map {
-                &.lb__button-#{$name} {
-                    @include border-normal(map-get($color-map, #{$name}#{map-get($basic-base-id, #{$name}) - 4}));
-                }
-            }
-        }
-
-        &.lb__button-flat {
-            box-shadow: none !important;
-            transform: none !important;
+        &.lb__button-noborder {
+            border: none !important;
         }
 
         @each $name, $val in $basic-color-map {
@@ -98,47 +85,20 @@
             }
         }
 
-        $shadow-height: ("tiny": 4px, "small": 6px, "normal": 8px, "large": 10px);
-        $plain-shadow-height-shift: ("tiny": 0px, "small": -2px, "normal": -2px, "large": -2px);
-
         @each $size in (tiny, small, normal, large) {
             &.lb__button-#{$size} {
                 @include inner-style($size);
-                &.lb__button-plain {
-                    @each $name, $val in $basic-color-map {
-                        &.lb__button-#{$name} {
-                            @include height-shadow(
-                                map-get($shadow-height, $size) + map-get($plain-shadow-height-shift, $size),
-                                map-get($color-map, #{$name}#{map-get($basic-base-id, $name) - 3})
-                            );
-                        }
-                    }
-                }
+            }
+        }
 
-                @each $name, $val in $basic-color-map {
-                    &.lb__button-#{$name} {
-                        @include height-shadow(
-                            map-get($shadow-height, $size),
-                            map-get($color-map, #{$name}#{map-get($basic-base-id, $name) + 1})
-                        );
-                    }
-                }
+        @each $name, $val in $basic-color-map {
+            &.lb__button-#{$name} {
+                border: $border-normal solid map-get($color-map, #{$name}#{map-get($basic-base-id, $name) - 1});
             }
         }
 
         &:hover {
-            border: none;
-
-            &.lb__button-plain {
-                &:disabled { @include border-normal($grey2); }
-                @each $name, $val in $basic-color-map {
-                    &.lb__button-#{$name} {
-                        @include border-normal(map-get($color-map, #{$name}#{map-get($basic-base-id, #{$name}) - 3}));
-                    }
-                }
-            }
-
-            &.lb__button-flat {
+            &.lb__button-noborder {
                 @each $name, $val in $basic-color-map {
                     &.lb__button-#{$name} {
                         background-color: map-get($color-map, #{$name}#{map-get($basic-base-id, #{$name}) - 1});
@@ -148,77 +108,25 @@
 
             @each $name, $val in $basic-color-map {
                 &.lb__button-#{$name} {
-                    background-color: map-get($color-map, #{$name}#{map-get($basic-base-id, #{$name}) + 1});
-                }
-            }
-
-            @each $size in (tiny, small, normal, large) {
-                &.lb__button-#{$size} {
-                    @include inner-style($size);
-                    &.lb__button-plain {
-                        @each $name, $val in $basic-color-map {
-                            &.lb__button-#{$name} {
-                                @include height-shadow(
-                                    map-get($shadow-height, $size) + map-get($plain-shadow-height-shift, $size),
-                                    map-get($color-map, #{$name}#{map-get($basic-base-id, $name) - 2})
-                                );
-                            }
-                        }
-                    }
-
-                    @each $name, $val in $basic-color-map {
-                        &.lb__button-#{$name} {
-                            @include height-shadow(
-                                map-get($shadow-height, $size),
-                                map-get($color-map, #{$name}#{map-get($basic-base-id, $name) + 2})
-                            );
-                        }
-                    }
+                    background-color: map-get($color-map, #{$name}#{map-get($basic-base-id, #{$name}) - 1});
+                    border-color: map-get($color-map, #{$name}#{map-get($basic-base-id, #{$name}) - 2});
                 }
             }
         }
 
         &:active {
-            transform: translateY(2px);
-
-            &.lb__button-flat {
+            &.lb__button-noborder {
                 @each $name, $val in $basic-color-map {
                     &.lb__button-#{$name} {
                         background-color: $val;
                     }
                 }
-
-                &.lb__button-plain {
-                    @each $name, $val in $basic-color-map {
-                        &.lb__button-#{$name} {
-                            @include border-normal(map-get($color-map, #{$name}#{map-get($basic-base-id, #{$name}) - 2}));
-                        }
-                    }
-                }
             }
 
-            @each $size in (tiny, small, normal, large) {
-                &.lb__button-#{$size} {
-                    @include inner-style($size);
-                    &.lb__button-plain {
-                        @each $name, $val in $basic-color-map {
-                            &.lb__button-#{$name} {
-                                @include height-shadow(
-                                    map-get($shadow-height, $size) + map-get($plain-shadow-height-shift, $size) - 2px,
-                                    map-get($color-map, #{$name}#{map-get($basic-base-id, $name) - 2})
-                                );
-                            }
-                        }
-                    }
-
-                    @each $name, $val in $basic-color-map {
-                        &.lb__button-#{$name} {
-                            @include height-shadow(
-                                map-get($shadow-height, $size) - 2px,
-                                map-get($color-map, #{$name}#{map-get($basic-base-id, $name) + 2})
-                            );
-                        }
-                    }
+            @each $name, $val in $basic-color-map {
+                &.lb__button-#{$name} {
+                    background-color: map-get($color-map, #{$name}#{map-get($basic-base-id, #{$name})});
+                    border-color: map-get($color-map, #{$name}#{map-get($basic-base-id, #{$name}) - 1});
                 }
             }
         }
@@ -226,24 +134,12 @@
         &:disabled {
             background-color: $grey2;
 
-            &.lb__button-plain {
-                border-color: $grey2;
-                @include height-shadow(6px, $grey3);
-                &:hover { border-color: $grey2; }
+            &.lb__button-noborder {
+                border: none !important;
             }
-            &.lb__button-flat {
-                box-shadow: none !important;
-                transform: none !important;
-            }
-
-            &.lb__button-tiny { @include height-shadow(4px, $grey3); }
-            &.lb__button-small { @include height-shadow(6px, $grey3); }
-            &.lb__button-normal { @include height-shadow(8px, $grey3); }
-            &.lb__button-large { @include height-shadow(10px, $grey3); }
 
             @include disabled;
-
-            &:active { transform: none; }
+            border: $border-normal solid $grey1;
         }
     }
 </style>

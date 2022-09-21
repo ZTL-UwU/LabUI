@@ -113,30 +113,21 @@
         <LButton color="grey" size="large">Grey Large</LButton>
     </div>
 
-    <div class="item-15">
-        <h2>Plain</h2>
-        <LButton plain color="blue">Plain</LButton>
-        <LButton plain color="green" size="large">Plain large</LButton>
-        <LButton plain color="grey" size="tiny">Tiny</LButton>
-        <LButton plain disabled>Plain Disabled</LButton>
-    </div>
-
     <div class="item-20">
-        <h2>Flat</h2>
-        <LButton flat color="blue">Flat</LButton>
-        <LButton flat plain color="yellow">Flat Plain</LButton>
-        <LButton flat color="green" size="large">Flat large</LButton>
-        <LButton flat disabled>Flat Disabled</LButton>
-        <LButton flat plain disabled>Flat Plain Disabled</LButton>
+        <h2>No Border</h2>
+        <LButton noborder color="blue">Flat</LButton>
+        <LButton noborder plain color="yellow">Flat Plain</LButton>
+        <LButton noborder color="green" size="large">Flat large</LButton>
+        <LButton noborder disabled>Flat Disabled</LButton>
+        <LButton noborder plain disabled>Flat Plain Disabled</LButton>
     </div>
 
     <div class="item-20">
         <h2>Round</h2>
-        <LButton round flat color="blue">R</LButton>
-        <LButton round plain color="yellow">Plain Round</LButton>
-        <LButton round flat plain color="blue">FPR</LButton>
-        <LButton round plain disabled>Plain Round</LButton>
-        <LButton round flat plain disabled>FPRD</LButton>
+        <LButton round color="blue">Round</LButton>
+        <LButton round noborder color="red">Round No Border</LButton>
+        <LButton round disabled>Disabled</LButton>
+        <LButton round noborder disabled>Disabled No Border</LButton>
     </div>
 
     <div class="item-20">
