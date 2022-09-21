@@ -5,7 +5,6 @@
     export let no_header = false;
     export let has_suffix = false;
     export let show = true;
-    export let flat = true;
     export let width = '500px';
     export let folded = false;
     export let foldable = false;
@@ -15,7 +14,6 @@
 
     $: classes = mix_classes([
         'box',
-        flat ? '' : 'box-3D',
     ]);
 
     $: styles = mix_styles([
@@ -128,9 +126,5 @@
         }
 
         margin-bottom: $box-margin-bottom;
-    }
-
-    .lb__box-3D {
-        @include border-bottom-huge($border1);
     }
 </style>

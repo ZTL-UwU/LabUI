@@ -6,7 +6,6 @@
     export let min = -Infinity;
     export let max = Infinity;
     export let step = 1;
-    export let flat = true;
     export let button_position = 'both';
     export let type = 'normal';
     export let disabled = false;
@@ -29,7 +28,6 @@
         disabled ? 'number-picker-disabled' : '',
         button_position === 'right' ? 'number-picker-position-right' : '',
         button_position === 'left' ? 'number-picker-position-left' : '',
-        flat ? '' : 'number-picker-3D',
     ]);
 
     $: minus_button_classes = mix_classes([
@@ -174,11 +172,6 @@
             .lb__number-picker-button-inner {
                 @include auto-h-center;
             }
-        }
-
-        &.lb__number-picker-3D {
-            padding-bottom: $border-huge;
-            border-bottom-width: $border-large;
         }
     }
 

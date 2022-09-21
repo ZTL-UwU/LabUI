@@ -35,7 +35,6 @@
     let number_picker_demo_value = 0;
     let number_picker_min_max_demo_value = 0;
     let number_picker_step_demo_value = 0.5;
-    let number_picker_3D_demo_value = 0;
     let number_picker_position_right_demo_value = 0;
 
     let rating_demo_value = 2;
@@ -270,9 +269,6 @@
                 <LProgress percent="27" length="100%" />
             </div>
         </LBox>
-        <LBox no_header flat={false} width="600px">
-            <div slot="body">3D Boxes</div>
-        </LBox>
     </div>
 
     <div class="item-20">
@@ -314,7 +310,6 @@
         <code>{input_handle_demo_value}</code>
     </div>
     <div class="item-10">
-        <LInput placeholder="3D Input" flat={false} />
         <LInput placeholder={input_disabled_demo_value} disabled />
         <LInput placeholder="Center Input" center width="100px" />
     </div>
@@ -346,7 +341,6 @@
             placeholder="Limited Text Area Demo"
             limit="100"
         />
-        <LInput type="textarea" placeholder="3D Text Area" flat={false} />
         <LInput type="textarea" placeholder="Disabled Text Area" disabled />
     </div>
 
@@ -370,13 +364,6 @@
             <LNumberPicker
                 bind:value={number_picker_step_demo_value}
                 step="0.5"
-            />
-        </div>
-        <div class="item-10">
-            <h3>3D</h3>
-            <LNumberPicker
-                bind:value={number_picker_3D_demo_value}
-                flat={false}
             />
         </div>
         <div class="item-10">

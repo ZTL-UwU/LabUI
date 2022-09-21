@@ -6,7 +6,6 @@
     export let value = '';
     export let type = 'text';
     export let limit = -1;
-    export let flat = true;
     export let center = false;
     export let readonly = false;
     export let clearable = false;
@@ -34,7 +33,6 @@
         (show_pass_icon && type !== 'password') ? 'input-password' : '',
         readonly ? 'input-readonly' : '',
         is_limited ? 'input-limited' : '',
-        flat ? '' : 'input-3D',
         center ? 'input-center' : '',
         clearable ? 'input-clearable' : '',
     ]);
@@ -156,9 +154,6 @@
         }
 
         border-radius: $border-radius-normal;
-        &.lb__input-3D {
-            @include border-bottom-large($border1);
-        }
         &.lb__input-readonly {
             cursor: default;
         }
