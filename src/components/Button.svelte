@@ -41,7 +41,7 @@
         @if $size == "tiny" {
             padding: 4px;
         } @else if $size == "small" {
-            padding: 6px;
+            padding: 4px;
             min-height: 28px;
             min-width: 80px;
         } @else if $size == "normal" {
