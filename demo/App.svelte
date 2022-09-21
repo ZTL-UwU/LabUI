@@ -600,7 +600,7 @@
 <style lang="scss">
     main {
         padding: 20px 100px 50px 100px;
-        max-width: 1400px;
+        max-width: 1100px;
         margin-left: auto;
         margin-right: auto;
     }
