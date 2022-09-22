@@ -123,6 +123,7 @@
     .lb__input-holder {
         position: relative;
         display: inline-block;
+        max-width: 100%;
     }
     
     $input-suffix-size: 45px;
@@ -187,6 +188,7 @@
     }
 
     .lb__input-textarea {
+        max-width: calc(100% - 28px);
         padding: 8px 12px 8px 12px;
 
         min-height: 60px;
