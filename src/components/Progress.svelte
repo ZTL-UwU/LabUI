@@ -79,6 +79,7 @@
         transition: $transition-long;
 
         .lb__progress-front {
+            display: flex;
             line-height: 1;
             border-radius: $border-radius-round;
 
@@ -94,18 +95,18 @@
             .lb__progress-num {
                 @include v-center;
                 user-select: none;
+                margin-left: calc(100% - 1.9em);
 
                 color: $white;
                 font-weight: 500;
-
-                margin-right: $gap-tiny;
             }
 
             &.lb__progress-front-vertical {
+                display: block;
                 text-align: center;
                 animation: none;
                 position: relative;
-                .lb__progress-num { margin-right: 0; }
+                .lb__progress-num { margin: 0 !important; }
             }
         }
     }
