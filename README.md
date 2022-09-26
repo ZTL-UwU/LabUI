@@ -72,7 +72,7 @@
         LButton,
         LBox,
         //...
-    } from '@ZTL-UwU/lab-ui/main';
+    } from '@ztl-uwu/labui/main';
 </script>
 ```
 
