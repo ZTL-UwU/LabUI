@@ -6,7 +6,6 @@
         LInput,
         LLink,
         LMask,
-        LMDContainer,
         LMessageBar,
         LNavBar,
         LNotification,
@@ -577,23 +576,6 @@
             <LButton flat>Button</LButton>
         </LNotification>
     </div>
-
-    <LBox no_header>
-        <div slot="body">
-            <LMDContainer bind:content={md_container_demo_value} />
-            <LInput type="textarea" bind:value={md_container_demo_value} />
-        </div>
-    </LBox>
-
-    <LBox foldable folded="true">
-        <div slot="header">MD Container</div>
-        <div slot="body">
-            <LMDContainer content={code_demo.cpp} />
-            <LMDContainer content={code_demo.css} />
-            <LMDContainer content={code_demo.markdown} />
-        </div>
-    </LBox>
-
     <!-- <LMask show={ show_cover } on:click={ on_click_demo }></LMask> -->
 </main>
 
