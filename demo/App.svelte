@@ -17,7 +17,6 @@
         LTabs,
         LTags,
     } from "../../src/main.js";
-    import * as code_demo from "./code_demo.js";
     import "../../src/styles/tabler-icons.min.css";
 
     let progress_demo_value = 10;
