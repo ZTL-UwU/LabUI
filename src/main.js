@@ -4,7 +4,6 @@ import Icon         from './components/Icon.svelte';
 import Input        from './components/Input.svelte';
 import Link         from './components/Link.svelte';
 import Mask         from './components/Mask.svelte';
-import MDContainer  from './components/MDContainer.svelte';
 import MessageBar   from './components/MessageBar.svelte';
 import NavBar       from './components/NavBar.svelte';
 import Notification from './components/Notification.svelte';
@@ -23,7 +22,6 @@ export {
     Input        as LInput,
     Link         as LLink,
     Mask         as LMask,
-    MDContainer  as LMDContainer,
     MessageBar   as LMessageBar,
     NavBar       as LNavBar,
     Notification as LNotification,
