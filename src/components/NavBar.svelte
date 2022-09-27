@@ -33,7 +33,6 @@
 
     .lb__nav-container {
         z-index: $z-index7;
-        width: 100vw;
         top: 0;
         left: 0;
     }
