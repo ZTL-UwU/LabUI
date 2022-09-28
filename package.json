@@ -1,6 +1,6 @@
 {
   "name": "@ztl-uwu/labui",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "license": "MIT",
   "description": "A Svelte frontend UI library.",
   "repository": {
@@ -31,6 +31,9 @@
     "typescript": "^4.3.5"
   },
   "dependencies": {
+    "dompurify": "^2.3.1",
+    "highlight.js": "^11.2.0",
+    "remarkable": "^2.0.1",
     "sirv-cli": "^2.0.2"
   },
   "exports": {
