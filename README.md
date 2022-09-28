@@ -83,11 +83,12 @@
 ### Progress
 
 **Components**
-- [ ] ⚒️Avatar
+- [ ] Avatar
 - [x] Box
 - [x] Button
 - [ ] Button Group
 - [ ] Card
+- [ ] Check Box
 - [ ] Form
 - [x] Icon
 - [x] Input
@@ -96,8 +97,8 @@
 - [x] Mask
 - [x] MDContainer
 - [ ] Message
-- [ ] ⚒️MessageBar
-- [ ] ⚒️NavBar
+- [ ] MessageBar
+- [ ] NavBar
 - [x] Notification
 - [x] NumberPicker
 - [x] Progress
@@ -115,8 +116,7 @@
 
 **Other**
 - [x] Logo
-- [ ] Design Guide
-- [ ] Docs / New Demo
+- [ ] Design Guide / Docs [⚒️Here](https://labui.js.org)
 - [ ] Themes
 
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/ZTL-UwU/LabUI)
