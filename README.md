@@ -53,17 +53,6 @@
     npm i --save @ztl-uwu/labui
     ```
 
-3. Move icon font to your public folder
-
-    **This step is needed because LabUI is still in development and there is no easy solution**  
-    **It will be fixed later**
-
-    [⚠️ Issue Page](https://github.com/ZTL-UwU/LabUI/issues/166)
-
-    ```bash
-    cp -r LabUI/src/styles/fonts {your-project}/public/build/
-    ```
-
 ## Usage
 
 ```html
@@ -90,7 +79,6 @@
 - [ ] Card
 - [ ] Check Box
 - [ ] Form
-- [x] Icon
 - [x] Input
 - [ ] Layout
 - [ ] Link
@@ -110,9 +98,6 @@
 - [x] Tabs
 - [ ] Table
 - [x] Tags
-
-**Fixes**
-- [ ] Icon Font Problem
 
 **Other**
 - [x] Logo

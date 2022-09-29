@@ -1,4 +1,5 @@
 <script>
+    import { Eye, EyeOff, CircleOff } from 'tabler-icons-svelte';
     import { mix_classes, mix_styles } from '../scripts/utils.js';
 
     export let disabled = false;
@@ -22,7 +23,7 @@
     };
 
     let show_pass_icon = type === 'password' ? true : false;
-    let show_password_icon = 'ti ti-eye';
+    let show_password_icon = 1; // 1: eye, 2:eye-off
 
     $: is_limited = limit == -1 ? false : true;
     $: counter = limit == -1 ? '' : `${value.length} / ${limit}`;
@@ -52,10 +53,10 @@
     const show_pass = () => {
         if (type === 'text') {
             type = 'password';
-            show_password_icon = 'ti ti-eye';
+            show_password_icon = 1;
         } else if (type === 'password') {
             type = 'text';
-            show_password_icon = 'ti ti-eye-off';
+            show_password_icon = 2;
         }
         show_pass_icon = true;
     }
@@ -85,12 +86,16 @@
                     {#if is_limited} { counter } {/if}
                     {#if show_pass_icon}
                         <span on:click={show_pass} class="lb__input-suffix-inner-button">
-                            <i class={show_password_icon} style="color: #4A4A4A; font-size: 15px;"></i>
+                            {#if show_password_icon === 1}
+                                <Eye size="15" color="#4A4A4A" />
+                            {:else}
+                                <EyeOff size="15" color="#4A4A4A" />
+                            {/if}
                         </span>
                     {/if}
                     {#if clearable && value.length > 0}
                         <span on:click={clear_input} class="lb__input-suffix-inner-button">
-                            <i class="ti ti-circle-x" style="color: #4A4A4A; font-size: 15px;"></i>
+                            <CircleOff style="color: #4A4A4A; font-size: 15px;" />
                         </span>
                     {/if}
                 </span>

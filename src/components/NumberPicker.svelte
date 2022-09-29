@@ -1,5 +1,6 @@
 <script>
-    import { mix_classes } from '../scripts/utils.js';
+    import { ChevronDown, ChevronUp, Minus, Plus } from 'tabler-icons-svelte';
+import { mix_classes } from '../scripts/utils.js';
     import LInput from './Input.svelte';
 
     export let value = 0;
@@ -105,12 +106,12 @@
     <span class={ classes }>
         {#if button_position === 'both'}
             <span class={ minus_button_classes } on:click={ handleMinus }>
-                <span class="lb__number-picker-button-inner"><i class="ti ti-minus"></i></span>
+                <span class="lb__number-picker-button-inner"><Minus size=16 color="#4A4A4A" /></span>
             </span>
         {:else if button_position === 'left'}
             <span class={ stacked_button_classes }>
-                <div class={ stacked_button_add_classes } on:click={ handleAdd }><i class="ti ti-chevron-up"></i></div>
-                <div class={ stacked_button_minus_classes } on:click={ handleMinus }><i class="ti ti-chevron-down"></i></div>
+                <div class={ stacked_button_add_classes } on:click={ handleAdd }><ChevronUp size=16 color="#4A4A4A" /></div>
+                <div class={ stacked_button_minus_classes } on:click={ handleMinus }><ChevronDown size=16 color="#4A4A4A" /></div>
             </span>
         {/if}
         <span class="lb__number-picker-input">
@@ -125,12 +126,12 @@
         </span>
         {#if button_position === 'both'}
             <span class={ add_button_classes } on:click={ handleAdd }>
-                <span class="lb__number-picker-button-inner"><i class="ti ti-plus"></i></span>
+                <span class="lb__number-picker-button-inner"><Plus size=16 color="#4A4A4A" /></span>
             </span>
         {:else if button_position === 'right'}
             <span class={ stacked_button_classes }>
-                <div class={ stacked_button_add_classes } on:click={ handleAdd }><i class="ti ti-chevron-up"></i></div>
-                <div class={ stacked_button_minus_classes } on:click={ handleMinus }><i class="ti ti-chevron-down"></i></div>
+                <div class={ stacked_button_add_classes } on:click={ handleAdd }><ChevronUp size=16 color="#4A4A4A" /></div>
+                <div class={ stacked_button_minus_classes } on:click={ handleMinus }><ChevronDown size=16 color="#4A4A4A" /></div>
             </span>
         {/if}
     </span>

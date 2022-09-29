@@ -1,6 +1,5 @@
 import Box          from './components/Box.svelte';
 import Button       from './components/Button.svelte';
-import Icon         from './components/Icon.svelte';
 import Input        from './components/Input.svelte';
 import Link         from './components/Link.svelte';
 import Mask         from './components/Mask.svelte';
@@ -19,7 +18,6 @@ import Tags         from './components/Tags.svelte';
 export {
     Box          as LBox,
     Button       as LButton,
-    Icon         as LIcon,
     Input        as LInput,
     Link         as LLink,
     Mask         as LMask,

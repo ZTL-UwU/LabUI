@@ -1,4 +1,5 @@
 <script>
+    import { ChevronDown, ChevronUp, X } from 'tabler-icons-svelte';
     import { mix_classes, mix_styles } from '../scripts/utils.js';
 	import { fade } from 'svelte/transition';
 
@@ -52,16 +53,16 @@
                 {#if foldable }
                     <span on:click={ HandleFold } class="lb__box-header-suffix-fold-button">
                         {#if folded }
-                            <i class="ti ti-chevron-down"></i>
+                            <ChevronDown size="16" />
                         {:else}
-                            <i class="ti ti-chevron-up"></i>
+                            <ChevronUp size="16" />
                         {/if}
                     </span>
                 {/if}
 
                 {#if closable }
                     <span on:click={ HandleClose } class="lb__box-header-suffix-close-button">
-                        <i class="ti ti-x"></i>
+                        <X size="16" />
                     </span>
                 {/if}
             </span>

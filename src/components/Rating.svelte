@@ -1,13 +1,11 @@
 <script>
+    import { Star, StarHalf } from 'tabler-icons-svelte';
     import { mix_classes } from '../scripts/utils.js';
-    import LIcon from './Icon.svelte';
 
     export let value = 0;
     export let disabled = false;
     export let max = Infinity;
     export let read_only = false;
-    export let full_icon = 'star';
-    export let half_icon = 'star-half';
     export let color = read_only ? 'grey8' : 'yellow3';
 
     export let rating_array = [];
@@ -53,9 +51,9 @@
     <span class={ read_only_classes }>
         {#each rating_array as index}
             {#if index === '@'}
-                <LIcon name={ full_icon } />
+                <Star />
             {:else}
-                <LIcon name={ half_icon } />
+                <StarHalf />
             {/if}
         {/each}
     </span>
