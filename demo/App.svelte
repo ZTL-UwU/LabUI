@@ -2,7 +2,6 @@
     import {
         LBox,
         LButton,
-        LIcon,
         LInput,
         LLink,
         LMask,
@@ -19,7 +18,7 @@
         LTags,
     } from "../../src/main.js";
     import * as code_demo from "./code_demo.js";
-    import "../../src/styles/tabler-icons.min.css";
+    import { CircleX, Message, SquareX, Link, Tag } from "tabler-icons-svelte";
 
     let progress_demo_value = 10;
 
@@ -181,7 +180,7 @@
         <span slot="header"> Message Bars </span>
         <div slot="body">
             <LMessageBar color="green">
-                <LIcon name="message" slot="icon" />
+                <Message size="16" slot="icon" />
                 <span slot="title">Message</span>
                 <span slot="content">
                     More to describe ...
@@ -196,12 +195,12 @@
                     return false;
                 }}
             >
-                <LIcon name="circle-x" slot="icon" />
+                <CircleX size="16" slot="icon" />
                 <span slot="title">Error</span>
                 <span slot="content">Custom close handling.</span>
             </LMessageBar>
             <LMessageBar color="yellow" uncloseable type="dark">
-                <LIcon name="square-x" slot="icon" />
+                <SquareX size="16" slot="icon" />
                 <span slot="title">Warning</span>
                 <span slot="content">This message is not closable</span>
             </LMessageBar>
@@ -433,7 +432,7 @@
         <div slot="body">
             <div class="item-10">
                 <LLink href="https://github.com/zhangtianli2006/LabUI"
-                    ><LIcon name="link" /> Link to GitHub repo</LLink
+                    ><Link size=16 /> Link to GitHub repo</LLink
                 >
                 <br />
                 <LLink on:click={on_click_demo}>👇🏼 Catch on:click</LLink>
@@ -528,11 +527,11 @@
                 <span slot="text">Tag</span>
             </LTags>
             <LTags>
-                <i slot="icon" class="ti ti-tag"></i>
+                <Tag slot="icon" size=14 />
                 <span slot="text">Tag</span>
             </LTags>
             <LTags href="https://github.com/zhangtianli2006/LabUI">
-                <i slot="icon" class="ti ti-link"></i>
+                <Link slot="icon" size=14 />
                 <span slot="text">Linked</span>
             </LTags>
             <br>
