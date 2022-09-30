@@ -18,7 +18,12 @@
         LTags,
     } from "../../src/main.js";
     import * as code_demo from "./code_demo.js";
-    import { CircleX, Message, SquareX, Link, Tag } from "tabler-icons-svelte";
+
+    import CircleX from "tabler-icons-svelte/icons/CircleX.svelte";
+    import Message from "tabler-icons-svelte/icons/Message.svelte";
+    import SquareX from "tabler-icons-svelte/icons/SquareX.svelte";
+    import Link from "tabler-icons-svelte/icons/Link.svelte";
+    import Tag from "tabler-icons-svelte/icons/Tag.svelte";
 
     let progress_demo_value = 10;
 
@@ -113,11 +118,10 @@
 
     <div class="item-20">
         <h2>No Border</h2>
-        <LButton noborder color="blue">Flat</LButton>
-        <LButton noborder plain color="yellow">Flat Plain</LButton>
-        <LButton noborder color="green" size="large">Flat large</LButton>
-        <LButton noborder disabled>Flat Disabled</LButton>
-        <LButton noborder plain disabled>Flat Plain Disabled</LButton>
+        <LButton noborder color="blue">No Border</LButton>
+        <LButton noborder color="yellow">No Border</LButton>
+        <LButton noborder color="green" size="large">No Border large</LButton>
+        <LButton noborder disabled>No Border Disabled</LButton>
     </div>
 
     <div class="item-20">
@@ -414,15 +418,11 @@
         <LRating
             read_only
             value="4.5"
-            full_icon="circle"
-            half_icon="circle-dashed"
         />
         <br />
         <LRating
             read_only
             value="3.5"
-            full_icon="square"
-            half_icon="square-toggle"
             color="yellow6"
         />
     </div>
@@ -562,7 +562,7 @@
     <div class="item-20">
         <h2>Notification</h2>
         <LNotification content="1">
-            <LButton flat color="blue">Button</LButton>
+            <LButton color="blue">Button</LButton>
         </LNotification>
         <LNotification content="999" color="green">
             <LButton color="yellow">Button</LButton>
@@ -573,7 +573,7 @@
         </LNotification>
         <br />
         <LNotification dot>
-            <LButton flat>Button</LButton>
+            <LButton noborder>Button</LButton>
         </LNotification>
     </div>
 
