@@ -1,5 +1,7 @@
 <script>
-    import { Star, StarHalf } from 'tabler-icons-svelte';
+    import Star from "tabler-icons-svelte/icons/Star.svelte";
+    import StarHalf from "tabler-icons-svelte/icons/StarHalf.svelte";
+
     import { mix_classes } from '../scripts/utils.js';
 
     export let value = 0;

@@ -1,5 +1,8 @@
 <script>
-    import { ChevronDown, ChevronUp, X } from 'tabler-icons-svelte';
+    import ChevronDown from "tabler-icons-svelte/icons/ChevronDown.svelte";
+    import ChevronUp from "tabler-icons-svelte/icons/ChevronUp.svelte";
+    import X from "tabler-icons-svelte/icons/X.svelte";
+
     import { mix_classes, mix_styles } from '../scripts/utils.js';
 	import { fade } from 'svelte/transition';
 

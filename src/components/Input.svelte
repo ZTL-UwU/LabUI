@@ -1,5 +1,8 @@
 <script>
-    import { Eye, EyeOff, CircleOff } from 'tabler-icons-svelte';
+    import Eye from "tabler-icons-svelte/icons/Eye.svelte";
+    import EyeOff from "tabler-icons-svelte/icons/EyeOff.svelte";
+    import CircleOff from "tabler-icons-svelte/icons/CircleOff.svelte";
+
     import { mix_classes, mix_styles } from '../scripts/utils.js';
 
     export let disabled = false;

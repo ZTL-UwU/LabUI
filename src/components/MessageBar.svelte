@@ -1,4 +1,6 @@
 <script>
+    import X from "tabler-icons-svelte/icons/X.svelte";
+
     import { createEventDispatcher } from 'svelte';
 	import { fly, fade } from 'svelte/transition';
 
@@ -78,7 +80,7 @@
             </div>
         </div>
         {#if !uncloseable}
-            <span class="lb__msg-bar-close-button" on:click={ closeAlert }><i class="ti ti-x"></i></span>
+            <span class="lb__msg-bar-close-button" on:click={ closeAlert }><X size="16" /></span>
         {/if}
         <br>
         <span class="lb__msg-bar-content"><slot name="content" /></span>

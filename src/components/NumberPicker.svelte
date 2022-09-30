@@ -1,6 +1,10 @@
 <script>
-    import { ChevronDown, ChevronUp, Minus, Plus } from 'tabler-icons-svelte';
-import { mix_classes } from '../scripts/utils.js';
+    import ChevronDown from "tabler-icons-svelte/icons/ChevronDown.svelte";
+    import ChevronUp from "tabler-icons-svelte/icons/ChevronUp.svelte";
+    import Minus from "tabler-icons-svelte/icons/Minus.svelte";
+    import Plus from "tabler-icons-svelte/icons/Plus.svelte";
+
+    import { mix_classes } from '../scripts/utils.js';
     import LInput from './Input.svelte';
 
     export let value = 0;
