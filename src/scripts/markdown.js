@@ -1,6 +1,6 @@
 
 import { Remarkable } from 'remarkable';
-import hljs from 'highlight.js';
+const hljs = require('./highlight.js');
 import '../styles/hljs_ayu.css';
 import '../styles/markdown.css';
 
