@@ -5,6 +5,7 @@
     export let inactive_value = false;
     export let active_value = true;
     export let disabled = false;
+    export let show_name = false;
 
     export let on_color = 'blue';
     export let off_color = 'c_grey1';
@@ -51,28 +52,32 @@
 </script>
 
 <span class="lb__switch" on:click={ handleClick }>
-    <span class={ inactive_name_classes }>
-        <slot name="inactive_name" />
-    </span>
-    <span
-        class={ background_classes }
-    >
+    {#if show_name}
+        <span class={ inactive_name_classes }>
+            <slot name="inactive_name" />
+        </span>
+    {/if}
+    <span class={ background_classes } >
         <span class={ indicator_classes }></span>
     </span>
-    <span class={ active_name_classes }>
-        <slot name="active_name" />
-    </span>
+    {#if show_name}
+        <span class={ active_name_classes }>
+            <slot name="active_name" />
+        </span>
+    {/if}
 </span>
 
 <style lang="scss">
     @import '../styles/main.scss';
 
     .lb__switch {
-        display: inline-block;
+        display: inline-flex;
         margin-right: $gutter-normal;
 
         .lb__switch-name {
             @include span-button;
+            padding-left: 5px;
+            padding-right: 5px;
             transition: $transition-normal;
 
             &:hover { color: $blue; }

@@ -107,7 +107,7 @@
             background-color: $white;
             border-radius: $border-radius-round;
 
-            margin-bottom: 6px;
+            margin-bottom: 5px;
         }
 
         .lb__radio-indicator-inner-holder {

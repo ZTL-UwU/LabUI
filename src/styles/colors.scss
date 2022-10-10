@@ -75,7 +75,8 @@ $red8 :#9a473f;
 $red9: #723730;
 $red: $red6;
 
-$color-map: ("green1": $green1,
+$color-map: (
+    "green1": $green1,
     "green2": $green2,
     "green3": $green3,
     "green4": $green4,
@@ -152,7 +153,8 @@ $color-map: ("green1": $green1,
     "red": $red,
 );
 
-$base-id: ("green1": 6,
+$base-id: (
+    "green1": 6,
     "green2": 6,
     "green3": 6,
     "green4": 6,
@@ -229,7 +231,8 @@ $base-id: ("green1": 6,
     "red": 6,
 );
 
-$basic-color-map: ("green": $green,
+$basic-color-map: (
+    "green": $green,
     "grey": $grey,
     "yellow": $yellow,
     "blue": $blue,
@@ -237,7 +240,8 @@ $basic-color-map: ("green": $green,
     "c_grey": $c_grey,
 );
 
-$basic-base-id: ("green": 6,
+$basic-base-id: (
+    "green": 6,
     "grey": 5,
     "yellow": 5,
     "blue": 6,
@@ -245,7 +249,8 @@ $basic-base-id: ("green": 6,
     "c_grey": 4,
 );
 
-$font-color-map: ("green1": $grey,
+$font-color-map: (
+    "green1": $grey,
     "green2": $grey,
     "green3": $grey,
     "green4": $white,

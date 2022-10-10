@@ -513,7 +513,7 @@
             <LSwitch on_color="green" off_color="red" />
             <LSwitch bind:value={switch_demo_value} disabled />
             <br />
-            <LSwitch bind:value={switch_demo_value}>
+            <LSwitch show_name bind:value={switch_demo_value}>
                 <span slot="inactive_name">Inactive</span>
                 <span slot="active_name">Active</span>
             </LSwitch>

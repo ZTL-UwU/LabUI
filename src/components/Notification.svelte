@@ -28,7 +28,7 @@
         position: relative;
         display: inline-block;
 
-        $notification-indicator-size: 18px;
+        $notification-indicator-size: 16px;
         $notification-indicator-dot-size: 12px;
         .lb__notification-indicator {
             display: inline-block;
