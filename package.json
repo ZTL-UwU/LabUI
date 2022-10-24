@@ -18,7 +18,6 @@
     "@rollup/plugin-node-resolve": "^13.0.4",
     "@rollup/plugin-typescript": "^8.2.5",
     "@tsconfig/svelte": "^3.0.0",
-    "node-sass": "^7.0.1",
     "rollup": "^2.56.2",
     "rollup-plugin-css-only": "^3.1.0",
     "rollup-plugin-livereload": "^2.0.5",
@@ -26,11 +25,12 @@
     "rollup-plugin-terser": "^7.0.0",
     "svelte": "^3.42.1",
     "svelte-check": "^2.2.4",
-    "svelte-preprocess": "^4.7.3",
     "tslib": "^2.3.1",
     "typescript": "^4.3.5"
   },
   "dependencies": {
+    "node-sass": "^7.0.1",
+    "svelte-preprocess": "^4.7.3",
     "dompurify": "^2.3.1",
     "highlight.js": "^11.2.0",
     "remarkable": "^2.0.1",
