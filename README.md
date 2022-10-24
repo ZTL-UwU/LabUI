@@ -24,13 +24,7 @@
 
 1. Install SCSS
 
-    Install Components
-
-    ```bash
-    npm install --save svelte-preprocess node-sass
-    ```
-
-    open `rollup.config.js`
+    in `rollup.config.js` (or `vite.config.js` if you use [vite](https://vitejs.dev/))
 
     ```javascript
     import preprocess from 'svelte-preprocess'; // Line to add
