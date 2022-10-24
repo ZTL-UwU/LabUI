@@ -15,9 +15,6 @@ jobs:
       - name: Unzip
         run: unzip test-template.zip
 
-      - name: Install Dependencies
-        run: npm i --save svelte-preprocess node-sass
-
       - name: Install LabUI
         run: npm i --save @ztl-uwu/labui
 
